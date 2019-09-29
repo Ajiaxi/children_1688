@@ -15,15 +15,16 @@ class Children1688Item(scrapy.Item):
      purchaseIndex1688 1688采购指数
      purchaseIndexTb 淘宝采购指数
      supplyIndex   1688供应指数
-      category1	 category2　　　　time	          line_Type	                      value　　　　crawl_Time
+      category1	 category2　　　　time	     purchaseIndex1688     purchaseIndexTb	     supplyIndex       　　　crawl_Time
 		童装	　      所有　　　　2018/9.27  　　 1688采购指数/淘宝采购指数/1688供应指数　　32191　　　2019/9.30
     '''
 
     category1 = scrapy.Field()
     category2 = scrapy.Field()
     showtime = scrapy.Field()
-    line_Type = scrapy.Field()
-    value = scrapy.Field()
+    purchaseIndex1688 = scrapy.Field()
+    purchaseIndexTb = scrapy.Field()
+    supplyIndex = scrapy.Field()
     crawl_Time = scrapy.Field()
 
 

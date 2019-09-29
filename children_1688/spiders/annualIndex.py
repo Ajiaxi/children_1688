@@ -1,12 +1,15 @@
 # -*- coding: utf-8 -*-
 import json
 import time
-
 import scrapy
-
 from children_1688.items import Children1688Item
+from children_1688.spiders.dataList import getAllDayPerYear
 
-
+'''
+    - 陈航
+    - 爬取三大指数去年昨日到今日一整年的数据
+    - 
+'''
 class Children01Spider(scrapy.Spider):
     name = 'children_01'
     allowed_domains = ['index.1688.com']
@@ -17,11 +20,11 @@ class Children01Spider(scrapy.Spider):
         # data1 =     response.css('#main-chart-val::attr(value)').extract_first()
         category1 = response.xpath('//*[@id="aliindex-masthead"]/div/div[3]/div[1]/p/a/text()').extract()
         category2 = response.xpath('//*[@id="aliindex-masthead"]/div/div[3]/div[2]/p/a/text()').extract()
-        # category1 = category1[1:-1]
-        # category2 = category2[1:-1]
-        showtime = '2018-9-28'
-        line_Types = ['1688采购指数','淘宝采购指数','1688供应指数']
+        # 去掉[] 以及''
+        category1 = str(category1)[2:-2]
+        category2 = str(category2)[2:-2]
 
+        # 将数据转换为json，通过获取json数据的方式获取我们所需要的数据
         datajson = json.loads(data)     #dict
         purchaseIndex1688s = datajson["purchaseIndex1688"]["index"]["history"]
         purchaseIndexTbs = datajson['purchaseIndexTb']["index"]["history"]
@@ -29,33 +32,48 @@ class Children01Spider(scrapy.Spider):
         crawl_Time = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
 
         print(len(purchaseIndex1688s))
+        # 依次遍历，将数据添加进item中
         for i in range(0,len(purchaseIndex1688s)):
+        # debug时所用代码
+        # for i in range(0,1):
+            list_Count = self.datalist()
             item = Children1688Item()
             item['category1'] = category1
             item['category2'] = category2
-            item['showtime'] = showtime
-            item['line_Type'] = line_Types[0]
-            item['value'] = purchaseIndex1688s[i]
+            item['showtime'] = list_Count[i]
+            item['purchaseIndex1688'] = purchaseIndex1688s[i]
+            item['purchaseIndexTb'] = purchaseIndexTbs[i]
+            item['supplyIndex'] = supplyIndexs[i]
             item['crawl_Time'] = crawl_Time
+            yield item
 
-        # for i in range(0, len(purchaseIndexTbs)):
-        #     item = Children1688Item()
-        #     item['category1'] = category1
-        #     item['category2'] = category2
-        #     item['showtime'] = showtime
-        #     item['line_Type'] = line_Types[1]
-        #     item['crawl_Time'] = crawl_Time
-        #
-        # for i in range(0, len(supplyIndexs)):
-        #     item = Children1688Item()
-        #     item['category1'] = category1
-        #     item['category2'] = category2
-        #     item['showtime'] = showtime
-        #     item['line_Type'] = line_Types[2]
-        #     item['value'] = supplyIndexs[i]
-        #     item['crawl_Time'] = crawl_Time
+    def datalist(self):
+        # 获取2018年全年的日期
+        data_2018 = getAllDayPerYear(2018)
+        # 获取2019年全年的日期
+        data_2019 = getAllDayPerYear(2019)
+        list_2018 = []
+        list_2019 = []
+        year = time.strftime('%y', time.localtime(time.time()))
+        month = time.strftime('%m', time.localtime(time.time()))
+        day = int(time.strftime('%d', time.localtime(time.time()))) - 1
+        # 获取去年昨日的日期 添加20原因：结果会显示为18-1-1 没有20
+        last_Year_Today = '20{}-{}-{}'.format(int(year) - 1, month, day)
+        # 获取今日的日期
+        today = '20{}-{}-{}'.format(year, month, int(day)+1)
+        # 在2018年全年list列表里匹配，当大于去年昨日日期，则添加进新数组
+        for x in range(0, len(data_2018)):
+            if data_2018[x] >= last_Year_Today:
+                list_2018.append(data_2018[x])
 
-        yield item
+        # 在2019年全年list列表里匹配，当今日日期大于列表元素时，添加进新数组
+        for y in range(0, len(data_2019)):
+            if today >= data_2019[y]:
+                list_2019.append(data_2019[y])
 
+        # 去年昨日到今日的所有日期
+        list_Count = list_2018 + list_2019
+        print(list_Count)
+        return list_Count
 
 
