@@ -1,0 +1,18 @@
+# 浏览器最大化
+driver.maximize_window()
+# 设置浏览器宽400 高800
+driver.set_window_siez(400,800)
+# 浏览器后退
+driver.back()
+# 浏览器前进
+driver.forword()
+# 浏览器关闭
+driver.close()
+# 浏览器退出
+driver.quit()
+
+# input = driver.find_element_by_id('kw')
+# input.send_keys('女装')
+# input.send_keys(Keys.ENTER)
+# 清除输入框文本
+input.clear()

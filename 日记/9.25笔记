@@ -1,0 +1,71 @@
+
+爬虫淘宝的数据，比如搜索Springboot 那么就爬取这一页的内容，以及爬取点击图片进去的那一页内容
+用pycharm　谷歌　谷歌驱动
+使用.csv格式保存　
+
+
+1 Python2切换到Python3
+echo alias python=python3 >> ~/.bashrc
+source ~/.bashrc
+
+2 Python3切换到Python2
+gedit  ~/.bashrc
+alias python=python3 
+source ~/.bashrc
+
+3 查看版本
+python -V
+
+4.查看pip版本
+pip show pip 
+
+5.更新pip版本
+#python -m pip install --upgrade pip
+
+#wget https://bootstrap.pypa.io/get-pip.py
+#sudo python get-pip.py
+
+#python -m pip install -U pip
+
+
+6.Ubuntu升级pip后，使用时出现了问题：
+
+Traceback (most recent call last):
+  File "/usr/bin/pip", line 9, in <module>
+    from pip import main
+ 解决方法：
+打开终端，在终端中输入
+
+sudo gedit /usr/bin/pip
+这时打开了pip文件，修改
+
+from pip import main  
+if __name__ == '__main__':  
+    sys.exit(main()) 
+为
+
+from pip import __main__  //修改
+if __name__ == '__main__':  
+    sys.exit(__main__._main())//修改
+
+7.安装selenium时出现
+ERROR: Could not install packages due to an EnvironmentError: [Errno 13] Permission denied: '/usr/local/lib/python3.5/dist-packages/selenium-3.141.0.dist-info'
+Consider using the `--user` option or check the permissions.
+
+解决方法：pip install selenium --user
+后面加上user即可
+
+8.googledriver 在/usr/bin
+
+9.google 出现Failed to load extension from manifest file ismissing or un...
+解决办法：
+find ~ -name "*chrome*.desktop"
+#and then after looking at the list and maybe looking inside the files and deciding
+#that you are ok with deleting them just to see if this fixes it....
+find ~ -name "*chrome*.desktop" | xargs rm
+#or something like
+find ~ -name "*chrome*.desktop" | xargs gvfs-trash
+#or maybe just save them in a folder or rename them while you make sure
+#this is the problem
+
+

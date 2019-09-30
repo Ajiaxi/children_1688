@@ -1,0 +1,74 @@
+9.29 修雯新需求　需要我是1688采购商以及1688供应商的数据
+==行业大盘
+爬取33个二级目录
+/user/piday/aliindex/IndustryMarket/三大指数.csv
+	- 淘宝采购指数	1688采购指数	1688供应指数
+
+	- category	 category2　　　　showtime	     line_Type	                       　　value　　　　爬取时间
+		童装	　所有　　　　2018/9.27  　　 1688采购指数/淘宝采购指数/1688供应指数　　32191　　　2019/9.30
+
+	- category1	 category2	showtime	1688采购指数  1688供应指数        　　　爬取时间
+	    童装	　防晒衣　　　　2018/9.27         数据	          数据         　　2019/9.30   32个csv 
+
+
+/user/piday/aliindex/IndustryMarket/二级目录采购指数和供应指数及其需求预测.csv 32个类似csv
+	
+	-category1 	category2 	industry_Type	　　 industry_Name　   1688采购指数　1688供应指数	爬取时间
+	　　童装　 　　　　防晒衣     　	 热门行业　　　　　　　儿童防晒衣　　　　　15135       11531
+				    　	 潜力行业　　　　　　　儿童防晒衣　　　　　15135       11531
+
+
+- 第一次抓取抓取全年的三大指数，每一个曲线的点，是按照日期排布的。
+	1 淘宝采购指数 2 1688采购指数 3 1688供应指数
+	- 通过F12分析id为#main-chart-val的input标签，进行爬取 前面两行是1688采购指数，比如网页显示16,464 ，则源代码里是16464 , 并且源代码里有一年的数据 第3 4行为1688供应指数 ， 最后两行为淘宝采购指数
+	- 注: 还需爬取二级目录信息 这个是童装的所有 https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311，需要爬取童装下的每个二级目录，可以将所有二级目录的网址手动复制下来，用list存取，根据这个list来爬取数据
+- 爬取需求预测。
+问题：1.爬取需求预测是爬取文档用红圈标注的文本吗？	
+		- 爬取热门行业中的1688采购指数和供应指数以及潜力行业的1688采购指数和供应指数
+
+
+
+
+==属性细分
+爬取32个二级目录
+/user/piday/aliindex/AttributeSegmentation/二级目录关键属性.csv	 32个类似csv
+/user/piday/aliindex/AttributeSegmentation/二级目录热门营销属性.csv	32个类似csv
+/user/piday/aliindex/AttributeSegmentation/二级目录价格带分布.csv	32个类似csv
+
+	-category1 	category2 	attributes_Type	　　　　　　　　　　　　　　　　　　　　　　　　　　　attributes_Name   　　　  index_Type	　　　　　value	爬取时间
+	　　童装　 　　　　防晒衣     　	 基础属性/营销属性/价格带分布　　　　　　　适用性别..等等　　　　1688采购指数/供应　　　　　15135
+注：价格带分布　只需要浏览 network有个price.json
+
+
+==采购商素描
+只爬取童装所有
+/user/piday/aliindex/BuyerSketch/新老采购商的对比_网上网下采购对比_采购单价_采购关联行业.csv
+	- category1	category2 	attributes_Type	　　　　　　　　　　　　　　　　　　　　　　　　　　　attributes_Name   　　　　	　value		爬取时间
+	　　童装　 　　　　所有		采购商身份/采购客单价/关联行业     　	 　　新采购商/老采购商　　　　　　　　15135
+	　　童装　 　　　　所有		采购商身份/采购客单价/关联行业     　	 　　淘宝店主/非淘宝店主　　　　　　　　15135
+
+
+- 采购商素描：
+	- 新老采购商的对比，可以看到客户忠诚度的变化。  获取属性相除 新/旧=trend ， trend 上升，则新采购商增加，客户忠诚度降低 
+	- 网上网下对比，可以看出互联网对行业的渗透比例。 获取属性相除 网上/网下=trend ， trend 上升，则网上采购增加，淘宝店主采购增加 
+	- 后期数据可以通过长时间的变化比例，得到行业的变化趋势。 超过75% 花费大于227 超过50% 花费大于359.....
+	- 采购关联行业	
+		
+问题:1.新老采购商的对比和网上网下采购对比是否可以直接用百分比的形式表示数据？　ｐａｓｓ
+
+==阿里排行
+爬取33个二级目录
+搜索排行榜　最近30天 4个榜　所有数据　一个榜50条　
+产品排行榜　最近30天　交易　3个榜　所有数据　　一个榜50条　
+/user/piday/aliindex/AAliRanking/搜索排行热搜榜.csv
+/user/piday/aliindex/AliRanking/产品排行榜.csv
+	- category1	category2 	attributes_Type	　　　　　　　　　　　　　　　　　　　　　attributes_Name   　　　　	　	value		爬取时间
+	　　童装　 　　　　所有		搜索排行热搜榜/产品排行榜     　	 　　上升榜/热搜榜/转化率榜/新词榜　　　　　15135
+	　　童装　 　　　　防晒衣	搜索排行热搜榜/产品排行榜    　	 　　　　　　上升榜/热门榜/最新上榜　　　　　15135
+
+- 阿里排行：
+	- 搜索排行榜 一级和二级类目都要抓取 最近30天
+	- 产品排行榜 一级和二级类目都要抓取 最近30天
+
+
+	

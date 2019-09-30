@@ -1,0 +1,160 @@
+- 安装scrapy 
+	- pip install lxml
+	-   1.进入https://pypi.org/project/pyOpenSSL/#downloads 下载wheel文件； 
+		2.在命令行窗口执行pip install (需要加上你下载文件的路径名)\pyOpenSSL-18.0.0-py2.py3-none-any.whl
+	-   1.进入http://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted ，下载对应的版本 
+		2.在命令行执行命令pip install Twisted‑xxx‑cpxx‑cpxxm‑win_amdxx.whl即可
+	-   1.进入网址https://sourceforge.net/projects/pywin32/files/pywin32/Build%20221/ 下载对应的版本。 
+		2.双击exe文件安装即可
+	- pip install scrapy	
+
+- 爬取练习网站 http://quotes.toscrape.com/
+- scrapy 爬取流程
+	- 抓取第一页
+	- 获取内容和下一页链接
+	- 翻页爬取
+	- 保存存取结果
+	
+- 创建scrapy
+	- 选择自己想要将项目放在哪里 然后
+		- scrapy startproject test0926
+	- cd test0926
+	- scrapy genspider -t basic quotes quotes.toscrape.com #创建一个爬取...的quotes.py
+	- 然后打开这个项目
+		- scrapy crawl quotes
+		- scrapy crawl quotes -o quotes.json
+		- scrapy crawl quotes -o quotes.csv
+		- scrapy crawl quotes -o quotes.jl
+		- scrapy crawl quotes -o quotes.xml
+- Scrapy执行shell命令报错：ModuleNotFoundError: No module named 'win32api'
+	- pip install pypiwin32
+	
+- scrapy命令行基本用法
+	- scrapy startproject -h 
+		-- logfile=FILE          
+			- 将日志输出到指定路径
+			- scrapy startproject --logfile="./logf.log" 项目名  # 将日志存储在当前目录下
+		-- loglevel=LEVEL, -L LEVEL
+                        log level (default: DEBUG)
+			- 控制日志信息的等级			
+				- CRITICAL 发生最严重的错误
+				- ERROR 发生了必须立即处理的错误
+				- WARNING 出现一些警告信息，即存在潜在错误
+				- INFO 输出一些提示信息
+				- DEBUG 输出一些调试信息，常用于开发阶段 #默认模式
+			- scrapy startproject --loglevel=DEBUG 项目名
+		--nolog                 disable logging completely
+			- 控制不输出日志信息
+			- scrapy startproject --nolog 项目名
+		--profile=FILE          write python cProfile stats to FILE
+			
+		--pidfile=FILE          write process ID to FILE
+		--set=NAME=VALUE, -s NAME=VALUE
+								set/override setting (may be repeated)
+		--pdb                   enable pdb on failure
+
+	- scrapy中，命令分别为全局命令以及项目命令
+		- scrapy -h
+			- bench         Run quick benchmark test
+			- check         Check spider contracts
+			- crawl         Run a spider
+			- edit          Edit spider
+			- genspider     Generate new spider using pre-defined templates
+			- list          List available spiders
+			- parse         Parse URL (using its spider) and print the results
+			- fetch         Fetch a URL using the Scrapy downloader
+			- runspider     Run a self-contained spider (without creating a project)
+			- settings      Get settings values
+			- shell         Interactive scraping console
+			- startproject  Create new project
+			- version       Print Scrapy version
+			- view          Open URL in browser, as seen by Scrapy
+		- 全局命令：不需要依靠项目就可直接运行
+			- fetch         Fetch a URL using the Scrapy downloader
+				- 主要用于显示爬虫爬取的过程
+				- scrapy fetch http://www.baidu.com
+				- 可以使用scrapy fetch -h 列出所有可以使用的fetch参数
+			- runspider     Run a self-contained spider (without creating a project)
+				- 可以不依托scrapy爬虫项目，直接运行一个爬虫文件
+				- scrapy runspider 项目名.py
+			- settings      Get settings values
+				- 查看配置信息
+				- scrapy setting --get BOT_NAME
+			- shell         Interactive scraping console
+				- 启动Scrapy的交互终端
+				- scrapy shell http://www.baidu.com --nolog
+			- startproject  Create new project
+				- 用于创建一个项目
+			- version       Print Scrapy version
+				- scrapy version 
+			- view          Open URL in browser, as seen by Scrapy
+				- 下载某个网页并用浏览器查看
+				- scrapy view http://news.163.com
+				
+		- 项目命令
+			- bench         Run quick benchmark test
+				- 测试本地硬件的性能
+				- scrapy bench
+			- genspider     Generate new spider using pre-defined templates
+				- 创建scrapy爬虫文件。快速创建爬虫文件的方式，可以基于现有的模板直接生成一个新的爬虫文件
+				- scrapy genspider -l # 查看模板
+					-	basic
+					-	crawl
+					-	csvfeed
+					-	xmlfeed
+					- scrapy genspider -d csvfeed #查看模板内容
+				- scrapy genspider -t basic first baidu.com # 创建了一个新的爬虫文件first,定义爬取的域名为baidu.com。有个文件first.py
+			- check         Check spider contracts
+				- 对爬虫文件进行检查
+				- scrapy check first
+			- crawl         Run a spider
+				- 启动爬虫
+				- scrapy crawl 爬虫名
+			- list          List available spiders
+				- 列出当前可使用的爬虫文件
+				- scrapy list
+			- edit          Edit spider
+				- 编辑某个爬虫文件
+				- scrapy edit 爬虫名
+			- parse         Parse URL (using its spider) and print the results
+				- 获取指定的url网址，并使用对应的爬虫文件进行处理和分析
+				- scrapy parse http://www.baidu.com --nolog
+					- scrapy parse -h 查询所有参数
+
+- Items编写
+		
+		
+		
+- Scrapy更改Item写入csv顺序
+	- 其实只要在settings.py文件中添加一句 FEED_EXPORT_FIELDS = ["title", "community", "rent_money","detail_url"]
+	- 字符串为在Item中定义的字段
+		
+		
+		
+		
+		
+		
+- scrapy爬虫框架多个spider指定pipeline  https://blog.csdn.net/harry5508/article/details/86486777
+	- 在 pipeline 里判断是哪个爬虫的结果  根据不同的爬虫名字，处理不同的逻辑，很完美，可以使用。
+	- 直接在爬虫里设置管道 
+		-  custom_settings = {'ITEM_PIPELINES' : {'children_1688.pipelines.Children1688Pipeline': 300,}    
+			}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
