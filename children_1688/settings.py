@@ -66,6 +66,7 @@ ROBOTSTXT_OBEY = True
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'children_1688.pipelines.Children1688Pipeline': 300,
+   'children_1688.pipelines.secondIndexPipelines' : 400,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -88,4 +89,4 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-FEED_EXPORT_FIELDS = ['category1', 'category2', 'showtime', 'purchaseIndex1688', 'purchaseIndexTb', 'supplyIndex', 'crawl_Time']
+# FEED_EXPORT_FIELDS = ['category1', 'category2', 'showtime', 'purchaseIndex1688', 'purchaseIndexTb', 'supplyIndex', 'crawl_Time']
