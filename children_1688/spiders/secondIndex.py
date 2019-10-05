@@ -11,7 +11,7 @@ from children_1688.spiders.date_All_Year import getAllDayPerYear
     - 思路: 
             - 通过手动换网页网页爬取所需数据 
     - 用法: 
-            - 控制台输入 scrapy crawl secondIndex 输入文件看pipelines中的类secondIndexPipelines 可改写文件路径
+            - 控制台输入 scrapy crawl secondIndex --nolog 输入文件看pipelines中的类secondIndexPipelines 可改写文件路径
             - 注: 每执行一次需要换网址及其输入文件名称
     - 参数解析：
             - category1： 种类一 就是童装的意思
@@ -20,20 +20,60 @@ from children_1688.spiders.date_All_Year import getAllDayPerYear
             - purchaseIndex1688s： 1688采购指数
             - supplyIndexs： 1688供应指数
             - crawl_Time： 爬取数据日期
-    - bug残留：  9.30下午 5.12 mark,待修改为自动创建csv文件输入数据,修改为不用手动换网页和路径名,
+    - bug残留：  9.30下午 5.12 mark,待修改为自动创建csv文件输入数据,修改为不用手动换网页和路径名
+                10.5晚 解决
 '''
-
 
 class SecondindexSpider(scrapy.Spider):
     name = 'secondIndex'
     allowed_domains = ['index.1688.com']
-    start_urls = ['https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,122698004']
+    start_urls = ['https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,127424004']
+    urls2 = [     'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,127424004',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,127496001',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,1043351',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,1037003',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,1037039',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,1037012',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,1048174',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,122086001',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,1037011',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,127430003',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,127430004',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,1042754',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,1037004',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,1037649',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,1042841',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,1037010',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,1037006',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,1037007',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,122704004',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,124188006',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,124196006',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,122086002',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,1037005',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,1037192',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,1037648',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,1042840',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,1037008',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,1037009',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,126440003',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,127164001',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,122088001',
+                  'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,122698004']
+    # next = ['127424004', '127496001', '1043351', '1037003', '1037039',
+    #         '1037012', '1048174', '122086001', '1037011', '127430003',
+    #         '127430004', '1042754', '1037004', '1037649', '1042841',
+    #         '1037010', '1037006', '1037007', '122704004', '124188006',
+    #         '124196006', '122086002', '1037005', '1037192', '1037648',
+    #         '1042840', '1037008', '1037009', '126440003', '127164001',
+    #         '122088001', '122698004']
+
     custom_settings = {
         'ITEM_PIPELINES' : {'children_1688.pipelines.secondIndexPipelines': 300,},
-        'FEED_EXPORT_FIELDS' : ['category1', 'category2', 'showtime', 'purchaseIndex1688', 'supplyIndex', 'crawl_Time'],
     }
 
     def parse(self, response):
+
         data = response.xpath('//*[@id="main-chart-val"]/@value').extract_first()
         category1 = response.xpath('//*[@id="aliindex-masthead"]/div/div[3]/div[1]/p/a/text()').extract()
         category2 = response.xpath('//*[@id="aliindex-masthead"]/div/div[3]/div[2]/p/a/text()').extract()
@@ -44,34 +84,37 @@ class SecondindexSpider(scrapy.Spider):
         purchaseIndex1688s = datajson["purchaseIndex1688"]["index"]["history"]
         supplyIndexs = datajson['supplyIndex']["index"]["history"]
         crawl_Time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
-        next = ['127424004','127496001', '1043351', '1037003', '1037039',
-                '1037012', '1048174', '122086001', '1037011', '127430003',
-                '127430004', '1042754', '1037004', '1037649', '1042841',
-                '1037010', '1037006', '1037007', '122704004', '124188006',
-                '124196006', '122086002', '1037005', '1037192', '1037648',
-                '1042840', '1037008', '1037009', '126440003', '127164001',
-                '122088001', '122698004']
+
         # print(len(purchaseIndex1688s))
-        # print('正在爬取' + category2 + '网页,Please wait....')
+        print('正在爬取' + category2 + '网页,Please wait....')
         # 依次遍历，将数据添加进item中
+        items = []
         for i in range(0, len(purchaseIndex1688s)):
-            # debug时所用代码
-            # for i in range(0,1):
+        # debug时所用代码
+        # for i in range(0,1):
             list_Count = self.datalist()
             item = SecondIndexItem()
             item['category1'] = category1
             item['category2'] = category2
-            print('正在爬取类别：'+category2+',日期：' + str(list_Count[i]))
-            item['showtime'] = list_Count[i]
+            item['showtime'] = list_Count[i-1]
             item['purchaseIndex1688'] = purchaseIndex1688s[i]
             item['supplyIndex'] = supplyIndexs[i]
             item['crawl_Time'] = crawl_Time
-            yield item
+            # yield item
+            items.append(item)
+        self.urls2.remove(response.url)
+            # for i in range(0,len(self.urls2)):
+        # for i in range(0,4):
+        #     url = self.urls2[i]
+        #     yield scrapy.Request(url=url, callback=self.parse)
+        # https://stackoverflow.com/questions/6566322/scrapy-crawl-urls-in-order
+        if self.urls2:
+            r = scrapy.Request(url=self.urls2[0],callback=self.parse)
+            items.append(r)
+        # print(items)
+        return items
 
         # url = 'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,{option}'
-        # for i in range(0,len(next)):
-        #     # url = response.urljoin(url.format(option=next[i]))
-        #     yield scrapy.Request(url=response.urljoin(url.format(option=next[i])), callback=self.parse)
 
     def datalist(self):
         # 获取2018年全年的日期
@@ -101,3 +144,4 @@ class SecondindexSpider(scrapy.Spider):
         list_Count = list_2018 + list_2019
         # print(list_Count)
         return list_Count
+
