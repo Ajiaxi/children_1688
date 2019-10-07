@@ -22,6 +22,7 @@ from children_1688.spiders.date_All_Year import getAllDayPerYear
             - crawl_Time： 爬取数据日期
     - bug残留：  9.30下午 5.12 mark,待修改为自动创建csv文件输入数据,修改为不用手动换网页和路径名
                 10.5晚 解决
+    - 状态： 32个类目都放在同一个csv中
 '''
 
 class SecondindexSpider(scrapy.Spider):
@@ -60,6 +61,7 @@ class SecondindexSpider(scrapy.Spider):
                   'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,127164001',
                   'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,122088001',
                   'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,122698004']
+
     # next = ['127424004', '127496001', '1043351', '1037003', '1037039',
     #         '1037012', '1048174', '122086001', '1037011', '127430003',
     #         '127430004', '1042754', '1037004', '1037649', '1042841',
@@ -84,7 +86,6 @@ class SecondindexSpider(scrapy.Spider):
         purchaseIndex1688s = datajson["purchaseIndex1688"]["index"]["history"]
         supplyIndexs = datajson['supplyIndex']["index"]["history"]
         crawl_Time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
-
         # print(len(purchaseIndex1688s))
         print('正在爬取' + category2 + '网页,Please wait....')
         # 依次遍历，将数据添加进item中
@@ -102,6 +103,7 @@ class SecondindexSpider(scrapy.Spider):
             item['crawl_Time'] = crawl_Time
             # yield item
             items.append(item)
+
         self.urls2.remove(response.url)
             # for i in range(0,len(self.urls2)):
         # for i in range(0,4):

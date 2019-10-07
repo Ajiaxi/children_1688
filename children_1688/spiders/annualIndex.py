@@ -22,8 +22,8 @@ from children_1688.spiders.date_All_Year import getAllDayPerYear
         - purchaseIndexTbs： 淘宝采购指数
         - supplyIndexs： 1688供应指数
         - crawl_Time： 爬取数据日期
-    - bug残留：  9.30下午 mark,待添加一个 爬取每天数据的爬虫class 并测试是否能追加数据进csv中
-
+    - bug残留：  9.30下午 mark,待添加一个 爬取每天数据的爬虫class 并测试是否能追加数据进csv中 解决
+    - 状态 ：数据存放在9.29csv中
 '''
 
 class Children01Spider(scrapy.Spider):

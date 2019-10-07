@@ -56,3 +56,11 @@ class AttributesegmentationItem(scrapy.Item):
     # attribute_Name = scrapy.Field()
     purchase_supply = scrapy.Field()
     crawl_Time = scrapy.Field()
+
+class priceItem(scrapy.Item):
+    category1 = scrapy.Field()
+    category2 = scrapy.Field()
+    attribute_Type = scrapy.Field()
+    attribute_Name = scrapy.Field()
+    index_Type = scrapy.Field()
+    percentage = scrapy.Field()
