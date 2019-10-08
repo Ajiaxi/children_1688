@@ -90,7 +90,6 @@ class IndustrymarketdownSpider(scrapy.Spider):
         items = []
 
         for div in divs:
-            item = IndustrymarketdownItem()
             industry_Name2 = div.xpath('./div[1]/p[1]/text()').extract()
             purchaseIndex16882 = div.xpath('./div[1]/div[2]/p/text()').extract()
             supplyIndex2 = div.xpath('./div[1]/div[3]/p/text()').extract()
@@ -103,6 +102,7 @@ class IndustrymarketdownSpider(scrapy.Spider):
 
 
         for i in range(0,len(list_supplyIndex)):
+            item = IndustrymarketdownItem()
             item['category1'] = category1
             item['category2'] = category2
             item['industry_Type'] = industry_Type[0]
@@ -120,4 +120,3 @@ class IndustrymarketdownSpider(scrapy.Spider):
             r = scrapy.Request(url=self.urls2[0],callback=self.parse)
             items.append(r)
         return items
-

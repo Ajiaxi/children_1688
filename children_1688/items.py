@@ -52,9 +52,11 @@ class IndustrymarketdownItem(scrapy.Item):
 class AttributesegmentationItem(scrapy.Item):
     category1 = scrapy.Field()
     category2 = scrapy.Field()
+    industry_Type = scrapy.Field()
+    attribute_Name = scrapy.Field()
     attribute_Type = scrapy.Field()
-    # attribute_Name = scrapy.Field()
-    purchase_supply = scrapy.Field()
+    purchaseIndex = scrapy.Field()
+    supplyIndex = scrapy.Field()
     crawl_Time = scrapy.Field()
 
 class priceItem(scrapy.Item):
