@@ -79,11 +79,11 @@ class IndustryMarketDown1(object):
 class AttributesegmentationPipelines:
     def __init__(self):
         # self.f = open("/home/chenhang/workplace/crawlFile/HangYeDaPan/Down/IndustryMarketDown.csv", "w")
-        self.f = open("Attributesegmentation.csv", "w")
-        # self.f = open("/home/chenhang/workplace/crawlFile/HangYeDaPan/Down/IndustryMarketDown.csv", "a+")
+        # self.f = open("Attributesegmentation.csv", "w")
+        self.f = open("Attributesegmentation.csv", "a+")
         self.writer = csv.writer(self.f)
-        self.writer.writerow(
-            ['category1', 'category2',  'industry_Type','attribute_Type','attribute_Name', 'purchaseIndex','supplyIndex', 'crawl_Time'])
+        # self.writer.writerow(
+        #     ['category1', 'category2',  'industry_Type','attribute_Type','attribute_Name', 'purchaseIndex','supplyIndex', 'crawl_Time'])
 
     def process_item(self, item, spider):
         list = [item['category1'], item['category2'], item['industry_Type'],item['attribute_Type'],item['attribute_Name'],item['purchaseIndex'],item['supplyIndex'] ,item['crawl_Time']]

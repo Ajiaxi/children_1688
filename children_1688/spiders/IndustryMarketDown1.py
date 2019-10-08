@@ -100,7 +100,6 @@ class IndustrymarketdownSpider(scrapy.Spider):
             list_purchaseIndex1688.append(purchaseIndex16882)
             list_supplyIndex.append(supplyIndex2)
 
-
         for i in range(0,len(list_supplyIndex)):
             item = IndustrymarketdownItem()
             item['category1'] = category1

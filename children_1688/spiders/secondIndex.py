@@ -103,7 +103,6 @@ class SecondindexSpider(scrapy.Spider):
             item['crawl_Time'] = crawl_Time
             # yield item
             items.append(item)
-
         self.urls2.remove(response.url)
             # for i in range(0,len(self.urls2)):
         # for i in range(0,4):
@@ -115,8 +114,6 @@ class SecondindexSpider(scrapy.Spider):
             items.append(r)
         # print(items)
         return items
-
-        # url = 'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,{option}'
 
     def datalist(self):
         # 获取2018年全年的日期

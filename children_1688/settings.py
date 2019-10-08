@@ -42,7 +42,6 @@ LOG_LEVEL = 'WARNING'
 DEFAULT_REQUEST_HEADERS = {
   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
   'Accept-Language': 'en',
-   'user-agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36',
 }
 
 # Enable or disable spider middlewares
@@ -65,10 +64,10 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {
-   'children_1688.pipelines.Children1688Pipeline': 300,
-   'children_1688.pipelines.secondIndexPipelines' : 400,
-}
+# ITEM_PIPELINES = {
+#    'children_1688.pipelines.Children1688Pipeline': 300,
+#    'children_1688.pipelines.secondIndexPipelines' : 400,
+# }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
