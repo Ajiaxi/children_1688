@@ -59,10 +59,74 @@ class AttributesegmentationItem(scrapy.Item):
     supplyIndex = scrapy.Field()
     crawl_Time = scrapy.Field()
 
-class priceItem(scrapy.Item):
+class AttributeSegmentationMiddleItem(scrapy.Item):
+    category1 = scrapy.Field()
+    category2 = scrapy.Field()
+    industry_Type = scrapy.Field()
+    attribute_Name = scrapy.Field()
+    purchaseIndex = scrapy.Field()
+    supplyIndex = scrapy.Field()
+    crawl_Time = scrapy.Field()
+
+class AttributeSegmentationPriceItem(scrapy.Item):
     category1 = scrapy.Field()
     category2 = scrapy.Field()
     attribute_Type = scrapy.Field()
     attribute_Name = scrapy.Field()
     index_Type = scrapy.Field()
     percentage = scrapy.Field()
+    attribute_Name1 = scrapy.Field()
+    index_Type1 = scrapy.Field()
+    percentage1 = scrapy.Field()
+    crawl_Time = scrapy.Field()
+
+class BuyerSketchItem(scrapy.Item):
+    category1 = scrapy.Field()
+    category2 = scrapy.Field()
+    attribute_Type = scrapy.Field()
+    attribute_Name = scrapy.Field()
+    percentage = scrapy.Field()
+    attribute_Name1 = scrapy.Field()
+    percentage1 = scrapy.Field()
+    crawl_Time = scrapy.Field()
+
+class aliIndex_7_1_Item(scrapy.Item):
+    category1 = scrapy.Field()
+    category2 = scrapy.Field()
+    attribute_Type = scrapy.Field()
+    attribute_Name = scrapy.Field()
+    search_Trend = scrapy.Field()
+    index  = scrapy.Field()
+    url = scrapy.Field()
+    crawl_Time = scrapy.Field()
+
+class aliIndex_7_2_Item(scrapy.Item):
+    category1 = scrapy.Field()
+    category2 = scrapy.Field()
+    attribute_Type = scrapy.Field()
+    attribute_Name = scrapy.Field()
+    index = scrapy.Field()
+    total  = scrapy.Field()
+    url = scrapy.Field()
+    crawl_Time = scrapy.Field()
+
+class aliIndex_7_3_Item(scrapy.Item):
+    category1 = scrapy.Field()
+    category2 = scrapy.Field()
+    attribute_Type = scrapy.Field()
+    attribute_Name = scrapy.Field()
+    rate = scrapy.Field()
+    total  = scrapy.Field()
+    url = scrapy.Field()
+    crawl_Time = scrapy.Field()
+
+
+class aliIndex_7_4_Item(scrapy.Item):
+    category1 = scrapy.Field()
+    category2 = scrapy.Field()
+    attribute_Type = scrapy.Field()
+    attribute_Name = scrapy.Field()
+    index = scrapy.Field()
+    total  = scrapy.Field()
+    url = scrapy.Field()
+    crawl_Time = scrapy.Field()

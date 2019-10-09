@@ -3,20 +3,17 @@ import time
 
 import scrapy
 
-from children_1688.items import AttributesegmentationItem
+from children_1688.items import AttributeSegmentationMiddleItem
 
 '''
-    用法：scrapy crawl AttributeSegmentation
-    bug残留：10.5日晚，还是表结构问题，不清楚怎么去给item赋值，"童装,儿童防晒衣/皮肤衣,热门基础属性,"中性 : 3,570/2,795",2019-10-05 18:11:27" 差一个适用性别，不知如何插入
-            10.8日  写5个function 分别爬取适用性别 是否连帽 颜色等 然后装进items中 返回给pipelines
-            10.8日晚 尝试许久，发现请求urlpost只有25个，get15个，解决良久还是一筹莫展，还是写5个spider吧
-            
-            AttributeSegmentation1为第一个数据，所以在pipeline中，需要改为w并且要有字段名写入，在run中执行即可
-            另外的2345就将w改为a+，将字段名写入注释掉，在run中注释掉即可
+    陈航
+    爬取热门营销属性
+    用法：scrapy crawl AttributeSegmentationMiddle
+    
 '''
 
 class AttributesegmentationSpider(scrapy.Spider):
-    name = 'AttributeSegmentation1'
+    name = 'AttributeSegmentationMiddle'
     allowed_domains = ['1688.com']
     start_urls = ['https://index.1688.com/alizs/attr.htm?userType=purchaser&cat=311,127424004']
     urls2 = ['https://index.1688.com/alizs/attr.htm?userType=purchaser&cat=311,127424004',
@@ -52,42 +49,42 @@ class AttributesegmentationSpider(scrapy.Spider):
              'https://index.1688.com/alizs/attr.htm?userType=purchaser&cat=311,122088001',
              'https://index.1688.com/alizs/attr.htm?userType=purchaser&cat=311,122698004']
     custom_settings = {
-        'ITEM_PIPELINES' : {'children_1688.pipelines.AttributesegmentationPipelines': 300,}
+        'ITEM_PIPELINES' : {'children_1688.pipelines.AttributesegmentationMiddlePipelines': 300,}
     }
 
-    # 处理适用性别函数
     def parse(self,response):
-        # print('开始爬虫')
         category1 = response.xpath('//div[contains(@class,"cate-first-level")]//a/text()').extract_first()
         category2 = response.xpath('//div[contains(@class,"cate-second-level")]//a/text()').extract()
-        # 热门基础属性等
-        industry_Type = response.xpath('//span[@class="ms-yh"]/text()').extract()
-        # 适用性别等
-        attribute_Type = response.xpath('//*[@id="tab-popular-base"]/div[1]/div/ul/li[1]/text()').extract()
-        # 中性 女性 男性 等
-        attribute_Name = response.xpath('//*[@id="tab-popular-base"]/div[2]/div[1]/div[1]/div/ul/li/p/@title').extract()
-        purchase_supply = response.xpath('//*[@id="tab-popular-base"]/div[2]/div[1]/div[1]/div/ul/li/div/p/text()').extract()
-        crawl_Time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
-        items = []
+        data = response.xpath('//*[@id="bar-chart-val"]/@value').extract()
+        for dic in data:
+            dicts = eval(dic)
+        attribute_Name = []
         purchaseIndex = []
         supplyIndex = []
-        print('正在爬取' + str(category2[0]) + '网页,Please wait....')
-        for i in range(0, len(purchase_supply), 2):
-            purchaseIndex.append(purchase_supply[i])
-            supplyIndex.append(purchase_supply[i + 1])
+        for dict in dicts:
+            # print(dict)
+            attribute_Name.append(dict.get('attrValue'))
+            purchaseIndex.append(dict.get('purchaseIndex'))
+            supplyIndex.append(dict.get('saleOfferCount'))
+        # 热门营销属性
+        industry_Type = response.xpath('//*[@id="content"]/div/div[2]/div[3]/div[1]/h4/span/text()').extract()
+        crawl_Time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+        items = []
+        print('正在爬取......：' + response.url)
         for i in range(0, len(attribute_Name)):
-            item = AttributesegmentationItem()
+            item = AttributeSegmentationMiddleItem()
             item['category1'] = category1
             item['category2'] = category2[0]
             item['industry_Type'] = industry_Type[0]
-            item['attribute_Type'] = attribute_Type[0]
             item['attribute_Name'] = attribute_Name[i]
             item['purchaseIndex'] = purchaseIndex[i]
             item['supplyIndex'] = supplyIndex[i]
             item['crawl_Time'] = crawl_Time
             items.append(item)
+        print('爬取完成..........')
         self.urls2.remove(response.url)
         if self.urls2:
             r = scrapy.Request(url=self.urls2[0], callback=self.parse)
             items.append(r)
+        # print(items)
         return items
