@@ -143,10 +143,7 @@ class BuyerSketchPricePipelines:
 
 class aliIndex_7_1_Pipelines:
     def __init__(self):
-        # 童装所有
-        # self.f = open("/home/chenhang/workplace/crawlFile/aliindex/aliIndex_7_1.csv", "w")
-        # 童装二级目录
-        self.f = open("/home/chenhang/workplace/crawlFile/aliindex/aliIndex_7_1.csv", "a+")
+        self.f = open("/home/chenhang/workplace/crawlFile/aliindex/aliIndex_7_1.csv", "w")
         self.writer = csv.writer(self.f)
         self.writer.writerow(
             ['category1', 'category2', 'industry_Type',  'attribute_Name', 'search_Trend', 'index', 'url', 'crawl_Time'])
@@ -162,11 +159,10 @@ class aliIndex_7_1_Pipelines:
 
 class aliIndex_7_2_Pipelines:
     def __init__(self):
-        # self.f = open("/home/chenhang/workplace/crawlFile/aliindex/aliIndex_7_2.csv", "w")
-        self.f = open("/home/chenhang/workplace/crawlFile/aliindex/aliIndex_7_2.csv", "a+")
+        self.f = open("/home/chenhang/workplace/crawlFile/aliindex/aliIndex_7_2.csv", "w")
         self.writer = csv.writer(self.f)
-        # self.writer.writerow(
-        #     ['category1', 'category2', 'industry_Type',  'attribute_Name', 'index', 'total', 'url', 'crawl_Time'])
+        self.writer.writerow(
+            ['category1', 'category2', 'industry_Type',  'attribute_Name', 'index', 'total', 'url', 'crawl_Time'])
 
     def process_item(self, item, spider):
         list = [item['category1'], item['category2'], item['attribute_Type'],item['attribute_Name'] ,item['index'] , item['total'],item['url'],item['crawl_Time']]
@@ -182,7 +178,6 @@ class aliIndex_7_3_Pipelines:
         self.writer = csv.writer(self.f)
         self.writer.writerow(
             ['category1', 'category2', 'industry_Type',  'attribute_Name', 'rate', 'total', 'url', 'crawl_Time'])
-
     def process_item(self, item, spider):
         list = [item['category1'], item['category2'], item['attribute_Type'],item['attribute_Name'] ,item['rate'] , item['total'],item['url'],item['crawl_Time']]
         self.writer.writerow(list)
@@ -195,6 +190,68 @@ class aliIndex_7_3_Pipelines:
 class aliIndex_7_4_Pipelines:
     def __init__(self):
         self.f = open("/home/chenhang/workplace/crawlFile/aliindex/aliIndex_7_4.csv", "w")
+        self.writer = csv.writer(self.f)
+        self.writer.writerow(
+            ['category1', 'category2', 'industry_Type',  'attribute_Name', 'index', 'total', 'url', 'crawl_Time'])
+
+    def process_item(self, item, spider):
+        list = [item['category1'], item['category2'], item['attribute_Type'],item['attribute_Name'] ,item['index'] , item['total'],item['url'],item['crawl_Time']]
+        self.writer.writerow(list)
+        return item
+
+    def close_spider(self, spider):  # 关闭
+        self.f.close()
+
+class aliIndex_30_1_Pipelines:
+    def __init__(self):
+        self.f = open("/home/chenhang/workplace/crawlFile/aliindex/aliIndex_30_1.csv", "w")
+        self.writer = csv.writer(self.f)
+        self.writer.writerow(
+            ['category1', 'category2', 'industry_Type',  'attribute_Name', 'search_Trend', 'index', 'url', 'crawl_Time'])
+
+    def process_item(self, item, spider):
+        list = [item['category1'], item['category2'], item['attribute_Type'],item['attribute_Name'] ,item['search_Trend'] , item['index'],item['url'],item['crawl_Time']]
+        self.writer.writerow(list)
+        return item
+
+    def close_spider(self, spider):  # 关闭
+        self.f.close()
+
+class aliIndex_30_2_Pipelines:
+    def __init__(self):
+        self.f = open("/home/chenhang/workplace/crawlFile/aliindex/aliIndex_30_2.csv", "w")
+        # self.f = open("/home/chenhang/workplace/crawlFile/aliindex/aliIndex_30_2.csv", "a+")
+        self.writer = csv.writer(self.f)
+        self.writer.writerow(
+            ['category1', 'category2', 'industry_Type',  'attribute_Name', 'index', 'total', 'url', 'crawl_Time'])
+
+    def process_item(self, item, spider):
+        list = [item['category1'], item['category2'], item['attribute_Type'],item['attribute_Name'] ,item['index'] , item['total'],item['url'],item['crawl_Time']]
+        self.writer.writerow(list)
+        return item
+
+    def close_spider(self, spider):  # 关闭
+        self.f.close()
+
+
+class aliIndex_30_3_Pipelines:
+    def __init__(self):
+        self.f = open("/home/chenhang/workplace/crawlFile/aliindex/aliIndex_30_3.csv", "w")
+        self.writer = csv.writer(self.f)
+        self.writer.writerow(
+            ['category1', 'category2', 'industry_Type',  'attribute_Name', 'rate', 'total', 'url', 'crawl_Time'])
+    def process_item(self, item, spider):
+        list = [item['category1'], item['category2'], item['attribute_Type'],item['attribute_Name'] ,item['rate'] , item['total'],item['url'],item['crawl_Time']]
+        self.writer.writerow(list)
+        return item
+
+    def close_spider(self, spider):  # 关闭
+        self.f.close()
+
+
+class aliIndex_30_4_Pipelines:
+    def __init__(self):
+        self.f = open("/home/chenhang/workplace/crawlFile/aliindex/aliIndex_30_4.csv", "w")
         self.writer = csv.writer(self.f)
         self.writer.writerow(
             ['category1', 'category2', 'industry_Type',  'attribute_Name', 'index', 'total', 'url', 'crawl_Time'])

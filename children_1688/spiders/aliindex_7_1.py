@@ -7,7 +7,8 @@ from children_1688.items import aliIndex_7_1_Item
 '''
     陈航
     爬取童装 所有 阿里排行 搜索排行榜 最近7天数据 , 共4个排行榜 每个排行榜50条数据
-    用法： scrapy crawl aliindex_7_1
+    用法： scrapy crawl aliindex_7_1 
+    
     此spider为童装上升榜
     
 '''
@@ -15,10 +16,10 @@ from children_1688.items import aliIndex_7_1_Item
 class AliindexSpider(scrapy.Spider):
     name = 'aliindex_7_1'
     allowed_domains = ['1688.com']
-    # start_urls = ['https://index.1688.com/alizs/word/listRankType.json?cat=311&rankType=rise&period=week']
-    start_urls = ['https://index.1688.com/alizs/word/listRankType.json?cat=127424004&rankType=rise&period=week']
+    start_urls = ['https://index.1688.com/alizs/word/listRankType.json?cat=311&rankType=rise&period=week']
 
-    urls = ['https://index.1688.com/alizs/word/listRankType.json?cat=127424004&rankType=rise&period=week',
+    urls = ['https://index.1688.com/alizs/word/listRankType.json?cat=311&rankType=rise&period=week',
+            'https://index.1688.com/alizs/word/listRankType.json?cat=127424004&rankType=rise&period=week',
             'https://index.1688.com/alizs/word/listRankType.json?cat=127496001&rankType=rise&period=week',
             'https://index.1688.com/alizs/word/listRankType.json?cat=1043351&rankType=rise&period=week',
             'https://index.1688.com/alizs/word/listRankType.json?cat=1037003&rankType=rise&period=week',

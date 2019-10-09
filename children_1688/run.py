@@ -16,7 +16,11 @@ from scrapy import cmdline
 # cmdline.execute("scrapy crawl AttributeSegmentationPrice".split())
 # cmdline.execute("scrapy crawl BuyerSketch".split())
 # cmdline.execute("scrapy crawl aliindex_7_1".split())
-cmdline.execute("scrapy crawl aliindex_7_2".split())
+# cmdline.execute("scrapy crawl aliindex_7_2".split())
 # cmdline.execute("scrapy crawl aliindex_7_3".split())
 # cmdline.execute("scrapy crawl aliindex_7_4".split())
+# cmdline.execute("scrapy crawl aliindex_30_1".split())
+# cmdline.execute("scrapy crawl aliindex_30_2".split())
+# cmdline.execute("scrapy crawl aliindex_30_3".split())
+cmdline.execute("scrapy crawl aliindex_30_4".split())
 

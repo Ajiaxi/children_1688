@@ -29,6 +29,7 @@ from children_1688.spiders.date_All_Year import getAllDayPerYear
 class Children01Spider(scrapy.Spider):
     name = 'children_01'
     allowed_domains = ['index.1688.com']
+    # 我是1688采购商
     start_urls = ['https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311']
     custom_settings = {
         'ITEM_PIPELINES' : {'children_1688.pipelines.Children1688Pipeline': 300,}
