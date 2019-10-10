@@ -8,14 +8,14 @@ from children_1688.items import Children1688Item
 
 '''
     - 陈航
-    - 爬取我是采购商三大指数昨日数据
-    - 用法：scrapy crawl everyIndex --nolog 将类Children1688Pipeline中的w(写入)改为a+(追击) ，并且注释掉头列名
+    - 爬取我是供应商三大指数昨日数据
+    - 用法：scrapy crawl everyIndex_supply --nolog 将类Children1688Pipeline中的w(写入)改为a+(追击) ，并且注释掉头列名
 '''
 
 class EveryindexSpider(scrapy.Spider):
-    name = 'everyIndex'
+    name = 'everyIndex_supply'
     allowed_domains = ['index.1688.com']
-    start_urls = ['https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311']
+    start_urls = ['https://index.1688.com/alizs/market.htm?userType=supplier&cat=311']
     custom_settings = {
         'ITEM_PIPELINES': {'children_1688.pipelines.Children1688Pipeline': 300, }
     }

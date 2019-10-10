@@ -73,32 +73,38 @@ class IndustrymarketdownSpider(scrapy.Spider):
         purchaseIndex16881 = response.xpath(
             '//*[@id="mod-related"]/div[2]/div[1]/div[1]/div[2]/div[2]/p/text()').extract()
         supplyIndex1 = response.xpath('//*[@id="mod-related"]/div[2]/div[1]/div[1]/div[2]/div[3]/p/text()').extract()
+        demand_Forecast1 =  response.xpath('//*[@id="mod-related"]/div[2]/div[1]/div[1]/div[2]/p[2]/text()').extract()
         crawl_Time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
         divs = response.xpath('//*[@id="mod-related"]/div[2]/div[1]/div[1]/ul/li')
         # 拼接数据
         list_industry_Name = []
         list_purchaseIndex1688 = []
         list_supplyIndex = []
+        list_demand_Forecast = []
         category1 = str(category1)[2:-2]
         category2 = str(category2)[2:-2]
         industry_Name1 = str(industry_Name1)[2:-2]
         purchaseIndex16881 = str(purchaseIndex16881)[2:-2]
         supplyIndex1 = str(supplyIndex1)[2:-2]
+        demand_Forecast1 = str(demand_Forecast1)[2:-2]
         list_industry_Name.append(industry_Name1)
         list_purchaseIndex1688.append(purchaseIndex16881)
         list_supplyIndex.append(supplyIndex1)
+        list_demand_Forecast.append(demand_Forecast1)
         items = []
-
         for div in divs:
             industry_Name2 = div.xpath('./div[1]/p[1]/text()').extract()
             purchaseIndex16882 = div.xpath('./div[1]/div[2]/p/text()').extract()
             supplyIndex2 = div.xpath('./div[1]/div[3]/p/text()').extract()
+            demand_Forecast2 = div.xpath('./div/p[2]/text()').extract()
             industry_Name2 = str(industry_Name2)[2:-2]
             purchaseIndex16882 = str(purchaseIndex16882)[2:-2]
             supplyIndex2= str(supplyIndex2)[2:-2]
+            demand_Forecast2 = str(demand_Forecast2)[2:-2]
             list_industry_Name.append(industry_Name2)
             list_purchaseIndex1688.append(purchaseIndex16882)
             list_supplyIndex.append(supplyIndex2)
+            list_demand_Forecast.append(demand_Forecast2)
 
         # print(list_industry_Name)
         # print(list_purchaseIndex1688)
@@ -111,6 +117,7 @@ class IndustrymarketdownSpider(scrapy.Spider):
             item['industry_Name'] = list_industry_Name[i]
             item['purchaseIndex1688'] = list_purchaseIndex1688[i]
             item['supplyIndex'] = list_supplyIndex[i]
+            item['demand_Forecast'] = list_demand_Forecast[i]
             item['crawl_Time'] = crawl_Time
             items.append(item)
         print(str(response.url)+'爬取完成')

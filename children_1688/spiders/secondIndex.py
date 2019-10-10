@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import datetime
 import json
 import time
 import scrapy
@@ -7,7 +8,7 @@ from children_1688.spiders.date_All_Year import getAllDayPerYear
 
 '''
     - 陈航
-    - 爬取童装下的所有二级目录的1688采购指数和1688供应指数
+    - 爬取我是采购商童装下的所有二级目录的1688采购指数和1688供应指数
     - 思路: 
             - 通过手动换网页网页爬取所需数据 
     - 用法: 
@@ -131,14 +132,13 @@ class SecondindexSpider(scrapy.Spider):
         today = '20{}-{}-{}'.format(year, month, int(day) + 1)
         # 在2018年全年list列表里匹配，当大于去年昨日日期，则添加进新数组
         for x in range(0, len(data_2018)):
-            if data_2018[x] >= last_Year_Today:
+            if datetime.datetime.strptime(data_2018[x], '%Y-%m-%d') >= datetime.datetime.strptime(last_Year_Today,'%Y-%m-%d'):
                 list_2018.append(data_2018[x])
 
         # 在2019年全年list列表里匹配，当今日日期大于列表元素时，添加进新数组
         for y in range(0, len(data_2019)):
-            if today >= data_2019[y]:
+            if datetime.datetime.strptime(today, '%Y-%m-%d') >= datetime.datetime.strptime(data_2019[y], '%Y-%m-%d'):
                 list_2019.append(data_2019[y])
-
         # 去年昨日到今日的所有日期
         list_Count = list_2018 + list_2019
         # print(list_Count)

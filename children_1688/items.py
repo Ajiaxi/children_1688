@@ -46,6 +46,7 @@ class IndustrymarketdownItem(scrapy.Item):
     industry_Name = scrapy.Field()
     purchaseIndex1688 = scrapy.Field()
     supplyIndex = scrapy.Field()
+    demand_Forecast = scrapy.Field()
     crawl_Time = scrapy.Field()
 
 

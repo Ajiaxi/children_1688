@@ -8,31 +8,17 @@ from children_1688.spiders.date_All_Year import getAllDayPerYear
 
 '''
     - 陈航
-    - 爬取我是采购商行业大盘儿童防晒衣/皮肤衣数据概况  三大指数去年昨日到今日一整年的数据
-    - 思路： 查看网页,我们所需数据格式为json格式,则通过response.xpath()获取data后，将data转换为json格式,
-            再通过json获取数据的方法获取我们所需的数据即可.
-    - 难点: 在于showtime这个参数,获取去年昨日到今日的所有日期,实现思路,首先获取2018年和2019年全年的日期(有闰年检查,data_2018,data_2019),
-            然后获取去年昨日的日期和去年全体日期做比较,小于就加入list_2018,同理获得list_2019
-            然后将list_2018和list_2019相加获得list_Count,这就是我们想要的数据
-    - 用法: 控制台输入 scrapy crawl children_01 输入文件看pipelines中的类Children1688Pipeline 可改写文件路径
-    - 参数解析：
-        - category1： 种类一 就是童装的意思
-        - category2： 种类2 也就是童装下的二级目录
-        - list_Count： 昨日去年到今日的所有日期
-        - purchaseIndex1688s： 1688采购指数
-        - purchaseIndexTbs： 淘宝采购指数
-        - supplyIndexs： 1688供应指数
-        - crawl_Time： 爬取数据日期
-    - bug残留：  9.30下午 mark,待添加爬取每天数据的爬虫class 并测试是否能追加数据进csv中 解决
+    - 爬取我是供应商行业大盘儿童防晒衣/皮肤衣数据概况  三大指数去年昨日到今日一整年的数据
+    - 用法: 控制台输入 scrapy crawl children_01_supply 输入文件看pipelines中的类Children1688Pipeline 可改写文件路径
 '''
 
 class Children01Spider(scrapy.Spider):
-    name = 'children_01'
+    name = 'children_01_supply'
     allowed_domains = ['index.1688.com']
-    start_urls = ['https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311']
+    start_urls = ['https://index.1688.com/alizs/market.htm?userType=supplier&cat=311']
     # 指定管道处理
     custom_settings = {
-        'ITEM_PIPELINES' : {'children_1688.pipelines.Children1688Pipeline': 300,}
+        'ITEM_PIPELINES' : {'children_1688.pipelines.Children1688SupplyPipeline': 300,}
     }
 
 
@@ -51,6 +37,7 @@ class Children01Spider(scrapy.Spider):
         purchaseIndexTbs = datajson['purchaseIndexTb']["index"]["history"]
         supplyIndexs = datajson['supplyIndex']["index"]["history"]
         crawl_Time = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
+
         print(len(purchaseIndex1688s))
         # 依次遍历，将数据添加进item中
         for i in range(0,len(purchaseIndex1688s)):
