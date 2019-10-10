@@ -6,6 +6,4 @@
 
 10.10日 新增行业大盘数据,因只有行业大盘数据不一样,也就只抓取了我是供应商的行业大盘数据
 
-https://www.cnblogs.com/fuhongliang/p/4304477.html
 
-hang.chen@2piday.com

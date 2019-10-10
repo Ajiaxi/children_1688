@@ -4,13 +4,6 @@ import time
 import scrapy
 from children_1688.items import AttributeSegmentationPriceItem
 
-'''
-    用法： scrapy crawl price
-    bug残留： 10.5 晚 只能获取一次，并且也是相同的price.json. 10.6解决,后面加路径名即可 
-            10.6  分类2栏目赋值不知如何做
-            10.9日 修改为手动改变网址以及分类2栏目 并且将piprlines中的w改为a+,将字段名注释即可
-    
-'''
 
 class PriceSpider(scrapy.Spider):
     name = 'AttributeSegmentationPrice'

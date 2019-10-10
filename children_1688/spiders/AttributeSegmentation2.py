@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 import time
-
 import scrapy
-
 from children_1688.items import AttributesegmentationItem
 
 class AttributesegmentationSpider(scrapy.Spider):

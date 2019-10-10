@@ -1,19 +1,8 @@
 # -*- coding: utf-8 -*-
 import time
-
 import scrapy
-
 from children_1688.items import AttributesegmentationItem
 
-'''
-    用法：scrapy crawl AttributeSegmentation
-    bug残留：10.5日晚，还是表结构问题，不清楚怎么去给item赋值，"童装,儿童防晒衣/皮肤衣,热门基础属性,"中性 : 3,570/2,795",2019-10-05 18:11:27" 差一个适用性别，不知如何插入
-            10.8日  写5个function 分别爬取适用性别 是否连帽 颜色等 然后装进items中 返回给pipelines
-            10.8日晚 尝试许久，发现请求urlpost只有25个，get15个，解决良久还是一筹莫展，还是写5个spider吧
-            
-            AttributeSegmentation1为第一个数据，所以在pipeline中，需要改为w并且要有字段名写入，在run中执行即可
-            另外的2345就将w改为a+，将字段名写入注释掉，在run中注释掉即可
-'''
 
 class AttributesegmentationSpider(scrapy.Spider):
     name = 'AttributeSegmentation1'

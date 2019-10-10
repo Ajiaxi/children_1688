@@ -21,9 +21,6 @@ from children_1688.spiders.date_All_Year import getAllDayPerYear
             - purchaseIndex1688s： 1688采购指数
             - supplyIndexs： 1688供应指数
             - crawl_Time： 爬取数据日期
-    - bug残留：  9.30下午 5.12 mark,待修改为自动创建csv文件输入数据,修改为不用手动换网页和路径名
-                10.5晚 解决
-    - 状态： 32个类目都放在同一个csv中
 '''
 
 class SecondindexSpider(scrapy.Spider):

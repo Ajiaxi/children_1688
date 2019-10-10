@@ -8,8 +8,6 @@ from children_1688.items import BuyerSketchItem
 '''
     陈航
     用途：爬取采购商素描栏目 童装所有
-    bug: 10.9日 抓取不到新老采购商淘宝店主非淘宝店主文字以及他们的百分比 目前由于量少问题 直接手打即可
-    
 '''
 
 class BuyersketchSpider(scrapy.Spider):

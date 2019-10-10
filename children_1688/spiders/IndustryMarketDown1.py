@@ -18,11 +18,6 @@ from children_1688.items import IndustrymarketdownItem
             - supplyIndexs： 1688供应指数
             - crawl_Time： 爬取数据日期
             - divs： li标签下的所有div 接下来遍历该div,获取所需数据
-    - bug残留：  9.30下午 mark,待添加遍历所有网页获取数据      
-                10.1 遍历网页后获得的数据无序 无解 只能一个网页写一个spider  
-                解决了遍历所有网页问题 但还有另外的问题，和attribute一样的问题，不知道热门行业和潜力行业何时插入好
-                '童装,儿童防晒衣/皮肤衣,潜力行业,童羽绒服/,"1,719","2,453",2019-10-05 17:54:17'
-                10.6 写两个spider 爬取潜力行业和热门行业 热门行业的数据追加到潜力行业中去即可
 '''
 
 class IndustrymarketdownSpider(scrapy.Spider):
