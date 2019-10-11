@@ -5,7 +5,9 @@ from children_1688.items import IndustrymarketdownItem
 
 '''
     - 陈航
-    - 爬取行业大盘下面 最近30天儿童防晒衣/皮肤衣相关行业
+    - 爬取我是采购商行业大盘下部 最近30天儿童防晒衣/皮肤衣相关行业 热门行业
+    - 该数据为热门行业及其潜力行业.csv的第一种数据，在children_1688.pipelines.IndustryMarketDown中写入方式为w，并且有字段名写入
+    
     - 思路: 网页数据分为两部分,例如儿童防晒衣这个网页,上面为儿童防晒衣,下面为5行,
             先获取上面行也就岁儿童防晒衣的数据,接着获取下面五行的数据,相同数据不用理会,
             不同数据需要拼接在一起,然后遍历赋值给item即可
@@ -18,6 +20,7 @@ from children_1688.items import IndustrymarketdownItem
             - supplyIndexs： 1688供应指数
             - crawl_Time： 爬取数据日期
             - divs： li标签下的所有div 接下来遍历该div,获取所需数据
+    
 '''
 
 class IndustrymarketdownSpider(scrapy.Spider):

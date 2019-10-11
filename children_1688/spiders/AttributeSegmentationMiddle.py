@@ -7,7 +7,7 @@ from children_1688.items import AttributeSegmentationMiddleItem
 
 '''
     陈航
-    爬取热门营销属性
+    爬取属性细分热门营销属性
     用法：scrapy crawl AttributeSegmentationMiddle
 '''
 

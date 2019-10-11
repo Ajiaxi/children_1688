@@ -3,6 +3,13 @@ import time
 import scrapy
 from children_1688.items import AttributesegmentationItem
 
+'''
+    爬取属性细分热门基础属性
+    该spider为所有二级目录的第2个类别 (比如二级目录防晒衣的是否连帽)
+    该spider是文件中5种数据的第二种数据，所以在children_1688.pipelines.AttributesegmentationPipelines中先将写入方式改为a+，并且将字段名写入代码注释
+
+'''
+
 class AttributesegmentationSpider(scrapy.Spider):
     name = 'AttributeSegmentation2'
     allowed_domains = ['1688.com']

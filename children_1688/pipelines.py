@@ -93,16 +93,15 @@ class IndustryMarketDown(object):
     def close_spider(self, spider):  # 关闭
         self.f.close()
 
-class IndustryMarketDowntest(object):
+
+class IndustryMarketDown1(object):
     def __init__(self):
-        # self.f = open("/home/chenhang/workplace/crawlFile/HangYeDaPan/Down/IndustryMarketDown.csv", "w")
-        self.f = open("IndustryMarketDown.csv", "w")
+        self.f = open("/home/chenhang/workplace/crawlFile/行业大盘-我是采购商/行业大盘下部/热门行业及其潜力行业.csv", "a+")
         self.writer = csv.writer(self.f)
-        self.writer.writerow(['目录1', '目录2', '行业类型', '行业名称', '1688采购指数', '1688供应指数', '淘宝需求预测', '爬取时间'])
 
     def process_item(self, item, spider):
         list = [item['category1'], item['category2'], item['industry_Type'], item['industry_Name'],
-                item['purchaseIndex1688'], item['supplyIndex'], item['demand_Forecast'], item['crawl_Time']]
+                item['purchaseIndex1688'], item['supplyIndex'], item['demand_Forecast'],item['crawl_Time']]
         self.writer.writerow(list)
         return item
 
@@ -119,20 +118,6 @@ class IndustryMarketDownSupplyPipelines(object):
     def process_item(self, item, spider):
         list = [item['category1'], item['category2'], item['industry_Type'], item['industry_Name'],
                 item['purchaseIndex1688'], item['supplyIndex'], item['demand_Forecast'], item['crawl_Time']]
-        self.writer.writerow(list)
-        return item
-
-    def close_spider(self, spider):  # 关闭
-        self.f.close()
-
-class IndustryMarketDown1(object):
-    def __init__(self):
-        self.f = open("/home/chenhang/workplace/crawlFile/行业大盘-我是采购商/行业大盘下部/热门行业及其潜力行业.csv", "a+")
-        self.writer = csv.writer(self.f)
-
-    def process_item(self, item, spider):
-        list = [item['category1'], item['category2'], item['industry_Type'], item['industry_Name'],
-                item['purchaseIndex1688'], item['supplyIndex'], item['demand_Forecast'],item['crawl_Time']]
         self.writer.writerow(list)
         return item
 

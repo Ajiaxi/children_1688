@@ -3,7 +3,9 @@ import json
 import time
 import scrapy
 from children_1688.items import AttributeSegmentationPriceItem
-
+'''
+    爬取属性细分价格带分布
+'''
 
 class PriceSpider(scrapy.Spider):
     name = 'AttributeSegmentationPrice'

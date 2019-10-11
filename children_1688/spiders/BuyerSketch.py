@@ -7,7 +7,8 @@ from children_1688.items import BuyerSketchItem
 
 '''
     陈航
-    用途：爬取采购商素描栏目 童装所有
+    用途：爬取采购商素描栏目 童装所有 
+    数据很少直接手写
 '''
 
 class BuyersketchSpider(scrapy.Spider):

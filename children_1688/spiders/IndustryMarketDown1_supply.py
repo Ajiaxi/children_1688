@@ -6,6 +6,8 @@ from children_1688.items import IndustrymarketdownItem
 '''
     - 陈航
     - 爬取我是供应商行业大盘下面 最近30天儿童防晒衣/皮肤衣相关行业
+    - 该数据为热门行业及其潜力行业.csv的第2种数据，在children_1688.pipelines.IndustryMarketDownSupplyPipelines中写入方式为a+
+
     - 用法: 控制台输入 scrapy crawl IndustryMarketDown1_supply --nolog 输入文件看pipelines中的类IndustryMarketDown 可改写文件路径
 
 '''
