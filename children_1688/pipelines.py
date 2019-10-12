@@ -10,7 +10,8 @@ class Children1688Pipeline(object):
 
     def __init__(self):
         # 1688采购商 全年写入
-        self.f = open("/home/chenhang/workplace/crawlFile/行业大盘-我是采购商/行业大盘上部/一级目录全年指数.csv", "w")
+        # self.f = open("/home/chenhang/workplace/crawlFile/行业大盘-我是采购商/行业大盘上部/一级目录全年指数.csv", "w")
+        self.f = open("一级目录全年指数.csv", "w")
         # 1688采购商 每天的index写入 spider为everyIndex
         # self.f = open("/home/chenhang/workplace/crawlFile/HangYeDaPan/Top/annualIndex.csv", "a+")
         self.writer = csv.writer(self.f)
@@ -189,7 +190,8 @@ class AttributeSegmentationPricePipelines:
 
 class BuyerSketchPricePipelines:
     def __init__(self):
-        self.f = open("/home/chenhang/workplace/crawlFile/采购商素描/采购商身份.csv", "w")
+        # self.f = open("/home/chenhang/workplace/crawlFile/采购商素描/采购商身份.csv", "w")
+        self.f = open("采购商身份.csv", "w")
         self.writer = csv.writer(self.f)
         self.writer.writerow(
             ['目录1', '目录2', '行业类型',  '新老采购商', '百分比1', '非淘宝/淘宝店主', '百分比2', '爬取时间'])
