@@ -18,7 +18,7 @@ from children_1688.spiders.annualIndex import Children01Spider
         需要改变相同的spider名称 
         
         localToHdfs    将 "/home/chenhang/workplace/crawlfile"; 下的所有文件 push到103服务器上的hdfs系统中 路径为："/user/piday/zhili/chenhang";
-        localToHive    将
+        localToHive    将/home/chenhang/crawlfile   下的所有文件 放到hive 中  关联hdfs路径为"/user/piday/zhili/crawlfile"
         
 '''
 configure_logging()
