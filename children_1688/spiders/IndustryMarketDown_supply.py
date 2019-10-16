@@ -11,7 +11,7 @@ from children_1688.items import IndustrymarketdownItem
     - 用法: 控制台输入 scrapy crawl IndustryMarketDown_supply --nolog 输入文件看pipelines中的类IndustryMarketDown 可改写文件路径
 '''
 
-class IndustrymarketdownSpider(scrapy.Spider):
+class IndustrymarketdownSpider_supply(scrapy.Spider):
     name = 'IndustryMarketDown_supply'
     allowed_domains = ['index.1688.com']
     start_urls = ['https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,127424004']

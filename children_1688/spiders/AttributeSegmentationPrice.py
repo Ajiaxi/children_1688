@@ -73,10 +73,11 @@ class PriceSpider(scrapy.Spider):
             index_Types1.append(dataList['name'])
             percentages1.append(dataList['value'])
 
+        print(len(index_Types))
         for i in range(0,len(index_Types)):
             item = AttributeSegmentationPriceItem()
             item['category1'] = '童装'
-            item['category2'] = category2[31]
+            item['category2'] = category2[i]
             item['attribute_Type'] = '价格带分布'
             item['attribute_Name'] = '1688浏览商品价格分布'
             item['index_Type'] =  index_Types[i]
@@ -87,12 +88,12 @@ class PriceSpider(scrapy.Spider):
             item['crawl_Time'] = crawl_Time
             items.append(item)
         print('爬取完成：'+ response.url)
-        # self.urls.remove(response.url)
-        # if self.urls:
-        #     print('正在爬取：'+self.urls[0])
-        #     r = scrapy.Request(url=self.urls[0],callback=self.parse)
-        #     items.append(r)
-        print(items)
+        self.urls.remove(response.url)
+        if self.urls:
+            print('正在爬取：'+self.urls[0])
+            r = scrapy.Request(url=self.urls[0],callback=self.parse)
+            items.append(r)
+        # print(items)
         return items
 
 

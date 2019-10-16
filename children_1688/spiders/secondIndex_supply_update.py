@@ -9,12 +9,10 @@ from children_1688.spiders.date_All_Year import getAllDayPerYear
 '''
     - 陈航
     - 爬取我是供应商童装下的所有二级目录的1688采购指数和1688供应指数
-    - 用法: 
-            - 控制台输入 scrapy crawl secondIndex_supply --nolog 输入文件看pipelines中的类secondIndexPipelines 可改写文件路径
 '''
 
-class SecondindexSpider_supply(scrapy.Spider):
-    name = 'secondIndex_supply'
+class SecondindexupdateSpider_supply(scrapy.Spider):
+    name = 'secondIndexupdate_supply'
     allowed_domains = ['index.1688.com']
     start_urls = ['https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,127424004']
     urls2 = [     'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,127424004',
@@ -59,7 +57,7 @@ class SecondindexSpider_supply(scrapy.Spider):
     #         '122088001', '122698004']
 
     custom_settings = {
-        'ITEM_PIPELINES' : {'children_1688.pipelines.secondIndexSupplyPipelines': 300,},
+        'ITEM_PIPELINES' : {'children_1688.pipelines.secondIndexupdateSupplyPipelines': 300,},
     }
 
     def parse(self, response):
@@ -92,11 +90,6 @@ class SecondindexSpider_supply(scrapy.Spider):
             # yield item
             items.append(item)
         self.urls2.remove(response.url)
-            # for i in range(0,len(self.urls2)):
-        # for i in range(0,4):
-        #     url = self.urls2[i]
-        #     yield scrapy.Request(url=url, callback=self.parse)
-        # https://stackoverflow.com/questions/6566322/scrapy-crawl-urls-in-order
         if self.urls2:
             r = scrapy.Request(url=self.urls2[0],callback=self.parse)
             items.append(r)

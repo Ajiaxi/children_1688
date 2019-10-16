@@ -60,7 +60,7 @@ class IndustrymarketdownSpider(scrapy.Spider):
              'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,122088001',
              'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,122698004']
     custom_settings = {
-        'ITEM_PIPELINES' : {'children_1688.pipelines.IndustryMarketDown': 300,}
+        'ITEM_PIPELINES' : {'children_1688.pipelines.IndustryMarketDownPipelines': 300,}
     }
 
     def parse(self, response):

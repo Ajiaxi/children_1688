@@ -12,7 +12,7 @@ from children_1688.items import AttributesegmentationItem
 
 '''
 
-class AttributesegmentationSpider(scrapy.Spider):
+class Attributesegmentation3Spider(scrapy.Spider):
     name = 'AttributeSegmentation3'
     allowed_domains = ['1688.com']
     start_urls = ['https://index.1688.com/alizs/attr.htm?userType=purchaser&cat=311,127424004']

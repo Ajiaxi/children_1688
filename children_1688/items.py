@@ -131,3 +131,12 @@ class aliIndex_7_4_Item(scrapy.Item):
     total  = scrapy.Field()
     url = scrapy.Field()
     crawl_Time = scrapy.Field()
+
+class aliindex_7_hot_Item(scrapy.Item):
+    name = scrapy.Field()
+    type = scrapy.Field()
+    title = scrapy.Field()
+    price = scrapy.Field()
+    trade = scrapy.Field()
+
+

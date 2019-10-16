@@ -22,7 +22,7 @@ from children_1688.items import IndustrymarketdownItem
             - divs： li标签下的所有div 接下来遍历该div,获取所需数据
 '''
 
-class IndustrymarketdownSpider(scrapy.Spider):
+class Industrymarketdown1Spider(scrapy.Spider):
     name = 'IndustryMarketDown1'
     allowed_domains = ['index.1688.com']
     start_urls = ['https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,127424004']
@@ -59,7 +59,7 @@ class IndustrymarketdownSpider(scrapy.Spider):
              'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,122088001',
              'https://index.1688.com/alizs/market.htm?userType=purchaser&cat=311,122698004']
     custom_settings = {
-        'ITEM_PIPELINES' : {'children_1688.pipelines.IndustryMarketDown1': 300,}
+        'ITEM_PIPELINES' : {'children_1688.pipelines.IndustryMarketDown1Pipelines': 300,}
     }
 
     industry_Type = ['热门行业', '潜力行业']

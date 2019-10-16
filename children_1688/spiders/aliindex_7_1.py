@@ -13,7 +13,7 @@ from children_1688.items import aliIndex_7_1_Item
     
 '''
 
-class AliindexSpider(scrapy.Spider):
+class aliindex_7_1_spider(scrapy.Spider):
     name = 'aliindex_7_1'
     allowed_domains = ['1688.com']
     start_urls = ['https://index.1688.com/alizs/word/listRankType.json?cat=311&rankType=rise&period=week']

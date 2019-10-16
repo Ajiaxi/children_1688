@@ -12,7 +12,7 @@ from children_1688.items import IndustrymarketdownItem
 
 '''
 
-class IndustrymarketdownSpider(scrapy.Spider):
+class Industrymarketdown1Spider_supply(scrapy.Spider):
     name = 'IndustryMarketDown1_supply'
     allowed_domains = ['index.1688.com']
     start_urls = ['https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,127424004']

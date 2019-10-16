@@ -12,7 +12,7 @@ from children_1688.spiders.date_All_Year import getAllDayPerYear
     - 用法: 控制台输入 scrapy crawl children_01_supply 输入文件看pipelines中的类Children1688Pipeline 可改写文件路径
 '''
 
-class Children01Spider(scrapy.Spider):
+class Children01Spider_supply(scrapy.Spider):
     name = 'children_01_supply'
     allowed_domains = ['index.1688.com']
     start_urls = ['https://index.1688.com/alizs/market.htm?userType=supplier&cat=311']
