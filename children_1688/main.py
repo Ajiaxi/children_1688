@@ -11,7 +11,7 @@ from children_1688.spiders.AttributeSegmentation2 import Attributesegmentation2S
 from children_1688.spiders.AttributeSegmentation3 import Attributesegmentation3Spider
 from children_1688.spiders.AttributeSegmentation4 import Attributesegmentation4Spider
 from children_1688.spiders.AttributeSegmentation5 import Attributesegmentation5Spider
-from children_1688.spiders.AttributeSegmentationMiddle import AttributesegmentationSpider
+from children_1688.spiders.AttributeSegmentationMiddle import AttributesegmentationMiddleSpider
 from children_1688.spiders.AttributeSegmentationPrice import PriceSpider
 from children_1688.spiders.BuyerSketch import BuyersketchSpider
 from children_1688.spiders.IndustryMarketDown import IndustrymarketdownSpider
@@ -73,13 +73,13 @@ flag = 'true'
 '''
     属性细分 热门基础属性5  热门营销属性1  价格带分布1
 '''
-runner.crawl(Attributesegmentation1Spider)
+# runner.crawl(Attributesegmentation1Spider)
 # runner.crawl(Attributesegmentation2Spider)
 # runner.crawl(Attributesegmentation3Spider)
 # runner.crawl(Attributesegmentation4Spider)
 # runner.crawl(Attributesegmentation5Spider)
 
-runner.crawl(AttributesegmentationSpider)
+# runner.crawl(AttributesegmentationMiddleSpider)
 
 runner.crawl(PriceSpider)
 
@@ -87,7 +87,7 @@ runner.crawl(PriceSpider)
 '''
     采购商素描
 '''
-runner.crawl(BuyersketchSpider)
+# runner.crawl(BuyersketchSpider)
 
 '''
     阿里排行 热搜榜和热销榜

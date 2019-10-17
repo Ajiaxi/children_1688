@@ -20,7 +20,6 @@ from children_1688.items import IndustrymarketdownItem
             - supplyIndexs： 1688供应指数
             - crawl_Time： 爬取数据日期
             - divs： li标签下的所有div 接下来遍历该div,获取所需数据
-    
 '''
 
 class IndustrymarketdownSpider(scrapy.Spider):
@@ -104,9 +103,6 @@ class IndustrymarketdownSpider(scrapy.Spider):
             list_supplyIndex.append(supplyIndex2)
             list_demand_Forecast.append(demand_Forecast2)
 
-        # print(list_industry_Name)
-        # print(list_purchaseIndex1688)
-        # print(list_supplyIndex)
         for i in range(0,len(list_supplyIndex)):    
             item = IndustrymarketdownItem()
             item['category1'] = category1

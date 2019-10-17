@@ -10,7 +10,7 @@ from children_1688.items import AttributeSegmentationPriceItem
 class PriceSpider(scrapy.Spider):
     name = 'AttributeSegmentationPrice'
     allowed_domains = ['1688.com']
-    start_urls = ['https://index.1688.com/alizs/attr/price.json?userType=purchaser&cat=311,122698004']
+    start_urls = ['https://index.1688.com/alizs/attr/price.json?userType=purchaser&cat=311,127424004']
     urls = ['https://index.1688.com/alizs/attr/price.json?userType=purchaser&cat=311,127424004',
             'https://index.1688.com/alizs/attr/price.json?userType=purchaser&cat=311,127496001',
             'https://index.1688.com/alizs/attr/price.json?userType=purchaser&cat=311,1043351',
@@ -46,12 +46,15 @@ class PriceSpider(scrapy.Spider):
 
             'https://index.1688.com/alizs/attr/price.json?userType=purchaser&cat=311,122088001',
             'https://index.1688.com/alizs/attr/price.json?userType=purchaser&cat=311,122698004']
+    category2 = ['儿童防晒衣/皮肤衣', '儿童内衣内裤', '儿童袜', '连身衣、爬服', '亲子装', '童T恤', '童背心/吊带', '童表演服/舞', '童衬衫', '童打底裤', '童打底衫',
+                 '童家居服', '童裤', '童礼服', '童马甲', '童毛衣', '童棉衣', '童牛仔服', '童披风/斗蓬', '童皮草/皮毛', '童皮衣', '童旗袍/唐装', '童裙', '童套装',
+                 '童外套/夹克', '童卫衣', '童羽绒服/羽', '童针织衫', '童装加工定制', '童装杂款包', '校服/校服定', '婴儿礼盒']
+
     custom_settings = {
         'ITEM_PIPELINES' : {'children_1688.pipelines.AttributeSegmentationPricePipelines': 300,},
     }
 
     def parse(self, response):
-        category2 = ['儿童防晒衣/皮肤衣', '儿童内衣内裤', '儿童袜', '连身衣、爬服', '亲子装', '童T恤', '童背心/吊带', '童表演服/舞', '童衬衫', '童打底裤', '童打底衫', '童家居服', '童裤', '童礼服', '童马甲', '童毛衣', '童棉衣', '童牛仔服', '童披风/斗蓬', '童皮草/皮毛', '童皮衣', '童旗袍/唐装', '童裙', '童套装', '童外套/夹克', '童卫衣', '童羽绒服/羽', '童针织衫', '童装加工定制', '童装杂款包', '校服/校服定', '婴儿礼盒']
         data = json.loads(response.text)
         browserdataLists = data['content']['browser']
         tradedataLists = data['content']['trade']
@@ -72,12 +75,11 @@ class PriceSpider(scrapy.Spider):
         for dataList in tradedataLists:
             index_Types1.append(dataList['name'])
             percentages1.append(dataList['value'])
-
-        print(len(index_Types))
+        category = self.category2[0]
         for i in range(0,len(index_Types)):
             item = AttributeSegmentationPriceItem()
             item['category1'] = '童装'
-            item['category2'] = category2[i]
+            item['category2'] = category
             item['attribute_Type'] = '价格带分布'
             item['attribute_Name'] = '1688浏览商品价格分布'
             item['index_Type'] =  index_Types[i]
@@ -89,12 +91,57 @@ class PriceSpider(scrapy.Spider):
             items.append(item)
         print('爬取完成：'+ response.url)
         self.urls.remove(response.url)
+        self.category2.remove(category)
         if self.urls:
             print('正在爬取：'+self.urls[0])
-            r = scrapy.Request(url=self.urls[0],callback=self.parse)
+            r = scrapy.Request(url=self.urls[0],callback=self.next_parse,meta={'category':self.category2[0]})
             items.append(r)
-        # print(items)
         return items
+
+    def next_parse(self,response):
+        data = json.loads(response.text)
+        browserdataLists = data['content']['browser']
+        tradedataLists = data['content']['trade']
+        crawl_Time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+        index_Types = []
+        percentages = []
+        index_Types1 = []
+        percentages1 = []
+        items = []
+        # 浏览商品价格分布
+        for dataList in browserdataLists:
+            index_Types.append(dataList['name'])
+            percentages.append(dataList['value'])
+
+        # 交易商品价格分布
+        for dataList in tradedataLists:
+            index_Types1.append(dataList['name'])
+            percentages1.append(dataList['value'])
+
+        category = response.meta['category']
+        for i in range(0, len(index_Types)):
+            item = AttributeSegmentationPriceItem()
+            item['category1'] = '童装'
+            item['category2'] = category
+            item['attribute_Type'] = '价格带分布'
+            item['attribute_Name'] = '1688浏览商品价格分布'
+            item['index_Type'] = index_Types[i]
+            item['percentage'] = percentages[i]
+            item['attribute_Name1'] = '1688交易商品价格分布'
+            item['index_Type1'] = index_Types1[i]
+            item['percentage1'] = percentages1[i]
+            item['crawl_Time'] = crawl_Time
+            items.append(item)
+        print('爬取完成：' + response.url)
+        self.urls.remove(response.url)
+        self.category2.remove(category)
+        if self.urls:
+            print('正在爬取：'+self.urls[0])
+            r = scrapy.Request(url=self.urls[0],callback=self.next_parse,meta={'category':self.category2[0]})
+            items.append(r)
+        return items
+
+
 
 
 
