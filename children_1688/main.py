@@ -1,33 +1,40 @@
 # !/usr/bin/env python3
 # -*- coding:utf-8 -*-
+import sys
 import os
+
+from children_1688.spiders.AttributeSegmentation import AttributeSegmentationSpider
+
+curPath = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(curPath)[0]
+sys.path.append(rootPath)
 
 from scrapy.crawler import CrawlerRunner
 from scrapy.utils.log import configure_logging
 from twisted.internet import reactor
 
-from children_1688.spiders.AttributeSegmentation1 import Attributesegmentation1Spider
-from children_1688.spiders.AttributeSegmentation2 import Attributesegmentation2Spider
-from children_1688.spiders.AttributeSegmentation3 import Attributesegmentation3Spider
-from children_1688.spiders.AttributeSegmentation4 import Attributesegmentation4Spider
-from children_1688.spiders.AttributeSegmentation5 import Attributesegmentation5Spider
-from children_1688.spiders.AttributeSegmentationMiddle import AttributesegmentationMiddleSpider
+# from children_1688.spiders.AttributeSegmentation1 import Attributesegmentation1Spider
+# from children_1688.spiders.AttributeSegmentation2 import Attributesegmentation2Spider
+# from children_1688.spiders.AttributeSegmentation3 import Attributesegmentation3Spider
+# from children_1688.spiders.AttributeSegmentation4 import Attributesegmentation4Spider
+# from children_1688.spiders.AttributeSegmentation5 import Attributesegmentation5Spider
+# from children_1688.spiders.AttributeSegmentationMiddle import AttributesegmentationMiddleSpider
+# from children_1688.spiders.BuyerSketch import BuyersketchSpider
+# from children_1688.spiders.IndustryMarketDown import IndustrymarketdownSpider
+# from children_1688.spiders.IndustryMarketDown1 import Industrymarketdown1Spider
+# from children_1688.spiders.IndustryMarketDown1_supply import Industrymarketdown1Spider_supply
+# from children_1688.spiders.IndustryMarketDown_supply import IndustrymarketdownSpider_supply
+# from children_1688.spiders.aliindex_30_2 import aliindex_30_2_spider
+# from children_1688.spiders.aliindex_30_hot import aliindex_30_hotSpider
+# from children_1688.spiders.aliindex_7_2 import aliindex_7_2_spider
+# from children_1688.spiders.aliindex_7_hot import aliindex_7_hotSpider
+# from children_1688.spiders.annualIndex import Children01Spider
+# from children_1688.spiders.annualIndex_supply import Children01Spider_supply
+# from children_1688.spiders.secondIndex import SecondindexSpider
+# from children_1688.spiders.secondIndex_supply import SecondindexSpider_supply
+# from children_1688.spiders.secondIndex_supply_update import SecondindexupdateSpider_supply
+# from children_1688.spiders.secondIndex_update import SecondindexupdateSpider
 from children_1688.spiders.AttributeSegmentationPrice import PriceSpider
-from children_1688.spiders.BuyerSketch import BuyersketchSpider
-from children_1688.spiders.IndustryMarketDown import IndustrymarketdownSpider
-from children_1688.spiders.IndustryMarketDown1 import Industrymarketdown1Spider
-from children_1688.spiders.IndustryMarketDown1_supply import Industrymarketdown1Spider_supply
-from children_1688.spiders.IndustryMarketDown_supply import IndustrymarketdownSpider_supply
-from children_1688.spiders.aliindex_30_2 import aliindex_30_2_spider
-from children_1688.spiders.aliindex_30_hot import aliindex_30_hotSpider
-from children_1688.spiders.aliindex_7_2 import aliindex_7_2_spider
-from children_1688.spiders.aliindex_7_hot import aliindex_7_hotSpider
-from children_1688.spiders.annualIndex import Children01Spider
-from children_1688.spiders.annualIndex_supply import Children01Spider_supply
-from children_1688.spiders.secondIndex import SecondindexSpider
-from children_1688.spiders.secondIndex_supply import SecondindexSpider_supply
-from children_1688.spiders.secondIndex_supply_update import SecondindexupdateSpider_supply
-from children_1688.spiders.secondIndex_update import SecondindexupdateSpider
 
 '''
     陈航
@@ -40,13 +47,16 @@ from children_1688.spiders.secondIndex_update import SecondindexupdateSpider
         localToHive    将/home/chenhang/chenhang  下的所有文件 放到hive 中  关联hdfs路径为"/user/piday/zhili/chenhang"
         
 '''
-configure_logging()
+
+
+# 设置没有任何日志输出。
+configure_logging(install_root_handler=False)
 runner = CrawlerRunner()
 
 '''
     行业大盘
 '''
-flag = 'true'
+# flag = 'true'
 # flag = 'false'
 
 # if flag == 'true':
@@ -73,6 +83,7 @@ flag = 'true'
 '''
     属性细分 热门基础属性5  热门营销属性1  价格带分布1
 '''
+runner.crawl(AttributeSegmentationSpider)
 # runner.crawl(Attributesegmentation1Spider)
 # runner.crawl(Attributesegmentation2Spider)
 # runner.crawl(Attributesegmentation3Spider)
@@ -80,8 +91,7 @@ flag = 'true'
 # runner.crawl(Attributesegmentation5Spider)
 
 # runner.crawl(AttributesegmentationMiddleSpider)
-
-runner.crawl(PriceSpider)
+# runner.crawl(PriceSpider)
 
 
 '''
@@ -100,6 +110,7 @@ runner.crawl(PriceSpider)
 
 
 # 需要执行语句继续写runner.crawl(spider名称即可)
+
 
 # 返回所有托管对象crawlers完成执行后触发的延迟。
 d = runner.join()

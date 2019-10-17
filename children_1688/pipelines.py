@@ -227,7 +227,6 @@ class AttributesegmentationMiddlePipelines:
 class AttributeSegmentationPricePipelines:
     def __init__(self):
         self.f = open(AttributeSegmentationPrice, "w")
-        # self.f = open("/home/chenhang/workplace/crawlFile/Shuxingxifen/price.csv", "a+")
         self.writer = csv.writer(self.f)
         self.writer.writerow(
             ['目录1', '目录2', '行业类型',  '属性名称1','价格分布1', '百分比',  '属性名称2','价格分布2', '百分比', '爬取时间'])
@@ -235,7 +234,7 @@ class AttributeSegmentationPricePipelines:
     def process_item(self, item, spider):
         list = [item['category1'], item['category2'], item['attribute_Type'],item['attribute_Name'] ,item['index_Type'], item['percentage'],item['attribute_Name1'] ,item['index_Type1'], item['percentage1'],item['crawl_Time']]
         self.writer.writerow(list)
-        return item
+        # return item
 
     def close_spider(self, spider):  # 关闭
         self.f.close()
