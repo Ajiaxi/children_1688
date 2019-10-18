@@ -28,8 +28,8 @@ class annualIndexUpdateSpider(scrapy.Spider):
         category1 = response.xpath('//*[@id="aliindex-masthead"]/div/div[3]/div[1]/p/a/text()').extract()
         category2 = response.xpath('//*[@id="aliindex-masthead"]/div/div[3]/div[2]/p/a/text()').extract()
         # 去掉[] 以及''
-        category1 = str(category1)[2:-2]
-        category2 = str(category2)[2:-2]
+        category1 = category1[0]
+        category2 = category2[0]
         # 将数据转换为json，通过获取json数据的方式获取我们所需要的数据
         datajson = json.loads(data)     #dict
         purchaseIndex1688s = datajson["purchaseIndex1688"]["index"]["history"]

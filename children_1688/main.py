@@ -13,12 +13,9 @@ sys.path.append(rootPath)
 from scrapy.crawler import CrawlerRunner
 from scrapy.utils.log import configure_logging
 from twisted.internet import reactor
-
 from children_1688.spiders.AttributeSegmentation import AttributeSegmentationSpider
 from children_1688.spiders.annualIndexUpdate import annualIndexUpdateSpider
 from children_1688.spiders.annualIndexUpdateSupply import annualIndexUpdateSupplySpider
-from children_1688.spiders.secondIndex_supply_update import SecondindexupdateSpider_supply
-from children_1688.spiders.secondIndex_update import SecondindexupdateSpider
 from children_1688.spiders.AttributeSegmentationMiddle import AttributesegmentationMiddleSpider
 from children_1688.spiders.BuyerSketch import BuyersketchSpider
 from children_1688.spiders.IndustryMarketDown import IndustrymarketdownSpider
@@ -91,7 +88,6 @@ runner.crawl(aliindex_7_hotSpider)
 runner.crawl(aliindex_30_hotSpider)
 
 # 需要执行语句继续写runner.crawl(spider名称即可)
-
 
 # 返回所有托管对象crawlers完成执行后触发的延迟。
 d = runner.join()

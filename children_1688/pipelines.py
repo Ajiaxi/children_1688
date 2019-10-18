@@ -33,6 +33,7 @@ aliIndex_30_hot = '/home/chenhang/chenhang/zhili/craw/raw/alirank/sale_30/热销
 
 '''
     每次执行完后　将last_time_crawl改为今日日期
+    10.18 改为代码获取上次更新时间
 '''
 # last_time_crawl = '2019-10-18'
 
@@ -50,8 +51,7 @@ class Children1688Pipeline(object):
 
     def process_item(self, item, spider):
         last_time_crawl = item['crawl_Time']
-        end = last_time_crawl.find(' ')
-        last_time_crawl = last_time_crawl[0:end]
+        last_time_crawl = last_time_crawl.split(' ')[0]
         if datetime.datetime.strptime(item['showtime'], '%Y-%m-%d') >= datetime.datetime.strptime(last_time_crawl, '%Y-%m-%d'):
             list = [item['category1'], item['category2'], item['showtime'], item['purchaseIndex1688'], item['purchaseIndexTb'], item['supplyIndex'], item['crawl_Time']]
             self.writer.writerow(list)
@@ -409,3 +409,17 @@ class aliIndex_30_hot_Pipelines:
     def close_spider(self, spider):  # 关闭
         self.f.close()
 
+class aLiSupplyFileMain_pipelines:
+    def __init__(self):
+        self.f = open('aLiSupplyFileMain_pipelines.csv', "w")
+        self.writer = csv.writer(self.f)
+        self.writer.writerow(
+            ['公司名', '编号', '地区', '主要产品', '主要市场', '交易量', '交易额'])
+
+    def process_item(self, item):
+        list = [item['companyName'], item['number'], item['area'], item['mainProducts'], item['mainMarket'], item['tradingVolume'], item['transactionAmount']]
+        self.writer.writerow(list)
+        return item
+
+    def close_spider(self):
+        self.f.close()
