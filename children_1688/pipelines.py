@@ -148,22 +148,6 @@ class IndustryMarketDownPipelines(object):
     def close_spider(self, spider):  # 关闭
         self.f.close()
 
-
-class IndustryMarketDown1Pipelines(object):
-    def __init__(self):
-        self.f = open(IndustryMarketDown, "a+")
-        self.writer = csv.writer(self.f)
-
-    def process_item(self, item, spider):
-        list = [item['category1'], item['category2'], item['industry_Type'], item['industry_Name'],
-                item['purchaseIndex1688'], item['supplyIndex'], item['demand_Forecast'],item['crawl_Time']]
-        self.writer.writerow(list)
-        return item
-
-    def close_spider(self, spider):  # 关闭
-        self.f.close()
-
-
 class IndustryMarketDownSupplyPipelines(object):
     def __init__(self):
         self.f = open(IndustryMarketDownSupply, "w")
