@@ -62,7 +62,7 @@ class PriceSpider(scrapy.Spider):
 
     # 处理第一个页面的parse
     def parse(self, response):
-        print('正在爬取Spider..... , 爬取名称 : 1688网站属性细分价格带分布')
+        print('正在更新Spider , 更新名称 : 1688网站属性细分价格带分布')
         data = json.loads(response.text)
         items = []
         items , category = self.datadeal(data,items)
@@ -90,7 +90,7 @@ class PriceSpider(scrapy.Spider):
             r = scrapy.Request(url=self.url+self.next[0],callback=self.next_parse)
             items.append(r)
         elif len(self.next) == 0:
-            print('爬取Spider完成..... , 爬取名称 : 1688网站属性细分价格带分布')
+            print('更新Spider完成 , 更新数据名称 : 1688网站属性细分价格带分布')
         return items
 
 

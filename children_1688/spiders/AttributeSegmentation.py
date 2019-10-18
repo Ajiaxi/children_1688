@@ -69,7 +69,7 @@ class AttributeSegmentationSpider(scrapy.Spider):
         count = surl.find(',')
         resurl = surl[count + 1:]
         if resurl == '127424004':
-            print('正在爬取Spider..... , 爬取名称 : 1688网站属性细分热门基础属性')
+            print('正在更新Spider　, 数据名称 : 1688网站属性细分热门基础属性')
         self.next2.append(resurl)
         self.next.remove(resurl)
         if self.next:
@@ -189,5 +189,5 @@ class AttributeSegmentationSpider(scrapy.Spider):
             r = scrapy.Request(url=self.url + self.next5[0], dont_filter=True, callback=self.parse5)
             items.append(r)
         elif len(self.next5) == 0:
-            print('爬取Spider完成..... , 爬取名称 : 1688网站属性细分热门基础属性')
+            print('更新Spider完成 , 更新数据名称 : 1688网站属性细分热门基础属性')
         return items

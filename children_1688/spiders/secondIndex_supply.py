@@ -17,47 +17,14 @@ class SecondindexSpider_supply(scrapy.Spider):
     name = 'secondIndex_supply'
     allowed_domains = ['index.1688.com']
     start_urls = ['https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,127424004']
-    urls2 = [     'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,127424004',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,127496001',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,1043351',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,1037003',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,1037039',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,1037012',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,1048174',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,122086001',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,1037011',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,127430003',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,127430004',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,1042754',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,1037004',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,1037649',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,1042841',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,1037010',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,1037006',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,1037007',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,122704004',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,124188006',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,124196006',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,122086002',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,1037005',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,1037192',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,1037648',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,1042840',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,1037008',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,1037009',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,126440003',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,127164001',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,122088001',
-                  'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,122698004']
-
-    # next = ['127424004', '127496001', '1043351', '1037003', '1037039',
-    #         '1037012', '1048174', '122086001', '1037011', '127430003',
-    #         '127430004', '1042754', '1037004', '1037649', '1042841',
-    #         '1037010', '1037006', '1037007', '122704004', '124188006',
-    #         '124196006', '122086002', '1037005', '1037192', '1037648',
-    #         '1042840', '1037008', '1037009', '126440003', '127164001',
-    #         '122088001', '122698004']
-
+    next = ['127424004', '127496001', '1043351', '1037003', '1037039',
+            '1037012', '1048174', '122086001', '1037011', '127430003',
+            '127430004', '1042754', '1037004', '1037649', '1042841',
+            '1037010', '1037006', '1037007', '122704004', '124188006',
+            '124196006', '122086002', '1037005', '1037192', '1037648',
+            '1042840', '1037008', '1037009', '126440003', '127164001',
+            '122088001', '122698004']
+    url = 'https://index.1688.com/alizs/market.htm?userType=supplier&cat=311,'
     custom_settings = {
         'ITEM_PIPELINES' : {'children_1688.pipelines.secondIndexSupplyPipelines': 300,},
     }
@@ -74,8 +41,7 @@ class SecondindexSpider_supply(scrapy.Spider):
         purchaseIndex1688s = datajson["purchaseIndex1688"]["index"]["history"]
         supplyIndexs = datajson['supplyIndex']["index"]["history"]
         crawl_Time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
-        # print(len(purchaseIndex1688s))
-        print('正在爬取' + category2 + '网页,Please wait....')
+        print('正在更新Spider , 更新名称 :' + category2 + '网页,Please wait....')
         # 依次遍历，将数据添加进item中
         items = []
         for i in range(0, len(purchaseIndex1688s)):
@@ -89,20 +55,21 @@ class SecondindexSpider_supply(scrapy.Spider):
             item['purchaseIndex1688'] = purchaseIndex1688s[i]
             item['supplyIndex'] = supplyIndexs[i]
             item['crawl_Time'] = crawl_Time
-            # yield item
             items.append(item)
-        self.urls2.remove(response.url)
-            # for i in range(0,len(self.urls2)):
-        # for i in range(0,4):
-        #     url = self.urls2[i]
-        #     yield scrapy.Request(url=url, callback=self.parse)
-        # https://stackoverflow.com/questions/6566322/scrapy-crawl-urls-in-order
-        if self.urls2:
-            r = scrapy.Request(url=self.urls2[0],callback=self.parse)
+        surl = str(response.url)
+        count = surl.find(',')
+        resurl = surl[count + 1:]
+        if resurl == '127424004':
+            print('正在更新Spider , 更新名称 : 1688我是供应商网站行业大盘二级目录全年指数数据')
+        self.next.remove(resurl)
+        if self.next:
+            r = scrapy.Request(url=self.url + self.next[0], callback=self.parse)
             items.append(r)
-        # print(items)
+        elif len(self.next) == 0:
+            print('更新Spider完成 , 更新数据名称 : 1688我是供应商网站行业大盘二级目录全年指数数据')
         return items
 
+    # 返回　去年昨日到昨日　的所有日期　
     def datalist(self):
         # 获取2018年全年的日期
         data_2018 = getAllDayPerYear(2018)
@@ -121,13 +88,10 @@ class SecondindexSpider_supply(scrapy.Spider):
         for x in range(0, len(data_2018)):
             if datetime.datetime.strptime(data_2018[x], '%Y-%m-%d') >= datetime.datetime.strptime(last_Year_Today,'%Y-%m-%d'):
                 list_2018.append(data_2018[x])
-
         # 在2019年全年list列表里匹配，当今日日期大于列表元素时，添加进新数组
         for y in range(0, len(data_2019)):
             if datetime.datetime.strptime(today, '%Y-%m-%d') >= datetime.datetime.strptime(data_2019[y], '%Y-%m-%d'):
                 list_2019.append(data_2019[y])
         # 去年昨日到今日的所有日期
         list_Count = list_2018 + list_2019
-        # print(list_Count)
         return list_Count
-

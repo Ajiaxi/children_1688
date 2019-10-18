@@ -8,40 +8,15 @@ class aliindex_7_hotSpider(scrapy.Spider):
     name = 'aliindex_7_hot'
     allowed_domains = ['1688.com']
     start_urls = ['https://index.1688.com/alizs/offer/rank.json?cat=311&dim=trade&period=week&time=1570686769180']
-
-    urls = ['https://index.1688.com/alizs/offer/rank.json?cat=311&dim=trade&period=week&time=1570686769180',
-            'https://index.1688.com/alizs/offer/rank.json?cat=127424004&dim=trade&period=week&time=1570686745789',
-            'https://index.1688.com/alizs/offer/rank.json?cat=127496001&dim=trade&period=week&time=1570686730005',
-            'https://index.1688.com/alizs/offer/rank.json?cat=1043351&dim=trade&period=week&time=1570686678756',
-            'https://index.1688.com/alizs/offer/rank.json?cat=1037003&dim=trade&period=week&time=1570671275367',
-            'https://index.1688.com/alizs/offer/rank.json?cat=1037039&dim=trade&period=week&time=1570671358423',
-            'https://index.1688.com/alizs/offer/rank.json?cat=1037012&dim=trade&period=week&time=1570679597471',
-            'https://index.1688.com/alizs/offer/rank.json?cat=1048174&dim=trade&period=week&time=1570679650877',
-            'https://index.1688.com/alizs/offer/rank.json?cat=122086001&dim=trade&period=week&time=1570679681823',
-            'https://index.1688.com/alizs/offer/rank.json?cat=1037011&dim=trade&period=week&time=1570679727030',
-            'https://index.1688.com/alizs/offer/rank.json?cat=127430003&dim=trade&period=week&time=1570680158151',
-            'https://index.1688.com/alizs/offer/rank.json?cat=127430004&dim=trade&period=week&time=1570680202856',
-            'https://index.1688.com/alizs/offer/rank.json?cat=1042754&dim=trade&period=week&time=1570680232975',
-            'https://index.1688.com/alizs/offer/rank.json?cat=1037004&dim=trade&period=week&time=1570680257584',
-            'https://index.1688.com/alizs/offer/rank.json?cat=1037649&dim=trade&period=week&time=1570686185844',
-            'https://index.1688.com/alizs/offer/rank.json?cat=1042841&dim=trade&period=week&time=1570686237269',
-            'https://index.1688.com/alizs/offer/rank.json?cat=1037010&dim=trade&period=week&time=1570686256633',
-            'https://index.1688.com/alizs/offer/rank.json?cat=1037006&dim=trade&period=week&time=1570686273753',
-            'https://index.1688.com/alizs/offer/rank.json?cat=1037007&dim=trade&period=week&time=1570686293475',
-            'https://index.1688.com/alizs/offer/rank.json?cat=122704004&dim=trade&period=week&time=1570686336981',
-            'https://index.1688.com/alizs/offer/rank.json?cat=124188006&dim=trade&period=week&time=1570686354666',
-            'https://index.1688.com/alizs/offer/rank.json?cat=124196006&dim=trade&period=week&time=1570686377041',
-            'https://index.1688.com/alizs/offer/rank.json?cat=122086002&dim=trade&period=week&time=1570686396920',
-            'https://index.1688.com/alizs/offer/rank.json?cat=1037005&dim=trade&period=week&time=1570686414832',
-            'https://index.1688.com/alizs/offer/rank.json?cat=1037192&dim=trade&period=week&time=1570686432156',
-            'https://index.1688.com/alizs/offer/rank.json?cat=1037648&dim=trade&period=week&time=1570686452605',
-            'https://index.1688.com/alizs/offer/rank.json?cat=1042840&dim=trade&period=week&time=1570686470750',
-            'https://index.1688.com/alizs/offer/rank.json?cat=1037008&dim=trade&period=week&time=1570686492909',
-            'https://index.1688.com/alizs/offer/rank.json?cat=1037009&dim=trade&period=week&time=1570686509509',
-            'https://index.1688.com/alizs/offer/rank.json?cat=126440003&dim=trade&period=week&time=1570686565736',
-            'https://index.1688.com/alizs/offer/rank.json?cat=127164001&dim=trade&period=week&time=1570686595978',
-            'https://index.1688.com/alizs/offer/rank.json?cat=122088001&dim=trade&period=week&time=1570686612190',
-            'https://index.1688.com/alizs/offer/rank.json?cat=122698004&dim=trade&period=week&time=1570686631309']
+    next = ['311', '127424004', '127496001', '1043351', '1037003', '1037039',
+            '1037012', '1048174', '122086001', '1037011', '127430003',
+            '127430004', '1042754', '1037004', '1037649', '1042841',
+            '1037010', '1037006', '1037007', '122704004', '124188006',
+            '124196006', '122086002', '1037005', '1037192', '1037648',
+            '1042840', '1037008', '1037009', '126440003', '127164001',
+            '122088001', '122698004']
+    head = 'https://index.1688.com/alizs/offer/rank.json?cat='
+    end = '&dim=trade&period=week&time=1570686631309'
 
     custom_settings = {
         'ITEM_PIPELINES': {'children_1688.pipelines.aliIndex_7_hot_Pipelines': 300}
@@ -61,12 +36,19 @@ class aliindex_7_hotSpider(scrapy.Spider):
             item["price"] = node.get('price')
             item["trade"] = node.get('trade')
             yield item
-        print('爬取完成：' + str(response.url))
-        self.urls.remove(self.urls[0])
-        if self.urls:
-            r = scrapy.Request(url=self.urls[0], callback=self.parse)
+        surl = str(response.url)
+        start = surl.find('=')
+        end = surl.find('&')
+        resurl = surl[start + 1: end]
+        if resurl == '311':
+            print('正在更新Spider , 更新数据名称 : 1688网站阿里排行产品排行榜')
+        self.next.remove(resurl)
+        if self.next:
+            r = scrapy.Request(url=self.head+self.next[0]+self.end, callback=self.parse)
             self.names.remove(self.names[0])
             yield r
+        elif len(self.next):
+            print('更新Spider完成 , 更新数据名称 : 1688网站阿里排行产品排行榜')
 
 
 

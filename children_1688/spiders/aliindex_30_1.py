@@ -17,50 +17,21 @@ class aliindex_30_1_spider(scrapy.Spider):
     name = 'aliindex_30_1'
     allowed_domains = ['1688.com']
     start_urls = ['https://index.1688.com/alizs/word/listRankType.json?cat=311&rankType=rise&period=month']
-
-    urls = ['https://index.1688.com/alizs/word/listRankType.json?cat=311&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=127424004&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=127496001&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=1043351&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=1037003&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=1037039&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=1037012&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=1048174&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=122086001&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=1037011&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=127430003&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=127430004&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=1042754&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=1037004&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=1037649&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=1042841&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=1037010&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=1037006&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=1037007&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=122704004&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=124188006&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=124196006&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=122086002&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=1037005&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=1037192&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=1037648&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=1042840&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=1037008&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=1037009&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=126440003&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=127164001&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=122088001&rankType=rise&period=month',
-            'https://index.1688.com/alizs/word/listRankType.json?cat=122698004&rankType=rise&period=month']
-
+    next = ['311', '127424004', '127496001', '1043351', '1037003', '1037039',
+            '1037012', '1048174', '122086001', '1037011', '127430003',
+            '127430004', '1042754', '1037004', '1037649', '1042841',
+            '1037010', '1037006', '1037007', '122704004', '124188006',
+            '124196006', '122086002', '1037005', '1037192', '1037648',
+            '1042840', '1037008', '1037009', '126440003', '127164001',
+            '122088001', '122698004']
+    head = 'https://index.1688.com/alizs/word/listRankType.json?cat='
+    end = '&rankType=rise&period=month'
     custom_settings = {
         'ITEM_PIPELINES': {'children_1688.pipelines.aliIndex_30_1_Pipelines': 300, },
     }
 
     def parse(self, response):
-        print('正在爬取,请稍等......')
-        # print(response.text)
         data = json.loads(response.text)
-        # print(len(data))
         keywords = []
         search_Trends = []
         indexs = []
@@ -84,18 +55,30 @@ class aliindex_30_1_spider(scrapy.Spider):
                 item['index'] = indexs[i]
                 item['url'] = urls[i]
                 item['crawl_Time'] = crawl_Time
-                # print(item)
                 items.append(item)
-            print('爬取完成：'+str(response.url))
-            self.urls.remove(response.url)
-            if self.urls:
-                r = scrapy.Request(url=self.urls[0],callback=self.parse)
+            surl = str(response.url)
+            start = surl.find('=')
+            end = surl.find('&')
+            resurl = surl[start + 1:end]
+            if resurl == '311':
+                print('正在更新Spider , 更新数据名称 : 1688网站阿里排行搜索排行榜30天上升榜')
+            self.next.remove(resurl)
+            if self.next:
+                r = scrapy.Request(url=self.head + self.next[0] + self.end, callback=self.parse)
                 items.append(r)
+            elif len(self.next):
+                print('更新Spider完成 , 更新数据名称 : 1688网站阿里排行搜索排行榜30天上升榜')
             return items
         else:
             print('content无数据.....')
-            self.urls.remove(response.url)
-            if self.urls:
-                r = scrapy.Request(url=self.urls[0], callback=self.parse)
+            surl = str(response.url)
+            start = surl.find('=')
+            end = surl.find('&')
+            resurl = surl[start + 1: end]
+            self.next.remove(resurl)
+            if self.next:
+                r = scrapy.Request(url=self.head + self.next[0] + self.end, callback=self.parse)
                 items.append(r)
+            elif len(self.next):
+                print('更新Spider完成 , 更新数据名称 : 1688网站阿里排行搜索排行榜30天上升榜')
             return items
