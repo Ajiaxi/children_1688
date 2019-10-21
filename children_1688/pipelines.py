@@ -26,17 +26,19 @@ aliIndex_7_3 = ''
 aliIndex_7_4 = ''
 aliIndex_7_hot = '/home/chenhang/chenhang/zhili/craw/raw/alirank/sale_7/热销榜_7.csv'
 aliIndex_30_1 = ''
-aliIndex_30_2 = '/home/chenhang/chenhang/zhili/craw/raw/alirank/search_30/搜索排行榜_7天_热搜榜.csv'
+aliIndex_30_2 = '/home/chenhang/chenhang/zhili/craw/raw/alirank/search_30/搜索排行榜_30天_热搜榜.csv'
 aliIndex_30_3 = ''
 aliIndex_30_4 = ''
 aliIndex_30_hot = '/home/chenhang/chenhang/zhili/craw/raw/alirank/sale_30/热销榜_30.csv'
 
 '''
-    每次执行完后　将last_time_crawl改为今日日期
-    10.18 改为代码获取上次更新时间
+    获取上次更新时间　last_time_crawl
 '''
-# last_time_crawl = '2019-10-18'
-
+csv_file = csv.reader(open(Children1688, 'r'))
+content = []
+for line in csv_file:
+    content.append(line)
+last_time_crawl = content[-1][-1].split(' ')[0]
 
 
 class Children1688Pipeline(object):
@@ -50,8 +52,6 @@ class Children1688Pipeline(object):
         # self.writer.writerow(['目录1', '目录2', '展示时间', '1688采购指数', '淘宝采购指数', '1688供应指数' ,'爬取时间'])
 
     def process_item(self, item, spider):
-        last_time_crawl = item['crawl_Time']
-        last_time_crawl = last_time_crawl.split(' ')[0]
         if datetime.datetime.strptime(item['showtime'], '%Y-%m-%d') >= datetime.datetime.strptime(last_time_crawl, '%Y-%m-%d'):
             list = [item['category1'], item['category2'], item['showtime'], item['purchaseIndex1688'], item['purchaseIndexTb'], item['supplyIndex'], item['crawl_Time']]
             self.writer.writerow(list)
@@ -71,9 +71,6 @@ class Children1688SupplyPipeline(object):
         # self.writer.writerow(['目录1', '目录2', '展示时间', '1688采购指数', '淘宝采购指数', '1688供应指数' ,'爬取时间'])
 
     def process_item(self, item, spider):
-        last_time_crawl = item['crawl_Time']
-        end = last_time_crawl.find(' ')
-        last_time_crawl = last_time_crawl[0:end]
         if datetime.datetime.strptime(item['showtime'], '%Y-%m-%d') >= datetime.datetime.strptime(last_time_crawl,'%Y-%m-%d'):
             list = [item['category1'], item['category2'], item['showtime'], item['purchaseIndex1688'], item['purchaseIndexTb'], item['supplyIndex'], item['crawl_Time']]
             self.writer.writerow(list)
@@ -103,9 +100,9 @@ class secondIndexupdatePipelines(object):
         self.writer = csv.writer(self.f)
 
     def process_item(self, item, spider):
-        last_time_crawl = item['crawl_Time']
-        end = last_time_crawl.find(' ')
-        last_time_crawl = last_time_crawl[0:end]
+        # last_time_crawl = item['crawl_Time']
+        # end = last_time_crawl.find(' ')
+        # last_time_crawl = last_time_crawl[0:end]
         if datetime.datetime.strptime(item['showtime'], '%Y-%m-%d') >= datetime.datetime.strptime(last_time_crawl,'%Y-%m-%d'):
             list = [item['category1'], item['category2'], item['showtime'], item['purchaseIndex1688'], item['supplyIndex'],item['crawl_Time']]
             self.writer.writerow(list)
@@ -138,9 +135,9 @@ class secondIndexupdateSupplyPipelines(object):
         self.writer = csv.writer(self.f)
 
     def process_item(self, item, spider):
-        last_time_crawl = item['crawl_Time']
-        end = last_time_crawl.find(' ')
-        last_time_crawl = last_time_crawl[0:end]
+        # last_time_crawl = item['crawl_Time']
+        # end = last_time_crawl.find(' ')
+        # last_time_crawl = last_time_crawl[0:end]
         if datetime.datetime.strptime(item['showtime'], '%Y-%m-%d') >= datetime.datetime.strptime(last_time_crawl,'%Y-%m-%d'):
             list = [item['category1'], item['category2'], item['showtime'], item['purchaseIndex1688'], item['supplyIndex'],
                     item['crawl_Time']]
@@ -416,10 +413,10 @@ class aLiSupplyFileMain_pipelines:
         self.writer.writerow(
             ['公司名', '编号', '地区', '主要产品', '主要市场', '交易量', '交易额'])
 
-    def process_item(self, item):
+    def process_item(self, item,spider):
         list = [item['companyName'], item['number'], item['area'], item['mainProducts'], item['mainMarket'], item['tradingVolume'], item['transactionAmount']]
         self.writer.writerow(list)
         return item
 
-    def close_spider(self):
+    def close_spider(self,spider):
         self.f.close()
