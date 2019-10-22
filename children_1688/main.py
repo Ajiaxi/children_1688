@@ -20,6 +20,8 @@ import os
 # from children_1688.spiders.secondIndex_update import SecondindexupdateSpider
 # from children_1688.spiders.AttributeSegmentationPrice import PriceSpider
 from children_1688.spiders.alisupplyfilemaim import AlisupplyfilemainSpider
+from children_1688.spiders.alisupplyfilemarket import AlisupplyfilemarketSpider
+from children_1688.spiders.alisupplyfilproduct import AlisupplyfilproductSpider
 
 curPath = os.path.abspath(os.path.dirname(__file__))
 rootPath = os.path.split(curPath)[0]
@@ -90,6 +92,8 @@ runner = CrawlerRunner()
 # runner.crawl(aliindex_7_hotSpider)
 # runner.crawl(aliindex_30_hotSpider)
 runner.crawl(AlisupplyfilemainSpider)
+runner.crawl(AlisupplyfilemarketSpider)
+runner.crawl(AlisupplyfilproductSpider)
 
 # 需要执行语句继续写runner.crawl(spider名称即可)
 

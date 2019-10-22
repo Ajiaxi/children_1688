@@ -420,3 +420,33 @@ class aLiSupplyFileMain_pipelines:
 
     def close_spider(self,spider):
         self.f.close()
+
+class aLiSupplyFileMarket_pipelines:
+    def __init__(self):
+        self.f = open('aLiSupplyFileMarket_pipelines.csv', "w")
+        self.writer = csv.writer(self.f)
+        self.writer.writerow(
+            ['公司名', '编号', '市场地区', '市场份额'])
+
+    def process_item(self, item,spider):
+        list = [item['companyName'], item['number'], item['area'], item['mainMarket']]
+        self.writer.writerow(list)
+        return item
+
+    def close_spider(self,spider):
+        self.f.close()
+
+class aLiSupplyFileProduct_pipelines:
+    def __init__(self):
+        self.f = open('aLiSupplyFileProduct_pipelines.csv', "w")
+        self.writer = csv.writer(self.f)
+        self.writer.writerow(
+            ['公司名', '编号', '产品'])
+
+    def process_item(self, item,spider):
+        list = [item['companyName'], item['number'], item['product']]
+        self.writer.writerow(list)
+        return item
+
+    def close_spider(self,spider):
+        self.f.close()

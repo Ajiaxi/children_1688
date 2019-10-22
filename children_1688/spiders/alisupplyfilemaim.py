@@ -11,11 +11,13 @@ from children_1688.items import aLiSupplyFileMain_Item
 class AlisupplyfilemainSpider(scrapy.Spider):
     name = 'alisupplyfilemain'
     allowed_domains = ['alibaba.com']
-    start_urls = ['https://www.alibaba.com/trade/search?spm=a2700.supplier-normal.16.4.9e19459b8XUEfx&viewType=L&n=50&indexArea=company_en&keyword=children_clothes&page=1&f1=y']
-    head = 'https://www.alibaba.com/trade/search?spm=a2700.supplier-normal.16.4.9e19459b8XUEfx&viewType=L&n=50&indexArea=company_en&keyword=children_clothes&page='
-    end = '&f1=y'
+    # start_urls = ['https://www.alibaba.com/trade/search?spm=a2700.supplier-normal.16.4.9e19459b8XUEfx&viewType=L&n=50&indexArea=company_en&keyword=children_clothes&page=1&f1=y']
+    start_urls = ['https://www.alibaba.com/trade/search?spm=a2700.supplier-normal.16.4.1f86459bWExbQ1&n=38&f1=y&indexArea=company_en&viewType=L&keyword=children_clothes&page=1']
+    # head = 'https://www.alibaba.com/trade/search?spm=a2700.supplier-normal.16.4.9e19459b8XUEfx&viewType=L&n=50&indexArea=company_en&keyword=children_clothes&page='
+    head = 'https://www.alibaba.com/trade/search?spm=a2700.supplier-normal.16.4.1f86459bWExbQ1&n=38&f1=y&indexArea=company_en&viewType=L&keyword=children_clothes&page='
+    # end = '&f1=y'
     next = []
-    for i in range(1,51):
+    for i in range(1,58):
         next.append(str(i))
     custom_settings = {
         'ITEM_PIPELINES': {'children_1688.pipelines.aLiSupplyFileMain_pipelines': 300, },
@@ -34,6 +36,8 @@ class AlisupplyfilemainSpider(scrapy.Spider):
         # 获取数据
         for div in divs:
             companyName = div.xpath('div[1]/div[2]/div[1]/div[2]/h2/a/text()').extract()
+            if len(companyName) == 0 :
+                companyName = div.xpath('div[1]/div[2]/div[1]/div[1]/h2/a/text()').extract()
             mainProduct = div.xpath('.//div[@class="value ellipsis ph"]//text()').extract()
             if 'China' in mainProduct:
                 mainProduct = ''
@@ -44,14 +48,15 @@ class AlisupplyfilemainSpider(scrapy.Spider):
                 tradingVolume = '0'
             else:
                 tradingVolume = str(tradingVolume)[2:-2]
-
             transactionAmount = div.xpath('.//ul[@class="record util-clearfix"]/li/div[2]/text()').extract()
             transactionAmount = str(transactionAmount).replace(' ', '').replace('\\n', '').replace('\'', '').replace(
                 '+', '').replace('$', '').replace(',', '').replace('[', '').replace(']', '')
             if len(transactionAmount) == 0:
                 transactionAmount = '0'
-
-            companyName = companyName[0]
+            try:
+                companyName = companyName[0]
+            except:
+                companyName = ''
             mainProduct = str(mainProduct)[2:-2]
             mainMarket = str(mainMarket)[2:-2]
 
@@ -74,10 +79,11 @@ class AlisupplyfilemainSpider(scrapy.Spider):
             items.append(item)
         print(response.url)
         surl = response.url
-        reurl = surl[-6:-5]
+        count = surl.rfind('=')
+        reurl = surl[count+1:]
         self.next.remove(reurl)
         if self.next:
-            r = scrapy.Request(url=self.head+self.next[0]+self.end,callback=self.parse)
+            r = scrapy.Request(url=self.head+self.next[0],callback=self.parse)
             items.append(r)
         elif len(self.next) == 0:
             print('更新Spider完成 , 更新数据名称 : https://www.alibaba.com/trade/search?spm=a2700.supplier-normal.16.4.9e19459b8XUEfx&viewType=L&n=50&indexArea=company_en&keyword=children_clothes&page=1&f1=y')

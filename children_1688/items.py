@@ -134,3 +134,14 @@ class aLiSupplyFileMain_Item(scrapy.Item):
     mainMarket = scrapy.Field()
     tradingVolume = scrapy.Field()
     transactionAmount = scrapy.Field()
+
+class aLiSupplyFileMarket_Item(scrapy.Item):
+    companyName = scrapy.Field()
+    number = scrapy.Field()
+    area = scrapy.Field()
+    mainMarket = scrapy.Field()
+
+class aLiSupplyFileProduct_Item(scrapy.Item):
+    companyName = scrapy.Field()
+    number = scrapy.Field()
+    product = scrapy.Field()
