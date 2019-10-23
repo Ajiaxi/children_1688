@@ -128,20 +128,50 @@ class aliindex_7_hot_Item(scrapy.Item):
 
 class aLiSupplyFileMain_Item(scrapy.Item):
     companyName = scrapy.Field()
-    number = scrapy.Field()
     area = scrapy.Field()
     mainProducts = scrapy.Field()
     mainMarket = scrapy.Field()
     tradingVolume = scrapy.Field()
     transactionAmount = scrapy.Field()
+    crawl_Time = scrapy.Field()
 
 class aLiSupplyFileMarket_Item(scrapy.Item):
     companyName = scrapy.Field()
-    number = scrapy.Field()
     area = scrapy.Field()
     mainMarket = scrapy.Field()
+    crawl_Time = scrapy.Field()
 
 class aLiSupplyFileProduct_Item(scrapy.Item):
     companyName = scrapy.Field()
-    number = scrapy.Field()
     product = scrapy.Field()
+    crawl_Time = scrapy.Field()
+
+class Cmindexchild_Item(scrapy.Item):
+    number = scrapy.Field()
+    date = scrapy.Field()
+    index = scrapy.Field()
+    crawl_Time = scrapy.Field()
+
+class Cmindexpricefabric_Item(scrapy.Item):
+    date = scrapy.Field()
+    index = scrapy.Field()
+    index_hb = scrapy.Field()
+    crawl_Time = scrapy.Field()
+
+class Cmindexsalefabric_Item(scrapy.Item):
+    round = scrapy.Field()
+    index = scrapy.Field()
+    index_hb = scrapy.Field()
+    bindex1 = scrapy.Field()
+    bindex2 = scrapy.Field()
+    crawl_Time = scrapy.Field()
+
+class Cmindexsalegery_Item(scrapy.Item):
+    round = scrapy.Field()
+    index = scrapy.Field()
+    index_hb = scrapy.Field()
+    bindex1 = scrapy.Field()
+    bindex2 = scrapy.Field()
+    crawl_Time = scrapy.Field()
+
+

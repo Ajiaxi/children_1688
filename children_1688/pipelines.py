@@ -10,27 +10,34 @@ import datetime
 '''
     配置输出路径
 '''
-Children1688 = '/home/chenhang/chenhang/zhili/craw/raw/hydp/cg/index/all/一级目录全年指数.csv'
-Children1688Supply = '/home/chenhang/chenhang/zhili/craw/raw/hydp/gy/index/all/一级目录全年指数.csv'
-secondIndex = '/home/chenhang/chenhang/zhili/craw/raw/hydp/cg/index/sub/二级目录全年指数.csv'
-secondIndexSupply = '/home/chenhang/chenhang/zhili/craw/raw/hydp/gy/index/sub/二级目录全年指数.csv'
-IndustryMarketDown = '/home/chenhang/chenhang/zhili/craw/raw/hydp/cg/rq/热门行业及潜力行业.csv'
-IndustryMarketDownSupply = '/home/chenhang/chenhang/zhili/craw/raw/hydp/gy/rq/热门行业及其潜力行业.csv'
-Attributesegmentation = '/home/chenhang/chenhang/zhili/craw/raw/attributes/base/属性细分热门基础属性.csv'
-AttributesegmentationMiddle = '/home/chenhang/chenhang/zhili/craw/raw/attributes/market/属性细分热门营销属性.csv'
-AttributeSegmentationPrice = '/home/chenhang/chenhang/zhili/craw/raw/attributes/price/属性细分价格带分布.csv'
-BuyerSketch = '/home/chenhang/chenhang/zhili/craw/raw/purchase/identify/采购商身份.csv'
+Children1688 = '/home/chenhang/zhili/craw/raw/hydp/cg/index/all/一级目录全年指数.csv'
+Children1688Supply = '/home/chenhang/zhili/craw/raw/hydp/gy/index/all/一级目录全年指数.csv'
+secondIndex = '/home/chenhang/zhili/craw/raw/hydp/cg/index/sub/二级目录全年指数.csv'
+secondIndexSupply = '/home/chenhang/zhili/craw/raw/hydp/gy/index/sub/二级目录全年指数.csv'
+IndustryMarketDown = '/home/chenhang/zhili/craw/raw/hydp/cg/rq/热门行业及潜力行业.csv'
+IndustryMarketDownSupply = '/home/chenhang/zhili/craw/raw/hydp/gy/rq/热门行业及其潜力行业.csv'
+Attributesegmentation = '/home/chenhang/zhili/craw/raw/attributes/base/属性细分热门基础属性.csv'
+AttributesegmentationMiddle = '/home/chenhang/zhili/craw/raw/attributes/market/属性细分热门营销属性.csv'
+AttributeSegmentationPrice = '/home/chenhang/zhili/craw/raw/attributes/price/属性细分价格带分布.csv'
+BuyerSketch = '/home/chenhang/zhili/craw/raw/purchase/identify/采购商身份.csv'
 aliIndex_7_1 = ''
-aliIndex_7_2 = '/home/chenhang/chenhang/zhili/craw/raw/alirank/search_7/搜索排行榜_7天_热搜榜.csv'
+aliIndex_7_2 = '/home/chenhang/zhili/craw/raw/alirank/search_7/搜索排行榜_7天_热搜榜.csv'
 aliIndex_7_3 = ''
 aliIndex_7_4 = ''
-aliIndex_7_hot = '/home/chenhang/chenhang/zhili/craw/raw/alirank/sale_7/热销榜_7.csv'
+aliIndex_7_hot = '/home/chenhang/zhili/craw/raw/alirank/sale_7/热销榜_7.csv'
 aliIndex_30_1 = ''
-aliIndex_30_2 = '/home/chenhang/chenhang/zhili/craw/raw/alirank/search_30/搜索排行榜_30天_热搜榜.csv'
+aliIndex_30_2 = '/home/chenhang/zhili/craw/raw/alirank/search_30/搜索排行榜_30天_热搜榜.csv'
 aliIndex_30_3 = ''
 aliIndex_30_4 = ''
-aliIndex_30_hot = '/home/chenhang/chenhang/zhili/craw/raw/alirank/sale_30/热销榜_30.csv'
-
+aliIndex_30_hot = '/home/chenhang/zhili/craw/raw/alirank/sale_30/热销榜_30.csv'
+aLiSupplyFileMain= '/home/chenhang/zhili/craw/raw/alisupply/main/阿里童装供应商信息_完整.csv'
+aLiSupplyFileMarket = '/home/chenhang/zhili/craw/raw/alisupply/market/阿里童装供应商信息_主要市场.csv'
+aLiSupplyFileProduct = '/home/chenhang/zhili/craw/raw/alisupply/product/阿里童装供应商信息_产品.csv'
+Cmindexchild = '/home/chenhang/zhili/craw/raw/cmindex/child/4.csv'
+Cmindexpricefabric = '/home/chenhang/zhili/craw/raw/cmindex/price/fabric/1.csv'
+cmindexPriceGrey = '/home/chenhang/zhili/craw/raw/cmindex/price/grey/2.csv'
+Cmindexsalefabric = '/home/chenhang/zhili/craw/raw/cmindex/sale/fabric/5.csv'
+CmindexsaleGrey = '/home/chenhang/zhili/craw/raw/cmindex/sale/grey/6.csv'
 '''
     获取上次更新时间　last_time_crawl
 '''
@@ -53,7 +60,7 @@ class Children1688Pipeline(object):
 
     def process_item(self, item, spider):
         if datetime.datetime.strptime(item['showtime'], '%Y-%m-%d') >= datetime.datetime.strptime(last_time_crawl, '%Y-%m-%d'):
-            list = [item['category1'], item['category2'], item['showtime'], item['purchaseIndex1688'], item['purchaseIndexTb'], item['supplyIndex'], item['crawl_Time']]
+            list = [item['category1']+'\t'+item['category2']+'\t'+item['showtime']+'\t'+item['purchaseIndex1688']+'\t'+item['purchaseIndexTb']+'\t'+item['supplyIndex']+'\t'+item['crawl_Time']]
             self.writer.writerow(list)
         return item
 
@@ -72,7 +79,7 @@ class Children1688SupplyPipeline(object):
 
     def process_item(self, item, spider):
         if datetime.datetime.strptime(item['showtime'], '%Y-%m-%d') >= datetime.datetime.strptime(last_time_crawl,'%Y-%m-%d'):
-            list = [item['category1'], item['category2'], item['showtime'], item['purchaseIndex1688'], item['purchaseIndexTb'], item['supplyIndex'], item['crawl_Time']]
+            list = [item['category1']+'\t'+item['category2']+'\t'+item['showtime']+'\t'+item['purchaseIndex1688']+'\t'+item['purchaseIndexTb']+'\t'+item['supplyIndex']+'\t'+item['crawl_Time']]
             self.writer.writerow(list)
         return item
 
@@ -87,7 +94,7 @@ class secondIndexPipelines(object):
         self.writer.writerow(['目录1', '目录2', '展示时间', '1688采购指数', '1688供应指数', '爬取时间'])
 
     def process_item(self, item, spider):
-        list = [item['category1'], item['category2'], item['showtime'], item['purchaseIndex1688'], item['supplyIndex'],item['crawl_Time']]
+        list = [item['category1']+'\t'+item['category2']+'\t'+item['showtime']+'\t'+item['purchaseIndex1688']+'\t'+item['supplyIndex'],item['crawl_Time']]
         self.writer.writerow(list)
         return item
 
@@ -104,7 +111,7 @@ class secondIndexupdatePipelines(object):
         # end = last_time_crawl.find(' ')
         # last_time_crawl = last_time_crawl[0:end]
         if datetime.datetime.strptime(item['showtime'], '%Y-%m-%d') >= datetime.datetime.strptime(last_time_crawl,'%Y-%m-%d'):
-            list = [item['category1'], item['category2'], item['showtime'], item['purchaseIndex1688'], item['supplyIndex'],item['crawl_Time']]
+            list = [item['category1']+'\t'+item['category2']+'\t'+item['showtime']+'\t'+item['purchaseIndex1688']+'\t'+item['supplyIndex'],item['crawl_Time']]
             self.writer.writerow(list)
         return item
 
@@ -120,7 +127,7 @@ class secondIndexSupplyPipelines(object):
         self.writer.writerow(['目录1', '目录2', '展示时间', '1688采购指数', '1688供应指数', '爬取时间'])
 
     def process_item(self, item, spider):
-        list = [item['category1'], item['category2'], item['showtime'], item['purchaseIndex1688'], item['supplyIndex'],
+        list = [item['category1']+'\t'+item['category2']+'\t'+item['showtime']+'\t'+item['purchaseIndex1688']+'\t'+item['supplyIndex'],
                 item['crawl_Time']]
         self.writer.writerow(list)
         return item
@@ -139,7 +146,7 @@ class secondIndexupdateSupplyPipelines(object):
         # end = last_time_crawl.find(' ')
         # last_time_crawl = last_time_crawl[0:end]
         if datetime.datetime.strptime(item['showtime'], '%Y-%m-%d') >= datetime.datetime.strptime(last_time_crawl,'%Y-%m-%d'):
-            list = [item['category1'], item['category2'], item['showtime'], item['purchaseIndex1688'], item['supplyIndex'],
+            list = [item['category1']+'\t'+item['category2']+'\t'+item['showtime']+'\t'+item['purchaseIndex1688']+'\t'+item['supplyIndex'],
                     item['crawl_Time']]
             self.writer.writerow(list)
         return item
@@ -154,8 +161,8 @@ class IndustryMarketDownPipelines(object):
         self.writer.writerow(['目录1', '目录2', '行业类型', '行业名称', '1688采购指数', '1688供应指数', '淘宝需求预测', '爬取时间'])
 
     def process_item(self, item, spider):
-        list = [item['category1'], item['category2'], item['industry_Type'], item['industry_Name'],
-                item['purchaseIndex1688'], item['supplyIndex'], item['demand_Forecast'], item['crawl_Time']]
+        list = [item['category1']+'\t'+item['category2']+'\t'+item['industry_Type']+'\t'+item['industry_Name'],
+                item['purchaseIndex1688']+'\t'+item['supplyIndex']+'\t'+item['demand_Forecast']+'\t'+item['crawl_Time']]
         self.writer.writerow(list)
         return item
 
@@ -169,8 +176,8 @@ class IndustryMarketDownSupplyPipelines(object):
         self.writer.writerow(['目录1', '目录2', '行业类型', '行业名称', '1688采购指数', '1688供应指数', '淘宝需求预测', '爬取时间'])
 
     def process_item(self, item, spider):
-        list = [item['category1'], item['category2'], item['industry_Type'], item['industry_Name'],
-                item['purchaseIndex1688'], item['supplyIndex'], item['demand_Forecast'], item['crawl_Time']]
+        list = [item['category1']+'\t'+item['category2']+'\t'+item['industry_Type']+'\t'+item['industry_Name'],
+                item['purchaseIndex1688']+'\t'+item['supplyIndex']+'\t'+item['demand_Forecast']+'\t'+item['crawl_Time']]
         self.writer.writerow(list)
         return item
 
@@ -184,8 +191,8 @@ class IndustryMarketDown1SupplyPipelines(object):
         self.writer = csv.writer(self.f)
 
     def process_item(self, item, spider):
-        list = [item['category1'], item['category2'], item['industry_Type'], item['industry_Name'],
-                item['purchaseIndex1688'], item['supplyIndex'], item['demand_Forecast'],item['crawl_Time']]
+        list = [item['category1']+'\t'+item['category2']+'\t'+item['industry_Type']+'\t'+item['industry_Name'],
+                item['purchaseIndex1688']+'\t'+item['supplyIndex']+'\t'+item['demand_Forecast'],item['crawl_Time']]
         self.writer.writerow(list)
         return item
 
@@ -200,7 +207,7 @@ class AttributesegmentationPipelines:
             ['目录1', '目录2',  '行业类型','属性类型','属性名称', '1688采购指数','1688供应指数', '爬取时间'])
 
     def process_item(self, item, spider):
-        list = [item['category1'], item['category2'], item['industry_Type'],item['attribute_Type'],item['attribute_Name'],item['purchaseIndex'],item['supplyIndex'] ,item['crawl_Time']]
+        list = [item['category1']+'\t'+item['category2']+'\t'+item['industry_Type'],item['attribute_Type'],item['attribute_Name'],item['purchaseIndex'],item['supplyIndex'] ,item['crawl_Time']]
         self.writer.writerow(list)
         return item
 
@@ -215,7 +222,7 @@ class AttributesegmentationMiddlePipelines:
             ['目录1', '目录2', '行业类型', '属性类型', '属性名称', '1688采购指数', '1688供应指数', '爬取时间'])
 
     def process_item(self, item, spider):
-        list = [item['category1'], item['category2'], item['industry_Type'],item['attribute_Name'],item['purchaseIndex'],item['supplyIndex'] ,item['crawl_Time']]
+        list = [item['category1']+'\t'+item['category2']+'\t'+item['industry_Type'],item['attribute_Name'],item['purchaseIndex'],item['supplyIndex'] ,item['crawl_Time']]
         self.writer.writerow(list)
         return item
 
@@ -230,7 +237,7 @@ class AttributeSegmentationPricePipelines:
             ['目录1', '目录2', '行业类型',  '属性名称1','价格分布1', '百分比',  '属性名称2','价格分布2', '百分比', '爬取时间'])
 
     def process_item(self, item, spider):
-        list = [item['category1'], item['category2'], item['attribute_Type'],item['attribute_Name'] ,item['index_Type'], item['percentage'],item['attribute_Name1'] ,item['index_Type1'], item['percentage1'],item['crawl_Time']]
+        list = [item['category1']+'\t'+item['category2']+'\t'+item['attribute_Type'],item['attribute_Name'] ,item['index_Type']+'\t'+item['percentage'],item['attribute_Name1'] ,item['index_Type1']+'\t'+item['percentage1'],item['crawl_Time']]
         self.writer.writerow(list)
         # return item
 
@@ -245,7 +252,7 @@ class BuyerSketchPricePipelines:
             ['目录1', '目录2', '行业类型',  '新老采购商', '百分比1', '非淘宝/淘宝店主', '百分比2', '爬取时间'])
 
     def process_item(self, item, spider):
-        list = [item['category1'], item['category2'], item['attribute_Type'],item['attribute_Name'] , item['percentage'],item['attribute_Name1'] , item['percentage1'],item['crawl_Time']]
+        list = [item['category1']+'\t'+item['category2']+'\t'+item['attribute_Type'],item['attribute_Name'] +'\t'+item['percentage'],item['attribute_Name1'] +'\t'+item['percentage1'],item['crawl_Time']]
         self.writer.writerow(list)
         return item
 
@@ -260,7 +267,7 @@ class aliIndex_7_1_Pipelines:
             ['目录1', '目录2', '榜名',  '关键词', '搜索趋势', '搜索指数', 'url', '爬取时间'])
 
     def process_item(self, item, spider):
-        list = [item['category1'], item['category2'], item['attribute_Type'],item['attribute_Name'] ,item['search_Trend'] , item['index'],item['url'],item['crawl_Time']]
+        list = [item['category1']+'\t'+item['category2']+'\t'+item['attribute_Type'],item['attribute_Name'] ,item['search_Trend'] +'\t'+item['index'],item['url'],item['crawl_Time']]
         self.writer.writerow(list)
         return item
 
@@ -276,7 +283,7 @@ class aliIndex_7_2_Pipelines:
             ['目录1', '目录2', '榜名',  '关键词', '搜索指数', '全站商品数', 'url', '爬取时间'])
 
     def process_item(self, item, spider):
-        list = [item['category1'], item['category2'], item['attribute_Type'],item['attribute_Name'] ,item['index'] , item['total'],item['url'],item['crawl_Time']]
+        list = [item['category1']+'\t'+item['category2']+'\t'+item['attribute_Type'],item['attribute_Name'] ,item['index'] +'\t'+item['total'],item['url'],item['crawl_Time']]
         self.writer.writerow(list)
         return item
 
@@ -290,7 +297,7 @@ class aliIndex_7_3_Pipelines:
         self.writer.writerow(
             ['目录1', '目录2', '榜名',  '关键词', '搜索转化率', '全站商品数', 'url', '爬取时间'])
     def process_item(self, item, spider):
-        list = [item['category1'], item['category2'], item['attribute_Type'],item['attribute_Name'] ,item['rate'] , item['total'],item['url'],item['crawl_Time']]
+        list = [item['category1']+'\t'+item['category2']+'\t'+item['attribute_Type'],item['attribute_Name'] ,item['rate'] +'\t'+item['total'],item['url'],item['crawl_Time']]
         self.writer.writerow(list)
         return item
 
@@ -306,7 +313,7 @@ class aliIndex_7_4_Pipelines:
             ['目录1', '目录2', '榜名', '关键词', '搜索指数', '全站商品数', 'url', '爬取时间'])
 
     def process_item(self, item, spider):
-        list = [item['category1'], item['category2'], item['attribute_Type'],item['attribute_Name'] ,item['index'] , item['total'],item['url'],item['crawl_Time']]
+        list = [item['category1']+'\t'+item['category2']+'\t'+item['attribute_Type'],item['attribute_Name'] ,item['index'] +'\t'+item['total'],item['url'],item['crawl_Time']]
         self.writer.writerow(list)
         return item
 
@@ -321,7 +328,7 @@ class aliIndex_30_1_Pipelines:
             ['目录1', '目录2', '榜名', '关键词', '搜索趋势', '搜索指数', 'url', '爬取时间'])
 
     def process_item(self, item, spider):
-        list = [item['category1'], item['category2'], item['attribute_Type'],item['attribute_Name'] ,item['search_Trend'] , item['index'],item['url'],item['crawl_Time']]
+        list = [item['category1']+'\t'+item['category2']+'\t'+item['attribute_Type'],item['attribute_Name'] ,item['search_Trend'] +'\t'+item['index'],item['url'],item['crawl_Time']]
         self.writer.writerow(list)
         return item
 
@@ -336,7 +343,7 @@ class aliIndex_30_2_Pipelines:
             ['目录1', '目录2', '榜名',  '关键词', '搜索指数', '全站商品数', 'url', '爬取时间'])
 
     def process_item(self, item, spider):
-        list = [item['category1'], item['category2'], item['attribute_Type'],item['attribute_Name'] ,item['index'] , item['total'],item['url'],item['crawl_Time']]
+        list = [item['category1']+'\t'+item['category2']+'\t'+item['attribute_Type'],item['attribute_Name'] ,item['index'] +'\t'+item['total'],item['url'],item['crawl_Time']]
         self.writer.writerow(list)
         return item
 
@@ -352,7 +359,7 @@ class aliIndex_30_3_Pipelines:
             ['目录1', '目录2', '榜名', '关键词', '搜索转化率', '全站商品数', 'url', '爬取时间'])
 
     def process_item(self, item, spider):
-        list = [item['category1'], item['category2'], item['attribute_Type'],item['attribute_Name'] ,item['rate'] , item['total'],item['url'],item['crawl_Time']]
+        list = [item['category1']+'\t'+item['category2']+'\t'+item['attribute_Type'],item['attribute_Name'] ,item['rate'] +'\t'+item['total'],item['url'],item['crawl_Time']]
         self.writer.writerow(list)
         return item
 
@@ -369,7 +376,7 @@ class aliIndex_30_4_Pipelines:
             ['目录1', '目录2', '榜名', '关键词', '搜索指数', '全站商品数', 'url', '爬取时间'])
 
     def process_item(self, item, spider):
-        list = [item['category1'], item['category2'], item['attribute_Type'],item['attribute_Name'] ,item['index'] , item['total'],item['url'],item['crawl_Time']]
+        list = [item['category1']+'\t'+item['category2']+'\t'+item['attribute_Type'],item['attribute_Name'] ,item['index'] +'\t'+item['total'],item['url'],item['crawl_Time']]
         self.writer.writerow(list)
         return item
 
@@ -384,7 +391,7 @@ class aliIndex_7_hot_Pipelines:
             ['name', 'type', 'title', 'price', 'trade'])
 
     def process_item(self, item, spider):
-        list = [item['name'], item['type'], item['title'], item['price'], item['trade']]
+        list = [item['name']+'\t'+item['type']+'\t'+item['title']+'\t'+item['price']+'\t'+item['trade']]
         self.writer.writerow(list)
         return item
 
@@ -399,7 +406,7 @@ class aliIndex_30_hot_Pipelines:
             ['name', 'type', 'title', 'price', 'trade'])
 
     def process_item(self, item, spider):
-        list = [item['name'], item['type'], item['title'], item['price'], item['trade']]
+        list = [item['name']+'\t'+item['type']+'\t'+item['title']+'\t'+item['price']+'\t'+item['trade']]
         self.writer.writerow(list)
         return item
 
@@ -408,13 +415,13 @@ class aliIndex_30_hot_Pipelines:
 
 class aLiSupplyFileMain_pipelines:
     def __init__(self):
-        self.f = open('aLiSupplyFileMain_pipelines.csv', "w")
+        self.f = open(aLiSupplyFileMain, "w")
         self.writer = csv.writer(self.f)
         self.writer.writerow(
-            ['公司名', '编号', '地区', '主要产品', '主要市场', '交易量', '交易额'])
+            ['公司名', '地区', '主要产品', '主要市场', '交易量', '交易额', '爬取时间'])
 
     def process_item(self, item,spider):
-        list = [item['companyName'], item['number'], item['area'], item['mainProducts'], item['mainMarket'], item['tradingVolume'], item['transactionAmount']]
+        list = [item['companyName']+'\t'+item['area']+'\t'+item['mainProducts']+'\t'+item['mainMarket']+'\t'+item['tradingVolume']+'\t'+item['transactionAmount']+'\t'+item['crawl_Time']]
         self.writer.writerow(list)
         return item
 
@@ -423,13 +430,13 @@ class aLiSupplyFileMain_pipelines:
 
 class aLiSupplyFileMarket_pipelines:
     def __init__(self):
-        self.f = open('aLiSupplyFileMarket_pipelines.csv', "w")
+        self.f = open(aLiSupplyFileMarket, "w")
         self.writer = csv.writer(self.f)
         self.writer.writerow(
-            ['公司名', '编号', '市场地区', '市场份额'])
+            ['公司名', '市场地区', '市场份额', '爬取时间'])
 
     def process_item(self, item,spider):
-        list = [item['companyName'], item['number'], item['area'], item['mainMarket']]
+        list = [item['companyName']+'\t'+item['area']+'\t'+item['mainMarket']+'\t'+item['crawl_Time']]
         self.writer.writerow(list)
         return item
 
@@ -438,14 +445,93 @@ class aLiSupplyFileMarket_pipelines:
 
 class aLiSupplyFileProduct_pipelines:
     def __init__(self):
-        self.f = open('aLiSupplyFileProduct_pipelines.csv', "w")
+        self.f = open(aLiSupplyFileProduct, "w")
         self.writer = csv.writer(self.f)
         self.writer.writerow(
-            ['公司名', '编号', '产品'])
+            ['公司名','产品', '爬取时间'])
 
     def process_item(self, item,spider):
-        list = [item['companyName'], item['number'], item['product']]
+        list = [item['companyName']+'\t'+item['product']+'\t'+item['crawl_Time']]
         self.writer.writerow(list)
+        return item
+
+    def close_spider(self,spider):
+        self.f.close()
+
+class Cmindexchild_pipelines:
+    def __init__(self):
+        self.f = open(Cmindexchild, "w")
+        self.writer = csv.writer(self.f)
+        self.writer.writerow(
+            ['序号', '日期', '本期指数', '爬取时间'])
+
+    def process_item(self, item,spider):
+        list = [item['number']+'\t'+item['date']+'\t'+item['index']+'\t'+item['crawl_Time']]
+        self.writer.writerow(list)
+        return item
+
+    def close_spider(self,spider):
+        self.f.close()
+
+class Cmindexpricefabric_pipelines:
+    def __init__(self):
+        self.f = open(Cmindexpricefabric, "w")
+        self.writer = csv.writer(self.f)
+        self.writer.writerow(
+            ['期次', '指数', '涨跌幅', '爬取时间'])
+
+    def process_item(self, item,spider):
+        if datetime.datetime.strptime(item['date'], '%Y-%m-%d') >= datetime.datetime.strptime('2018-01-01', '%Y-%m-%d'):
+            list = [item['date']+'\t'+item['index']+'\t'+item['index_hb']+'\t'+item['crawl_Time']]
+            self.writer.writerow(list)
+        return item
+
+    def close_spider(self,spider):
+        self.f.close()
+
+class cmindexPriceGrey_pipelines:
+    def __init__(self):
+        self.f = open(cmindexPriceGrey, "w")
+        self.writer = csv.writer(self.f)
+        self.writer.writerow(
+            ['期次', '指数', '涨跌幅','爬取时间'])
+
+    def process_item(self, item,spider):
+        if datetime.datetime.strptime(item['date'], '%Y-%m-%d') >= datetime.datetime.strptime('2018-01-01', '%Y-%m-%d'):
+            list = [item['date']+'\t'+item['index']+'\t'+item['index_hb']+'\t'+item['crawl_Time']]
+            self.writer.writerow(list)
+        return item
+
+    def close_spider(self,spider):
+        self.f.close()
+
+class Cmindexsalefabric_pipelines:
+    def __init__(self):
+        self.f = open(Cmindexsalefabric, "w")
+        self.writer = csv.writer(self.f)
+        self.writer.writerow(
+            ['期次', '总景气指数', '涨跌幅', '流通景气指数', '生产景气指数', '爬取时间'])
+
+    def process_item(self, item,spider):
+        if datetime.datetime.strptime(item['round'], '%Y%m') >= datetime.datetime.strptime('201801', '%Y%m'):
+            list = [item['round']+'\t'+item['index']+'\t'+item['index_hb']+'\t'+item['bindex1']+'\t'+item['bindex2']+'\t'+item['crawl_Time']]
+            self.writer.writerow(list)
+        return item
+
+    def close_spider(self,spider):
+        self.f.close()
+
+class CmindexsaleGrey_pipelines:
+    def __init__(self):
+        self.f = open(CmindexsaleGrey, "w")
+        self.writer = csv.writer(self.f)
+        self.writer.writerow(
+            ['期次', '总景气指数', '涨跌幅', '流通景气指数', '生产景气指数', '爬取时间'])
+
+    def process_item(self, item,spider):
+        if datetime.datetime.strptime(item['round'], '%Y%m') >= datetime.datetime.strptime('201801', '%Y%m'):
+            list = [item['round']+'\t'+item['index']+'\t'+item['index_hb']+'\t'+item['bindex1']+'\t'+item['bindex2']+'\t'+item['crawl_Time']]
+            self.writer.writerow(list)
         return item
 
     def close_spider(self,spider):

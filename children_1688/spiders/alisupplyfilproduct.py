@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import time
+
 import scrapy
 
 from children_1688.items import aLiSupplyFileProduct_Item
@@ -27,6 +29,7 @@ class AlisupplyfilproductSpider(scrapy.Spider):
         # 获取数据
         for div in divs:
             companyName = div.xpath('div[1]/div[2]/div[1]/div[2]/h2/a/text()').extract()
+            crawl_Time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
             if len(companyName) == 0:
                 companyName = div.xpath('div[1]/div[2]/div[1]/div[1]/h2/a/text()').extract()
             mainProduct = div.xpath('.//div[@class="value ellipsis ph"]/text()').extract()
@@ -56,8 +59,8 @@ class AlisupplyfilproductSpider(scrapy.Spider):
         for i in range(0, len(companyNames)):
             item = aLiSupplyFileProduct_Item()
             item['companyName'] = companyNames[i]
-            item['number'] = numbers
             item['product'] = mainProducts[i]
+            item['crawl_Time'] = crawl_Time
             items.append(item)
         surl = response.url
         count = surl.rfind('=')

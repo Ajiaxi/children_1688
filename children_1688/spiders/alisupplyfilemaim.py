@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import time
+
 import scrapy
 
 from children_1688.items import aLiSupplyFileMain_Item
@@ -67,15 +69,16 @@ class AlisupplyfilemainSpider(scrapy.Spider):
             tradingVolumes.append(tradingVolume)
             transactionAmounts.append(transactionAmount)
         # 赋值数据
+        crawl_Time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
         for i in range(0,len(companyNames)):
             item = aLiSupplyFileMain_Item()
             item['companyName'] = companyNames[i]
-            item['number'] = numbers
             item['area'] = areas[i]
             item['mainProducts'] = mainProducts[i]
             item['mainMarket'] = mainMarkets[i]
             item['tradingVolume'] = tradingVolumes[i]
             item['transactionAmount'] = transactionAmounts[i]
+            item['crawl_Time'] = crawl_Time
             items.append(item)
         print(response.url)
         surl = response.url
