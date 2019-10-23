@@ -71,5 +71,5 @@ class AlisupplyfilproductSpider(scrapy.Spider):
             items.append(r)
         elif len(self.next) == 0:
             print(
-                '更新Spider完成 , 更新数据名称 : https://www.alibaba.com/trade/search?spm=a2700.supplier-normal.16.4.9e19459b8XUEfx&viewType=L&n=50&indexArea=company_en&keyword=children_clothes&page=1&f1=y')
+                '更新Spider完成 , 更新数据名称 : alisupplyfilproduct')
         return items

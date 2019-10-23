@@ -13,11 +13,8 @@ from children_1688.items import aLiSupplyFileMain_Item
 class AlisupplyfilemainSpider(scrapy.Spider):
     name = 'alisupplyfilemain'
     allowed_domains = ['alibaba.com']
-    # start_urls = ['https://www.alibaba.com/trade/search?spm=a2700.supplier-normal.16.4.9e19459b8XUEfx&viewType=L&n=50&indexArea=company_en&keyword=children_clothes&page=1&f1=y']
     start_urls = ['https://www.alibaba.com/trade/search?spm=a2700.supplier-normal.16.4.1f86459bWExbQ1&n=38&f1=y&indexArea=company_en&viewType=L&keyword=children_clothes&page=1']
-    # head = 'https://www.alibaba.com/trade/search?spm=a2700.supplier-normal.16.4.9e19459b8XUEfx&viewType=L&n=50&indexArea=company_en&keyword=children_clothes&page='
     head = 'https://www.alibaba.com/trade/search?spm=a2700.supplier-normal.16.4.1f86459bWExbQ1&n=38&f1=y&indexArea=company_en&viewType=L&keyword=children_clothes&page='
-    # end = '&f1=y'
     next = []
     for i in range(1,58):
         next.append(str(i))
@@ -28,7 +25,6 @@ class AlisupplyfilemainSpider(scrapy.Spider):
     def parse(self, response):
         divs = response.xpath('.//div[@class="item-main"]')
         companyNames = []
-        numbers = 1
         areas = []
         mainProducts = []
         mainMarkets = []
@@ -89,5 +85,5 @@ class AlisupplyfilemainSpider(scrapy.Spider):
             r = scrapy.Request(url=self.head+self.next[0],callback=self.parse)
             items.append(r)
         elif len(self.next) == 0:
-            print('更新Spider完成 , 更新数据名称 : https://www.alibaba.com/trade/search?spm=a2700.supplier-normal.16.4.9e19459b8XUEfx&viewType=L&n=50&indexArea=company_en&keyword=children_clothes&page=1&f1=y')
+            print('更新Spider完成 , 更新数据名称 : alisupplyfilemain')
         return items

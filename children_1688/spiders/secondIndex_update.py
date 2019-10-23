@@ -38,7 +38,7 @@ class SecondindexupdateSpider(scrapy.Spider):
         purchaseIndex1688s = datajson["purchaseIndex1688"]["index"]["history"]
         supplyIndexs = datajson['supplyIndex']["index"]["history"]
         crawl_Time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
-        print('正在更新Spider , 更新名称 :' + category2 + '网页,Please wait....')
+        print('正在更新Spider secondIndex_update , 更新名称 :' + category2 + '网页,Please wait....')
         # 依次遍历，将数据添加进item中
         items = []
         for i in range(0, len(purchaseIndex1688s)):
@@ -57,13 +57,13 @@ class SecondindexupdateSpider(scrapy.Spider):
         count = surl.find(',')
         resurl = surl[count + 1:]
         if resurl == '127424004':
-            print('正在更新Spider , 更新名称 : 1688我是供应商网站行业大盘二级目录全年指数数据')
+            print('正在更新Spider , 更新名称 : secondIndex_update 1688我是供应商网站行业大盘二级目录全年指数数据')
         self.next.remove(resurl)
         if self.next:
             r = scrapy.Request(url=self.url + self.next[0], callback=self.parse)
             items.append(r)
         elif len(self.next) == 0:
-            print('更新Spider完成 , 更新数据名称 : 1688我是供应商网站行业大盘二级目录全年指数数据')
+            print('更新Spider完成 , 更新数据名称 : secondIndex_update 1688我是供应商网站行业大盘二级目录全年指数数据')
         return items
 
     def datalist(self):

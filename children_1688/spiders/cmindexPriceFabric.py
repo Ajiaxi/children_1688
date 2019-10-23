@@ -50,5 +50,5 @@ class CmindexpricefabricSpider(scrapy.Spider):
                 r = scrapy.Request(url=self.head + self.next[0] + self.end,callback=self.parse)
                 items.append(r)
             except:
-                print('CmindexpricefabricSpider爬取完成')
+                print('CmindexpricefabricSpider 爬取完成')
         return items

@@ -40,11 +40,11 @@ class aliindex_30_hotSpider(scrapy.Spider):
         end = surl.find('&')
         resurl = surl[start + 1: end]
         if resurl == '311':
-            print('正在更新Spider , 更新数据名称 : 1688网站阿里排行产品排行榜')
+            print('正在更新Spider , 更新数据名称 : aliindex_30_hot 1688网站阿里排行产品排行榜')
         self.next.remove(resurl)
         if self.next:
             r = scrapy.Request(url=self.head + self.next[0] + self.end, callback=self.parse)
             self.names.remove(self.names[0])
             yield r
         elif len(self.next):
-            print('更新Spider完成 , 更新数据名称 : 1688网站阿里排行产品排行榜')
+            print('更新Spider完成 , 更新数据名称 : aliindex_30_hot 1688网站阿里排行产品排行榜')

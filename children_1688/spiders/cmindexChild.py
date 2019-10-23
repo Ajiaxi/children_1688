@@ -54,5 +54,6 @@ class CmindexchildSpider(scrapy.Spider):
             item['index'] = dealIndex[i]
             item['crawl_Time'] = crawl_Time
             yield item
+        print('更新Spider完成 , 更新数据名称 : cmindexchild')
 
 

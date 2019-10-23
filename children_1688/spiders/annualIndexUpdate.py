@@ -44,14 +44,14 @@ class annualIndexUpdateSpider(scrapy.Spider):
             item = Children1688Item()
             item['category1'] = category1
             item['category2'] = category2
-            print('正在爬取日期：'+str(list_Count[i]))
+            print('everyIndex 正在爬取日期：'+str(list_Count[i]))
             item['showtime'] = list_Count[i]
             item['purchaseIndex1688'] = purchaseIndex1688s[i]
             item['purchaseIndexTb'] = purchaseIndexTbs[i]
             item['supplyIndex'] = supplyIndexs[i]
             item['crawl_Time'] = crawl_Time
             yield item
-        print('更新Spider完成 , 更新数据名称 : 1688我是采购商商网站行业大盘童装所有全年三大指数')
+        print('更新Spider完成 , 更新数据名称 : everyIndex 1688我是采购商商网站行业大盘童装所有全年三大指数')
 
     def datalist(self):
         # 获取2018年全年的日期

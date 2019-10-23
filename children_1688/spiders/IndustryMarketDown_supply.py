@@ -92,7 +92,7 @@ class IndustrymarketdownSpider_supply(scrapy.Spider):
         count = surl.find(',')
         resurl = surl[count + 1:]
         if resurl == '127424004':
-            print('正在更新Spider , 更新名称 : 1688我是供应商网站行业大盘下部数据')
+            print('正在更新Spider , 更新名称 : IndustryMarketDown_supply 1688我是供应商网站行业大盘下部数据')
         self.next2.append(resurl)
         self.next.remove(resurl)
         if self.next:
@@ -124,7 +124,7 @@ class IndustrymarketdownSpider_supply(scrapy.Spider):
             r = scrapy.Request(url=self.url + self.next2[0], dont_filter=True, callback=self.parse2)
             items.append(r)
         elif len(self.next2) == 0:
-            print('更新Spider完成 , 更新数据名称 : 1688我是供应商网站行业大盘下部数据')
+            print('更新Spider完成 , 更新数据名称 : IndustryMarketDown_supply 1688我是供应商网站行业大盘下部数据')
         return items
 
 
