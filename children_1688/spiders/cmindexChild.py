@@ -49,9 +49,9 @@ class CmindexchildSpider(scrapy.Spider):
                 elif dMonth == '03': dealdate.append('2018Q1')
         for i in range(0,len(dealdate)):
             item = Cmindexchild_Item()
-            item['number'] = i+1
+            item['number'] = str(i+1)
             item['date'] = dealdate[i]
-            item['index'] = dealIndex[i]
+            item['index'] = str(dealIndex[i])
             item['crawl_Time'] = crawl_Time
             yield item
         print('更新Spider完成 , 更新数据名称 : cmindexchild')

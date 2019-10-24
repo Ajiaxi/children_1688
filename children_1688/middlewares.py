@@ -4,6 +4,7 @@
 #
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+import random
 
 from scrapy import signals
 
@@ -101,3 +102,22 @@ class Children1688DownloaderMiddleware(object):
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
+
+
+class MyproxiesSpiderMiddleware(object):
+    IPPOOL = [
+        {"ipaddr": "202.109.157.47"},
+        {"ipaddr": "124.205.143.213	"},
+        {"ipaddr": "218.75.69.50"},
+        {"ipaddr": "183.166.162.242"},
+        {"ipaddr": "58.22.177.6"},
+        {"ipaddr": "219.159.38.209"},
+        {"ipaddr": "183.166.162.242"}
+    ]
+
+    def __init__(self, ip=''):
+        self.ip = ip
+    def process_request(self, request, spider):
+        thisip = random.choice(self.IPPOOL)
+        print("this is ip:" + thisip["ipaddr"])
+        request.meta["proxy"] = "http://" + thisip["ipaddr"]

@@ -62,13 +62,14 @@ class PriceSpider(scrapy.Spider):
 
     # 处理第一个页面的parse
     def parse(self, response):
-        print('正在更新Spider , 更新名称 : AttributeSegmentationPrice 1688网站属性细分价格带分布')
         data = json.loads(response.text)
         items = []
         items , category = self.datadeal(data,items)
         surl = str(response.url)
         count = surl.find(',')
         resurl = surl[count + 1:]
+        if resurl == '127424004':
+            print('正在更新Spider , 更新名称 : AttributeSegmentationPrice 1688网站属性细分价格带分布')
         self.next.remove(resurl)
         self.category2.remove(category)
         if self.next:

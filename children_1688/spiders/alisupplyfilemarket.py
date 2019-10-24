@@ -63,10 +63,9 @@ class AlisupplyfilemarketSpider(scrapy.Spider):
             item = aLiSupplyFileMarket_Item()
             item['companyName'] = companyNames[i]
             item['area'] = areas[i]
-            item['mainMarket'] = mainMarkets[i]
+            item['mainMarket'] = str(mainMarkets[i])
             item['crawl_Time'] = crawl_Time
             items.append(item)
-        print(response.url)
         surl = response.url
         count = surl.rfind('=')
         reurl = surl[count + 1:]

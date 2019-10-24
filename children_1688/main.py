@@ -3,8 +3,17 @@
 import sys
 import os
 
-from children_1688.spiders.aliindex_30_4 import aliindex_30_4_spider
-from children_1688.spiders.annualIndex import Children01Spider
+
+curPath = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(curPath)[0]
+sys.path.append(rootPath)
+
+from scrapy.crawler import CrawlerRunner
+from scrapy.utils.log import configure_logging
+from twisted.internet import reactor
+
+from children_1688.spiders.alisupplyfilemarket import AlisupplyfilemarketSpider
+from children_1688.spiders.alisupplyfilproduct import AlisupplyfilproductSpider
 from children_1688.spiders.AttributeSegmentation import AttributeSegmentationSpider
 from children_1688.spiders.annualIndexUpdate import annualIndexUpdateSpider
 from children_1688.spiders.annualIndexUpdateSupply import annualIndexUpdateSupplySpider
@@ -20,21 +29,13 @@ from children_1688.spiders.secondIndex_supply_update import SecondindexupdateSpi
 from children_1688.spiders.secondIndex_update import SecondindexupdateSpider
 from children_1688.spiders.AttributeSegmentationPrice import PriceSpider
 from children_1688.spiders.alisupplyfilemaim import AlisupplyfilemainSpider
-from children_1688.spiders.alisupplyfilemarket import AlisupplyfilemarketSpider
-from children_1688.spiders.alisupplyfilproduct import AlisupplyfilproductSpider
 from children_1688.spiders.cmindexChild import CmindexchildSpider
 from children_1688.spiders.cmindexPriceFabric import CmindexpricefabricSpider
 from children_1688.spiders.cmindexPriceGrey import CmindexpricegreySpider
 from children_1688.spiders.cmindexSaleFabric import CmindexsalefabricSpider
 from children_1688.spiders.cmindexSaleGrey import CmindexsalegreySpider
 
-curPath = os.path.abspath(os.path.dirname(__file__))
-rootPath = os.path.split(curPath)[0]
-sys.path.append(rootPath)
 
-from scrapy.crawler import CrawlerRunner
-from scrapy.utils.log import configure_logging
-from twisted.internet import reactor
 
 
 
@@ -84,7 +85,7 @@ runner.crawl(PriceSpider)
 
 '''
     采购商素描
-# '''
+'''
 runner.crawl(BuyersketchSpider)
 
 

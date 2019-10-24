@@ -33,7 +33,7 @@ class BuyersketchSpider(scrapy.Spider):
             item = BuyerSketchItem()
             item['category1'] = category1
             item['category2'] = category2
-            item['attribute_Type'] = attribute_Type
+            item['attribute_Type'] = attribute_Type[0]
             item['attribute_Name'] = attribute_Name[i]
             item['percentage'] = percentage[i]
             item['attribute_Name1'] = attribute_Name1[i]

@@ -20,6 +20,7 @@ class AlisupplyfilemainSpider(scrapy.Spider):
         next.append(str(i))
     custom_settings = {
         'ITEM_PIPELINES': {'children_1688.pipelines.aLiSupplyFileMain_pipelines': 300, },
+       ' DOWNLOADER_MIDDLEWARES' :{'children_1688.middlewares.Children1688DownloaderMiddleware': 543},
     }
 
     def parse(self, response):
@@ -53,11 +54,11 @@ class AlisupplyfilemainSpider(scrapy.Spider):
                 transactionAmount = '0'
             try:
                 companyName = companyName[0]
+                companyName = str(companyName).replace('\t','_')
             except:
                 companyName = ''
             mainProduct = str(mainProduct)[2:-2]
             mainMarket = str(mainMarket)[2:-2]
-
             companyNames.append(companyName)
             areas.append(companyName.split(' ')[0])
             mainProducts.append(mainProduct)
@@ -76,13 +77,12 @@ class AlisupplyfilemainSpider(scrapy.Spider):
             item['transactionAmount'] = transactionAmounts[i]
             item['crawl_Time'] = crawl_Time
             items.append(item)
-        print(response.url)
         surl = response.url
         count = surl.rfind('=')
         reurl = surl[count+1:]
         self.next.remove(reurl)
         if self.next:
-            r = scrapy.Request(url=self.head+self.next[0],callback=self.parse)
+            r = scrapy.Request(url=self.head+self.next[0],dont_filter=True,callback=self.parse)
             items.append(r)
         elif len(self.next) == 0:
             print('更新Spider完成 , 更新数据名称 : alisupplyfilemain')

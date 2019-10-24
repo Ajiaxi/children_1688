@@ -27,7 +27,6 @@ class AttributesegmentationMiddleSpider(scrapy.Spider):
     }
 
     def parse(self,response):
-        print('正在更新Spider , 更新名称 : AttributeSegmentationMiddle 1688网站属性名称中部热门营销属性数据')
         category1 = response.xpath('//div[contains(@class,"cate-first-level")]//a/text()').extract_first()
         category2 = response.xpath('//div[contains(@class,"cate-second-level")]//a/text()').extract()
         data = response.xpath('//*[@id="bar-chart-val"]/@value').extract()
@@ -57,6 +56,8 @@ class AttributesegmentationMiddleSpider(scrapy.Spider):
         surl = str(response.url)
         count = surl.find(',')
         resurl = surl[count + 1:]
+        if resurl == '127424004':
+            print('正在更新Spider , 更新名称 : AttributeSegmentationMiddle 1688网站属性名称中部热门营销属性数据')
         self.next.remove(resurl)
         if self.next:
             r = scrapy.Request(url=self.url+self.next[0], callback=self.parse)

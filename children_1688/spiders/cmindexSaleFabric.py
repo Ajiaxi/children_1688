@@ -45,8 +45,6 @@ class CmindexsalefabricSpider(scrapy.Spider):
             item['bindex2'] = index_hb[i]
             item['crawl_Time'] = crawl_Time
             items.append(item)
-        # count = str(response.url).rfind('&')
-        # reurl = str(response.url)[count - 2:count]
         reurl = str(response.url)[-2:]
         if '=' in reurl:
             reurl = str(response.url)[-1:]
