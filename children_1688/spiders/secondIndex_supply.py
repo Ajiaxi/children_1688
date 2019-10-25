@@ -51,7 +51,7 @@ class SecondindexSpider_supply(scrapy.Spider):
             item = SecondIndexItem()
             item['category1'] = category1
             item['category2'] = category2
-            item['showtime'] = list_Count[i-1]
+            item['showtime'] = list_Count[i]
             item['purchaseIndex1688'] = purchaseIndex1688s[i]
             item['supplyIndex'] = supplyIndexs[i]
             item['crawl_Time'] = crawl_Time

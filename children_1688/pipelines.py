@@ -48,7 +48,6 @@ content = []
 for line in csv_file:
     content.append(line)
 last_time_crawl = content[-1][-1].split(' ')[0]
-yesterday = time.strftime('%Y-%m-%d',time.localtime(time.time()))
 
 
 
@@ -63,9 +62,6 @@ class Children1688Pipeline(object):
         # self.writer.writerow(['目录1', '目录2', '展示时间', '1688采购指数', '淘宝采购指数', '1688供应指数' ,'爬取时间'])
 
     def process_item(self, item, spider):
-        if yesterday == last_time_crawl:
-            print('今天还没过')
-            return
         if datetime.datetime.strptime(item['showtime'], '%Y-%m-%d') >= datetime.datetime.strptime(last_time_crawl, '%Y-%m-%d'):
             list = [item['category1']+'\t'+ item['category2']+'\t'+item['showtime']+'\t'+str(item['purchaseIndex1688'])+'\t'+str(item['purchaseIndexTb'])+'\t'+str(item['supplyIndex'])+'\t'+item['crawl_Time']]
             self.writer.writerow(list)
@@ -85,9 +81,6 @@ class Children1688SupplyPipeline(object):
         # self.writer.writerow(['目录1', '目录2', '展示时间', '1688采购指数', '淘宝采购指数', '1688供应指数' ,'爬取时间'])
 
     def process_item(self, item, spider):
-        if yesterday == last_time_crawl:
-            print('今天还没过')
-            return
         if datetime.datetime.strptime(item['showtime'], '%Y-%m-%d') >= datetime.datetime.strptime(last_time_crawl,'%Y-%m-%d'):
             list = [item['category1']+'\t'+item['category2']+'\t'+item['showtime']+'\t'+str(item['purchaseIndex1688'])+'\t'+str(item['purchaseIndexTb'])+'\t'+str(item['supplyIndex'])+'\t'+item['crawl_Time']]
             self.writer.writerow(list)
@@ -117,9 +110,6 @@ class secondIndexupdatePipelines(object):
         self.writer = csv.writer(self.f)
 
     def process_item(self, item, spider):
-        if yesterday == last_time_crawl:
-            print('今天还没过')
-            return
         if datetime.datetime.strptime(item['showtime'], '%Y-%m-%d') >= datetime.datetime.strptime(last_time_crawl,'%Y-%m-%d'):
             list = [item['category1']+'\t'+item['category2']+'\t'+item['showtime']+'\t'+str(item['purchaseIndex1688'])+'\t'+str(item['supplyIndex']),item['crawl_Time']]
             self.writer.writerow(list)
@@ -152,9 +142,6 @@ class secondIndexupdateSupplyPipelines(object):
         self.writer = csv.writer(self.f)
 
     def process_item(self, item, spider):
-        if yesterday == last_time_crawl:
-            print('今天还没过')
-            return
         if datetime.datetime.strptime(item['showtime'], '%Y-%m-%d') >= datetime.datetime.strptime(last_time_crawl,'%Y-%m-%d'):
             list = [item['category1']+'\t'+item['category2']+'\t'+item['showtime']+'\t'+str(item['purchaseIndex1688'])+'\t'+str(item['supplyIndex'])+'\t'+
                     item['crawl_Time']]

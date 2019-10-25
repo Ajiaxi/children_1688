@@ -33,10 +33,20 @@ class AttributeSegmentationSpider(scrapy.Spider):
     def datadeal(self,category1,category2,industry_Type,attribute_Type,attribute_Name,purchase_supply,items):
         crawl_Time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
         purchaseIndex = []
+        dealpurchaseIndex = []
         supplyIndex = []
+        dealsupplyIndex = []
         for i in range(0, len(purchase_supply), 2):
             purchaseIndex.append(purchase_supply[i])
             supplyIndex.append(purchase_supply[i + 1])
+        for p in purchase_supply:
+            if ',' in p :
+                r = str(p).replace(',','')
+                dealpurchaseIndex.append(r)
+        for s in supplyIndex:
+            if ',' in s:
+                r = str(s).replace(',','')
+                dealsupplyIndex.append(r)
         for i in range(0, len(attribute_Name)):
             item = AttributesegmentationItem()
             item['category1'] = category1
@@ -44,8 +54,8 @@ class AttributeSegmentationSpider(scrapy.Spider):
             item['industry_Type'] = industry_Type[0]
             item['attribute_Type'] = attribute_Type[0]
             item['attribute_Name'] = attribute_Name[i]
-            item['purchaseIndex'] = purchaseIndex[i]
-            item['supplyIndex'] = supplyIndex[i]
+            item['purchaseIndex'] = dealpurchaseIndex[i]
+            item['supplyIndex'] = dealsupplyIndex[i]
             item['crawl_Time'] = crawl_Time
             items.append(item)
         return items
