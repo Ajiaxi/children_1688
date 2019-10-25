@@ -43,10 +43,14 @@ class AttributeSegmentationSpider(scrapy.Spider):
             if ',' in p :
                 r = str(p).replace(',','')
                 dealpurchaseIndex.append(r)
+            else:
+                dealpurchaseIndex.append(p)
         for s in supplyIndex:
             if ',' in s:
                 r = str(s).replace(',','')
                 dealsupplyIndex.append(r)
+            else:
+                dealsupplyIndex.append(s)
         for i in range(0, len(attribute_Name)):
             item = AttributesegmentationItem()
             item['category1'] = category1
