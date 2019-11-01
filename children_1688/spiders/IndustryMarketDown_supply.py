@@ -41,7 +41,9 @@ class IndustrymarketdownSpider_supply(scrapy.Spider):
         category2 = str(category2)[2:-2]
         industry_Name1 = str(industry_Name1)[2:-2]
         purchaseIndex16881 = str(purchaseIndex16881)[2:-2]
+        purchaseIndex16881 = purchaseIndex16881.replace(',', '')
         supplyIndex1 = str(supplyIndex1)[2:-2]
+        supplyIndex1 = supplyIndex1.replace(',', '')
         demand_Forecast1 = str(demand_Forecast1)[2:-2]
         list_industry_Name.append(industry_Name1)
         list_purchaseIndex1688.append(purchaseIndex16881)
