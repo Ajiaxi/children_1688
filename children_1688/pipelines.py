@@ -93,11 +93,11 @@ class secondIndexPipelines(object):
 
     def __init__(self):
         self.f = open(secondIndex, "w")
-        self.writer = csv.writer(self.f)
+        self.writer = csv.writer(self.f, delimiter='\t')
         self.writer.writerow(['目录1', '目录2', '展示时间', '1688采购指数', '1688供应指数', '爬取时间'])
 
     def process_item(self, item, spider):
-        list = [item['category1']+'\t'+item['category2']+'\t'+item['showtime']+'\t'+str(item['purchaseIndex1688'])+'\t'+str(item['supplyIndex']),item['crawl_Time']]
+        list = [item['category1'],item['category2'],item['showtime'],str(item['purchaseIndex1688']),str(item['supplyIndex']),item['crawl_Time']]
         self.writer.writerow(list)
         return item
 
