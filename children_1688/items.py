@@ -174,4 +174,5 @@ class Cmindexsalegery_Item(scrapy.Item):
     bindex2 = scrapy.Field()
     crawl_Time = scrapy.Field()
 
-
+class aliindex_7_1_Item(scrapy.Item):
+    article = scrapy.Field()

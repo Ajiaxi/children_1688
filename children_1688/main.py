@@ -64,62 +64,61 @@ runner = CrawlerRunner()
     
     供应商行业大盘 童装所有全年三大指数　二级目录指数　行业大盘热门行业/潜力行业
 '''
-# runner.crawl(annualIndexUpdateSpider)
-# runner.crawl(SecondindexupdateSpider)
+runner.crawl(annualIndexUpdateSpider)
+runner.crawl(SecondindexupdateSpider)
 runner.crawl(SecondindexSpider)
-# runner.crawl(IndustrymarketdownSpider)
-# runner.crawl(annualIndexUpdateSupplySpider)
-# runner.crawl(SecondindexupdateSpider_supply)
-# runner.crawl(IndustrymarketdownSpider_supply)
-#
-#
-# '''
-#     属性细分 热门基础属性  热门营销属性  价格带分布
-# '''
-# runner.crawl(AttributeSegmentationSpider)
-# runner.crawl(AttributesegmentationMiddleSpider)
-# runner.crawl(PriceSpider)
-#
-#
-# '''
-#     采购商素描
-# '''
-# runner.crawl(BuyersketchSpider)
-#
-#
-# '''
-#     阿里排行 热搜榜和热销榜
-# '''
-#
-# runner.crawl(aliindex_7_2_spider)
-# runner.crawl(aliindex_30_2_spider)
-# runner.crawl(aliindex_7_hotSpider)
-# runner.crawl(aliindex_30_hotSpider)
-#
-# '''
-#     英文网站    alisupply文件夹
-# '''
-# runner.crawl(AlisupplyfilemainSpider)
-# runner.crawl(AlisupplyfilemarketSpider)
-# runner.crawl(AlisupplyfilproductSpider)
-#
-# '''
-#     指数　cmindex文件夹　child
-# '''
-# runner.crawl(CmindexchildSpider)
-#
-# '''
-#     指数　cmindex文件夹　price
-# '''
-# runner.crawl(CmindexpricefabricSpider)
-# runner.crawl(CmindexpricegreySpider)
-#
-# '''
-#     指数　cmindex文件夹　sale
-# '''
-# runner.crawl(CmindexsalefabricSpider)
-# runner.crawl(CmindexsalegreySpider)
+runner.crawl(IndustrymarketdownSpider)
+runner.crawl(annualIndexUpdateSupplySpider)
+runner.crawl(SecondindexupdateSpider_supply)
+runner.crawl(IndustrymarketdownSpider_supply)
 
+
+'''
+    属性细分 热门基础属性  热门营销属性  价格带分布
+'''
+runner.crawl(AttributeSegmentationSpider)
+runner.crawl(AttributesegmentationMiddleSpider)
+runner.crawl(PriceSpider)
+
+
+'''
+    采购商素描
+'''
+runner.crawl(BuyersketchSpider)
+
+
+'''
+    阿里排行 热搜榜和热销榜
+'''
+
+runner.crawl(aliindex_7_2_spider)
+runner.crawl(aliindex_30_2_spider)
+runner.crawl(aliindex_7_hotSpider)
+runner.crawl(aliindex_30_hotSpider)
+
+'''
+    英文网站    alisupply文件夹
+'''
+runner.crawl(AlisupplyfilemainSpider)
+runner.crawl(AlisupplyfilemarketSpider)
+runner.crawl(AlisupplyfilproductSpider)
+
+'''
+    指数　cmindex文件夹　child
+'''
+runner.crawl(CmindexchildSpider)
+
+'''
+    指数　cmindex文件夹　price
+'''
+runner.crawl(CmindexpricefabricSpider)
+runner.crawl(CmindexpricegreySpider)
+
+'''
+    指数　cmindex文件夹　sale
+'''
+runner.crawl(CmindexsalefabricSpider)
+runner.crawl(CmindexsalegreySpider)
 # 需要执行语句继续写runner.crawl(spider名称即可)
 # 返回所有托管对象crawlers完成执行后触发的延迟。
 d = runner.join()

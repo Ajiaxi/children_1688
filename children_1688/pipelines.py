@@ -527,3 +527,17 @@ class CmindexsaleGrey_pipelines:
 
     def close_spider(self,spider):
         self.f.close()
+
+class article_first_love:
+    def __init__(self):
+        self.f = open('./first_lova.csv', "w")
+        self.writer = csv.writer(self.f)
+
+    def process_item(self, item, spider):
+        list = item['article']
+        self.writer.writerow(list)
+        self.writer.writerow('\n')
+        return item
+
+    def close_spider(self, spider):
+        self.f.close()
