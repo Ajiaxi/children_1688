@@ -24,9 +24,9 @@ class BuyersketchSpider(scrapy.Spider):
         category2 = '所有'
         attribute_Type = response.xpath('//*[@id="mod-identity"]/div[1]/h4/span/text()').extract()
         attribute_Name = ['新采购商','老采购商']
-        percentage = ['44.33','55.67']
+        percentage = ['64.53','35.47']
         attribute_Name1 = ['非淘宝店主','淘宝店主']
-        percentage1 = ['55.88','44.12']
+        percentage1 = ['47.81','52.19']
         crawl_Time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
         items = []
         for i in range(0,len(attribute_Name)):

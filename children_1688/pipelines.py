@@ -47,7 +47,8 @@ csv_file = csv.reader(open(Children1688, 'r'))
 content = []
 for line in csv_file:
     content.append(line)
-last_time_crawl = content[-1][-1].split(' ')[0]
+a = content[-1][0]
+last_time_crawl = a.split('\t')[2]
 
 
 
