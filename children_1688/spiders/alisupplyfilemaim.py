@@ -4,6 +4,7 @@ import time
 import scrapy
 
 from children_1688.items import aLiSupplyFileMain_Item
+from children_1688.logger import Logger
 
 '''
     爬取
@@ -86,4 +87,5 @@ class AlisupplyfilemainSpider(scrapy.Spider):
             items.append(r)
         elif len(self.next) == 0:
             print('更新Spider完成 , 更新数据名称 : alisupplyfilemain')
+            Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : alisupplyfilemain')
         return items

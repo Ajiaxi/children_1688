@@ -3,6 +3,7 @@ import time
 
 import scrapy
 from children_1688.items import AttributeSegmentationMiddleItem
+from children_1688.logger import Logger
 
 '''
     陈航
@@ -58,10 +59,12 @@ class AttributesegmentationMiddleSpider(scrapy.Spider):
         resurl = surl[count + 1:]
         if resurl == '127424004':
             print('正在更新Spider , 更新名称 : AttributeSegmentationMiddle 1688网站属性名称中部热门营销属性数据')
+            Logger('all.log', level='debug').logger.info('正在更新Spider , 更新名称 : AttributeSegmentationMiddle 1688网站属性名称中部热门营销属性数据')
         self.next.remove(resurl)
         if self.next:
             r = scrapy.Request(url=self.url+self.next[0], callback=self.parse)
             items.append(r)
         elif len(self.next) == 0:
             print('更新Spider完成 , 更新名称 : AttributeSegmentationMiddle 1688网站属性名称中部热门营销属性数据')
+            Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新名称 : AttributeSegmentationMiddle 1688网站属性名称中部热门营销属性数据')
         return items

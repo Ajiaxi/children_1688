@@ -4,7 +4,6 @@ import sys
 import os
 
 from children_1688.spiders.secondIndex import SecondindexSpider
-from children_1688.spiders.secondIndex_supply import SecondindexSpider_supply
 
 curPath = os.path.abspath(os.path.dirname(__file__))
 rootPath = os.path.split(curPath)[0]

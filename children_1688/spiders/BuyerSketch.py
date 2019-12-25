@@ -4,6 +4,7 @@ import time
 import scrapy
 
 from children_1688.items import BuyerSketchItem
+from children_1688.logger import Logger
 
 '''
     陈航
@@ -41,4 +42,5 @@ class BuyersketchSpider(scrapy.Spider):
             item['crawl_Time'] = crawl_Time
             items.append(item)
         print('更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描')
+        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描')
         return items

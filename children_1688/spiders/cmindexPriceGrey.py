@@ -5,6 +5,7 @@ import time
 import scrapy
 
 from children_1688.items import Cmindexpricefabric_Item
+from children_1688.logger import Logger
 
 
 class CmindexpricegreySpider(scrapy.Spider):
@@ -54,4 +55,5 @@ class CmindexpricegreySpider(scrapy.Spider):
                 items.append(r)
             except:
                 print('CmindexpricegreySpider爬取完成')
+                Logger('all.log', level='debug').logger.info('CmindexpricegreySpider爬取完成')
         return items

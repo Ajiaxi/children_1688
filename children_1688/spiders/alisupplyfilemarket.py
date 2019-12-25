@@ -4,6 +4,7 @@ import time
 import scrapy
 
 from children_1688.items import aLiSupplyFileMarket_Item
+from children_1688.logger import Logger
 
 
 class AlisupplyfilemarketSpider(scrapy.Spider):
@@ -76,4 +77,5 @@ class AlisupplyfilemarketSpider(scrapy.Spider):
         elif len(self.next) == 0:
             print(
                 '更新Spider完成 , 更新数据名称 : alisupplyfilemarket')
+            Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : alisupplyfilemarket')
         return items

@@ -2,6 +2,7 @@
 import time
 import scrapy
 from children_1688.items import AttributesegmentationItem
+from children_1688.logger import Logger
 
 '''
     爬取属性细分热门基础属性 由5个parse合并成一个
@@ -84,6 +85,7 @@ class AttributeSegmentationSpider(scrapy.Spider):
         resurl = surl[count + 1:]
         if resurl == '127424004':
             print('正在更新Spider　, 数据名称 : AttributeSegmentation 1688网站属性细分热门基础属性')
+            Logger('all.log', level='debug').logger.info('正在更新Spider　, 数据名称 : AttributeSegmentation 1688网站属性细分热门基础属性')
         self.next2.append(resurl)
         self.next.remove(resurl)
         if self.next:
@@ -204,4 +206,5 @@ class AttributeSegmentationSpider(scrapy.Spider):
             items.append(r)
         elif len(self.next5) == 0:
             print('更新Spider完成 , 更新数据名称 : AttributeSegmentation 1688网站属性细分热门基础属性')
+            Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : AttributeSegmentation 1688网站属性细分热门基础属性')
         return items

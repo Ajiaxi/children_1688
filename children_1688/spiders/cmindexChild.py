@@ -5,6 +5,7 @@ import time
 import scrapy
 
 from children_1688.items import Cmindexchild_Item
+from children_1688.logger import Logger
 
 
 class CmindexchildSpider(scrapy.Spider):
@@ -55,5 +56,7 @@ class CmindexchildSpider(scrapy.Spider):
             item['crawl_Time'] = crawl_Time
             yield item
         print('更新Spider完成 , 更新数据名称 : cmindexchild')
+        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : cmindexchild')
+
 
 

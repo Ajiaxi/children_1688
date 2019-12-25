@@ -3,6 +3,8 @@ import json
 import time
 import scrapy
 from children_1688.items import AttributeSegmentationPriceItem
+from children_1688.logger import Logger
+
 '''
     爬取属性细分价格带分布
 '''
@@ -70,6 +72,7 @@ class PriceSpider(scrapy.Spider):
         resurl = surl[count + 1:]
         if resurl == '127424004':
             print('正在更新Spider , 更新名称 : AttributeSegmentationPrice 1688网站属性细分价格带分布')
+            Logger('all.log', level='debug').logger.info('正在更新Spider , 更新名称 : AttributeSegmentationPrice 1688网站属性细分价格带分布')
         self.next.remove(resurl)
         self.category2.remove(category)
         if self.next:
@@ -92,6 +95,7 @@ class PriceSpider(scrapy.Spider):
             items.append(r)
         elif len(self.next) == 0:
             print('更新Spider完成 , 更新数据名称 : AttributeSegmentationPrice 1688网站属性细分价格带分布')
+            Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : AttributeSegmentationPrice 1688网站属性细分价格带分布')
         return items
 
 

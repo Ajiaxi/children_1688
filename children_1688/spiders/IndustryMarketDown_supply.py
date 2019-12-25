@@ -2,6 +2,7 @@
 import time
 import scrapy
 from children_1688.items import IndustrymarketdownItem
+from children_1688.logger import Logger
 
 '''
     - 陈航
@@ -97,6 +98,7 @@ class IndustrymarketdownSpider_supply(scrapy.Spider):
         resurl = surl[count + 1:]
         if resurl == '127424004':
             print('正在更新Spider , 更新名称 : IndustryMarketDown_supply 1688我是供应商网站行业大盘下部数据')
+            Logger('all.log', level='debug').logger.info('正在更新Spider , 更新名称 : IndustryMarketDown_supply 1688我是供应商网站行业大盘下部数据')
         self.next2.append(resurl)
         self.next.remove(resurl)
         if self.next:
@@ -129,6 +131,7 @@ class IndustrymarketdownSpider_supply(scrapy.Spider):
             items.append(r)
         elif len(self.next2) == 0:
             print('更新Spider完成 , 更新数据名称 : IndustryMarketDown_supply 1688我是供应商网站行业大盘下部数据')
+            Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : IndustryMarketDown_supply 1688我是供应商网站行业大盘下部数据')
         return items
 
 
