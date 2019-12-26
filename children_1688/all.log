@@ -1,0 +1,5 @@
+2019-12-25 14:43:26,128 - /home/chenhang/workplace/pycharmprojects/children_1688/children_1688/logger.py[line:33] - DEBUG: debug
+2019-12-25 14:43:26,129 - /home/chenhang/workplace/pycharmprojects/children_1688/children_1688/logger.py[line:34] - INFO: info
+2019-12-25 14:43:26,129 - /home/chenhang/workplace/pycharmprojects/children_1688/children_1688/logger.py[line:35] - WARNING: 警告
+2019-12-25 14:43:26,129 - /home/chenhang/workplace/pycharmprojects/children_1688/children_1688/logger.py[line:36] - ERROR: 报错
+2019-12-25 14:43:26,129 - /home/chenhang/workplace/pycharmprojects/children_1688/children_1688/logger.py[line:37] - CRITICAL: 严重
