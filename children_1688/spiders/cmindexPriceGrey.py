@@ -55,5 +55,4 @@ class CmindexpricegreySpider(scrapy.Spider):
                 items.append(r)
             except:
                 print('CmindexpricegreySpider爬取完成')
-                Logger('all.log', level='debug').logger.info('CmindexpricegreySpider爬取完成')
         return items

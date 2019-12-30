@@ -41,6 +41,4 @@ class BuyersketchSpider(scrapy.Spider):
             item['percentage1'] = percentage1[i]
             item['crawl_Time'] = crawl_Time
             items.append(item)
-        print('更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描')
-        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描')
         return items

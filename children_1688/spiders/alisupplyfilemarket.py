@@ -74,8 +74,4 @@ class AlisupplyfilemarketSpider(scrapy.Spider):
         if self.next:
             r = scrapy.Request(url=self.head + self.next[0], callback=self.parse)
             items.append(r)
-        elif len(self.next) == 0:
-            print(
-                '更新Spider完成 , 更新数据名称 : alisupplyfilemarket')
-            Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : alisupplyfilemarket')
         return items

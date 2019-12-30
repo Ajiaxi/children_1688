@@ -57,5 +57,4 @@ class CmindexsalefabricSpider(scrapy.Spider):
                 items.append(r)
             except:
                 print('cmindexSaleFabricSpider爬取完成')
-                Logger('all.log', level='debug').logger.info('cmindexSaleFabricSpider爬取完成')
         return items

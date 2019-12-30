@@ -8,6 +8,8 @@ import csv
 import datetime
 import time
 
+from children_1688.logger import Logger
+
 '''
     配置输出路径
 '''
@@ -62,6 +64,7 @@ class Children1688Pipeline(object):
         # 1688采购商 更新童装所有全年指数
         self.f = open(Children1688, "a+")
         self.writer = csv.writer(self.f)
+        Logger('all.log', level='debug').logger.info('正在更新Spider..... , 更新数据名称 : 1688我是采购商网站行业大盘童装所有全年三大指数')
         # self.writer.writerow(['目录1', '目录2', '展示时间', '1688采购指数', '淘宝采购指数', '1688供应指数' ,'爬取时间'])
 
     def process_item(self, item, spider):
@@ -71,6 +74,7 @@ class Children1688Pipeline(object):
         return item
 
     def close_spider(self, spider):  # 关闭
+        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : everyIndex 1688我是采购商商网站行业大盘童装所有全年三大指数')
         self.f.close()
 
 class Children1688SupplyPipeline(object):
@@ -81,6 +85,7 @@ class Children1688SupplyPipeline(object):
         # 1688供应商 更新童装所有全年指数
         self.f = open(Children1688Supply, "a+")
         self.writer = csv.writer(self.f)
+        Logger('all.log', level='debug').logger.info('正在更新Spider..... , 更新数据名称 : 1688我是供应商网站行业大盘童装所有全年三大指数')
         # self.writer.writerow(['目录1', '目录2', '展示时间', '1688采购指数', '淘宝采购指数', '1688供应指数' ,'爬取时间'])
 
     def process_item(self, item, spider):
@@ -90,6 +95,7 @@ class Children1688SupplyPipeline(object):
         return item
 
     def close_spider(self, spider):  # 关闭
+        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : everyIndex_supply 1688我是供应商网站行业大盘童装所有全年三大指数')
         self.f.close()
 
 class secondIndexPipelines(object):
@@ -111,6 +117,7 @@ class secondIndexupdatePipelines(object):
     def __init__(self):
         self.f = open(secondIndex, "a+")
         self.writer = csv.writer(self.f)
+        Logger('all.log', level='debug').logger.info('正在更新Spider , 更新名称 : secondIndex_update 1688我是供应商网站行业大盘二级目录全年指数数据')
 
     def process_item(self, item, spider):
         if datetime.datetime.strptime(item['showtime'], '%Y-%m-%d') >= datetime.datetime.strptime(last_time_crawl,'%Y-%m-%d'):
@@ -119,6 +126,7 @@ class secondIndexupdatePipelines(object):
         return item
 
     def close_spider(self, spider):  # 关闭
+        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : secondIndex_update 1688我是供应商网站行业大盘二级目录全年指数数据')
         self.f.close()
 
 
@@ -143,6 +151,7 @@ class secondIndexupdateSupplyPipelines(object):
     def __init__(self):
         self.f = open(secondIndexSupply, "a+")
         self.writer = csv.writer(self.f)
+        Logger('all.log', level='debug').logger.info('正在更新Spider , 更新名称 : secondIndexupdate_supply 1688我是供应商网站行业大盘二级目录全年指数数据')
 
     def process_item(self, item, spider):
         if datetime.datetime.strptime(item['showtime'], '%Y-%m-%d') >= datetime.datetime.strptime(last_time_crawl,'%Y-%m-%d'):
@@ -152,11 +161,13 @@ class secondIndexupdateSupplyPipelines(object):
         return item
 
     def close_spider(self, spider):  # 关闭
+        Logger('all.log', level='debug').logger.info('正在更新Spider , 更新名称 : secondIndexupdate_supply 1688我是供应商网站行业大盘二级目录全年指数数据')
         self.f.close()
 
 class IndustryMarketDownPipelines(object):
     def __init__(self):
         self.f = open(IndustryMarketDown, "w")
+        Logger('all.log', level='debug').logger.info('正在更新Spider , 更新名称 : IndustryMarketDown 1688网站我是采购商行业大盘下部数据')
         self.writer = csv.writer(self.f,delimiter='\t')
         self.writer.writerow(['目录1', '目录2', '行业类型', '行业名称', '1688采购指数', '1688供应指数', '淘宝需求预测', '爬取时间'])
 
@@ -167,11 +178,14 @@ class IndustryMarketDownPipelines(object):
         return item
 
     def close_spider(self, spider):  # 关闭
+        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : IndustryMarketDown 1688网站我是采购商行业大盘下部数据')
         self.f.close()
 
 class IndustryMarketDownSupplyPipelines(object):
     def __init__(self):
         self.f = open(IndustryMarketDownSupply, "w")
+        Logger('all.log', level='debug').logger.info(
+            '正在更新Spider , 更新名称 : IndustryMarketDown_supply 1688我是供应商网站行业大盘下部数据')
         self.writer = csv.writer(self.f,delimiter='\t')
         self.writer.writerow(['目录1', '目录2', '行业类型', '行业名称', '1688采购指数', '1688供应指数', '淘宝需求预测', '爬取时间'])
 
@@ -182,6 +196,7 @@ class IndustryMarketDownSupplyPipelines(object):
         return item
 
     def close_spider(self, spider):  # 关闭
+        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : IndustryMarketDown_supply 1688我是供应商网站行业大盘下部数据')
         self.f.close()
 
 class AttributesegmentationPipelines:
@@ -190,6 +205,7 @@ class AttributesegmentationPipelines:
         self.writer = csv.writer(self.f,delimiter='\t')
         self.writer.writerow(
             ['目录1', '目录2',  '行业类型','属性类型','属性名称', '1688采购指数','1688供应指数', '爬取时间'])
+        Logger('all.log', level='debug').logger.info('正在更新Spider　, 数据名称 : AttributeSegmentation 1688网站属性细分热门基础属性')
         # self.f.writelines(['目录1', '目录2',  '行业类型','属性类型','属性名称', '1688采购指数','1688供应指数', '爬取时间'])
 
     def process_item(self, item, spider):
@@ -200,12 +216,14 @@ class AttributesegmentationPipelines:
         return item
 
     def close_spider(self, spider):  # 关闭
-
+        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : AttributeSegmentation 1688网站属性细分热门基础属性')
         self.f.close()
 
 class AttributesegmentationMiddlePipelines:
     def __init__(self):
         self.f = open(AttributesegmentationMiddle, "w")
+        Logger('all.log', level='debug').logger.info(
+            '正在更新Spider , 更新名称 : AttributeSegmentationMiddle 1688网站属性名称中部热门营销属性数据')
         self.writer = csv.writer(self.f)
         self.writer.writerow(
             ['目录1', '目录2', '行业类型', '属性类型', '属性名称', '1688采购指数', '1688供应指数', '爬取时间'])
@@ -217,11 +235,14 @@ class AttributesegmentationMiddlePipelines:
         return item
 
     def close_spider(self, spider):  # 关闭
+        Logger('all.log', level='debug').logger.info(
+            '更新Spider完成 , 更新名称 : AttributeSegmentationMiddle 1688网站属性名称中部热门营销属性数据')
         self.f.close()
 
 class AttributeSegmentationPricePipelines:
     def __init__(self):
         self.f = open(AttributeSegmentationPrice, "w")
+        Logger('all.log', level='debug').logger.info('正在更新Spider , 更新名称 : AttributeSegmentationPrice 1688网站属性细分价格带分布')
         self.writer = csv.writer(self.f)
         self.writer.writerow(
             ['目录1', '目录2', '行业类型',  '属性名称1','价格分布1', '百分比',  '属性名称2','价格分布2', '百分比', '爬取时间'])
@@ -233,11 +254,13 @@ class AttributeSegmentationPricePipelines:
         # return item
 
     def close_spider(self, spider):  # 关闭
+        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : AttributeSegmentationPrice 1688网站属性细分价格带分布')
         self.f.close()
 
 class BuyerSketchPricePipelines:
     def __init__(self):
         self.f = open(BuyerSketch, "w")
+        Logger('all.log', level='debug').logger.info('正在更新Spider , 更新名称  : BuyerSketch 1688网站采购商素描')
         self.writer = csv.writer(self.f)
         self.writer.writerow(
             ['目录1', '目录2', '行业类型',  '新老采购商', '百分比1', '非淘宝/淘宝店主', '百分比2', '爬取时间'])
@@ -249,12 +272,14 @@ class BuyerSketchPricePipelines:
         return item
 
     def close_spider(self, spider):  # 关闭
+        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描')
         self.f.close()
 
 class aliIndex_7_1_Pipelines:
     def __init__(self):
         self.f = open("/home/chenhang/workplace/crawlFile/阿里排行/搜索排行榜_7天_上升榜.csv", "w")
         self.writer = csv.writer(self.f)
+        Logger('all.log', level='debug').logger.info('正在更新Spider , 更新数据名称 : aliindex_7_1 1688网站阿里排行搜索排行榜7天上升榜')
         self.writer.writerow(
             ['目录1', '目录2', '榜名',  '关键词', '搜索趋势', '搜索指数', 'url', '爬取时间'])
 
@@ -265,6 +290,7 @@ class aliIndex_7_1_Pipelines:
         return item
 
     def close_spider(self, spider):  # 关闭
+        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : aliindex_7_1 1688网站阿里排行搜索排行榜7天上升榜')
         self.f.close()
 
 
@@ -272,6 +298,7 @@ class aliIndex_7_2_Pipelines:
     def __init__(self):
         self.f = open(aliIndex_7_2, "w")
         self.writer = csv.writer(self.f)
+        Logger('all.log', level='debug').logger.info('正在更新Spider , 更新数据名称 : aliindex_7_2 1688网站阿里排行搜索排行榜7天热搜榜')
         self.writer.writerow(
             ['目录1', '目录2', '榜名',  '关键词', '搜索指数', '全站商品数', 'url', '爬取时间'])
 
@@ -282,12 +309,15 @@ class aliIndex_7_2_Pipelines:
         return item
 
     def close_spider(self, spider):  # 关闭
+        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : aliindex_7_2 1688网站阿里排行搜索排行榜7天热搜榜')
         self.f.close()
 
 class aliIndex_7_3_Pipelines:
     def __init__(self):
         self.f = open("/home/chenhang/workplace/crawlFile/阿里排行/搜索排行榜_7天_转化率榜榜.csv", "w")
         self.writer = csv.writer(self.f)
+        Logger('all.log', level='debug').logger.info(
+            '正在更新Spider , 更新数据名称 : aliindex_7_3 aliindex_7_3 1688网站阿里排行搜索排行榜7天转化率榜')
         self.writer.writerow(
             ['目录1', '目录2', '榜名',  '关键词', '搜索转化率', '全站商品数', 'url', '爬取时间'])
     def process_item(self, item, spider):
@@ -296,6 +326,7 @@ class aliIndex_7_3_Pipelines:
         return item
 
     def close_spider(self, spider):  # 关闭
+        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : aliindex_7_3 1688网站阿里排行搜索排行榜7天转化率榜')
         self.f.close()
 
 
@@ -303,6 +334,7 @@ class aliIndex_7_4_Pipelines:
     def __init__(self):
         self.f = open("/home/chenhang/workplace/crawlFile/阿里排行/搜索排行榜_7天_新词榜.csv", "w")
         self.writer = csv.writer(self.f)
+        Logger('all.log', level='debug').logger.info('正在更新Spider , 更新数据名称 : aliindex_7_4 1688网站阿里排行搜索排行榜7天新词榜')
         self.writer.writerow(
             ['目录1', '目录2', '榜名', '关键词', '搜索指数', '全站商品数', 'url', '爬取时间'])
 
@@ -312,12 +344,14 @@ class aliIndex_7_4_Pipelines:
         return item
 
     def close_spider(self, spider):  # 关闭
+        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : aliindex_7_4 1688网站阿里排行搜索排行榜7天新词榜')
         self.f.close()
 
 class aliIndex_30_1_Pipelines:
     def __init__(self):
         self.f = open("/home/chenhang/workplace/crawlFile/阿里排行/搜索排行榜_30天_上升榜.csv", "w")
         self.writer = csv.writer(self.f)
+        Logger('all.log', level='debug').logger.info('正在更新Spider , 更新数据名称 : aliindex_30_1 1688网站阿里排行搜索排行榜30天上升榜')
         self.writer.writerow(
             ['目录1', '目录2', '榜名', '关键词', '搜索趋势', '搜索指数', 'url', '爬取时间'])
 
@@ -327,12 +361,14 @@ class aliIndex_30_1_Pipelines:
         return item
 
     def close_spider(self, spider):  # 关闭
+        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : aliindex_30_1 1688网站阿里排行搜索排行榜30天上升榜')
         self.f.close()
 
 class aliIndex_30_2_Pipelines:
     def __init__(self):
         self.f = open(aliIndex_30_2, "w")
         self.writer = csv.writer(self.f)
+        Logger('all.log', level='debug').logger.info('正在更新Spider , 更新数据名称 : aliindex_30_2 1688网站阿里排行搜索排行榜30天热搜榜')
         self.writer.writerow(
             ['目录1', '目录2', '榜名',  '关键词', '搜索指数', '全站商品数', 'url', '爬取时间'])
 
@@ -342,6 +378,7 @@ class aliIndex_30_2_Pipelines:
         return item
 
     def close_spider(self, spider):  # 关闭
+        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : aliindex_30_2 1688网站阿里排行搜索排行榜30天热搜榜')
         self.f.close()
 
 
@@ -349,6 +386,7 @@ class aliIndex_30_3_Pipelines:
     def __init__(self):
         self.f = open("/home/chenhang/workplace/crawlFile/阿里排行/搜索排行榜_30天_转化率榜榜.csv", "w")
         self.writer = csv.writer(self.f)
+        Logger('all.log', level='debug').logger.info('正在更新Spider , 更新数据名称 : aliindex_30_3 1688网站阿里排行搜索排行榜30天转化率榜')
         self.writer.writerow(
             ['目录1', '目录2', '榜名', '关键词', '搜索转化率', '全站商品数', 'url', '爬取时间'])
 
@@ -358,6 +396,7 @@ class aliIndex_30_3_Pipelines:
         return item
 
     def close_spider(self, spider):  # 关闭
+        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : aliindex_30_3 1688网站阿里排行搜索排行榜30天转化率榜')
         self.f.close()
 
 
@@ -366,6 +405,7 @@ class aliIndex_30_4_Pipelines:
         # self.f = open("/home/chenhang/workplace/crawlFile/阿里排行/搜索排行榜_30天_新词榜.csv", "w")
         self.f = open("搜索排行榜_30天_新词榜.csv", "w")
         self.writer = csv.writer(self.f)
+        Logger('all.log', level='debug').logger.info('正在更新Spider , 更新数据名称 : aliindex_30_4 1688网站阿里排行搜索排行榜7天新词榜')
         self.writer.writerow(
             ['目录1', '目录2', '榜名', '关键词', '搜索指数', '全站商品数', 'url', '爬取时间'])
 
@@ -375,12 +415,14 @@ class aliIndex_30_4_Pipelines:
         return item
 
     def close_spider(self, spider):  # 关闭
+        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : aliindex_30_4 1688网站阿里排行搜索排行榜新词榜')
         self.f.close()
 
 class aliIndex_7_hot_Pipelines:
     def __init__(self):
         self.f = open(aliIndex_7_hot, "w")
         self.writer = csv.writer(self.f)
+        Logger('all.log', level='debug').logger.info('正在更新Spider , 更新数据名称 : aliindex_7_hot 1688网站阿里排行产品排行榜')
         self.writer.writerow(
             ['name', 'type', 'title', 'price', 'trade'])
 
@@ -390,12 +432,14 @@ class aliIndex_7_hot_Pipelines:
         return item
 
     def close_spider(self, spider):  # 关闭
+        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : aliindex_7_hot 1688网站阿里排行产品排行榜')
         self.f.close()
 
 class aliIndex_30_hot_Pipelines:
     def __init__(self):
         self.f = open(aliIndex_30_hot, "w")
         self.writer = csv.writer(self.f)
+        Logger('all.log', level='debug').logger.info('正在更新Spider , 更新数据名称 : aliindex_30_hot 1688网站阿里排行产品排行榜')
         self.writer.writerow(
             ['name', 'type', 'title', 'price', 'trade'])
 
@@ -405,11 +449,13 @@ class aliIndex_30_hot_Pipelines:
         return item
 
     def close_spider(self, spider):  # 关闭
+        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : aliindex_30_hot 1688网站阿里排行产品排行榜')
         self.f.close()
 
 class aLiSupplyFileMain_pipelines:
     def __init__(self):
         self.f = open(aLiSupplyFileMain, "w")
+        Logger('all.log', level='debug').logger.info('正在更新Spider , 更新数据名称 : alisupplyfilemain　')
         self.writer = csv.writer(self.f,delimiter='\t')
         self.writer.writerow(
             ['公司名', '地区', '主要产品', '主要市场', '交易量', '交易额', '爬取时间'])
@@ -420,11 +466,13 @@ class aLiSupplyFileMain_pipelines:
         return item
 
     def close_spider(self,spider):
+        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : alisupplyfilemain')
         self.f.close()
 
 class aLiSupplyFileMarket_pipelines:
     def __init__(self):
         self.f = open(aLiSupplyFileMarket, "w")
+        Logger('all.log', level='debug').logger.info('正在更新Spider , 更新数据名称 : alisupplyfilemarket')
         self.writer = csv.writer(self.f,delimiter='\t')
         self.writer.writerow(
             ['公司名', '市场地区', '市场份额', '爬取时间'])
@@ -435,12 +483,14 @@ class aLiSupplyFileMarket_pipelines:
         return item
 
     def close_spider(self,spider):
+        Logger('all.log', level='debug').logger.info('正在更新Spider , 更新数据名称 : alisupplyfilemarket')
         self.f.close()
 
 class aLiSupplyFileProduct_pipelines:
     def __init__(self):
         self.f = open(aLiSupplyFileProduct, "w")
         self.writer = csv.writer(self.f,delimiter='\t')
+        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称: alisupplyfilproduct')
         self.writer.writerow(
             ['公司名','产品', '爬取时间'])
 
@@ -450,6 +500,7 @@ class aLiSupplyFileProduct_pipelines:
         return item
 
     def close_spider(self,spider):
+        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : alisupplyfilproduct')
         self.f.close()
 
 class Cmindexchild_pipelines:
@@ -465,6 +516,7 @@ class Cmindexchild_pipelines:
         return item
 
     def close_spider(self,spider):
+        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : cmindexchild')
         self.f.close()
 
 class Cmindexpricefabric_pipelines:
@@ -481,6 +533,7 @@ class Cmindexpricefabric_pipelines:
         return item
 
     def close_spider(self,spider):
+        Logger('all.log', level='debug').logger.info('CmindexpricefabricSpider 爬取完成')
         self.f.close()
 
 class cmindexPriceGrey_pipelines:
@@ -497,6 +550,7 @@ class cmindexPriceGrey_pipelines:
         return item
 
     def close_spider(self,spider):
+        Logger('all.log', level='debug').logger.info('CmindexpricegreySpider爬取完成')
         self.f.close()
 
 class Cmindexsalefabric_pipelines:
@@ -513,6 +567,7 @@ class Cmindexsalefabric_pipelines:
         return item
 
     def close_spider(self,spider):
+        Logger('all.log', level='debug').logger.info('cmindexSaleFabricSpider爬取完成')
         self.f.close()
 
 class CmindexsaleGrey_pipelines:
@@ -529,18 +584,5 @@ class CmindexsaleGrey_pipelines:
         return item
 
     def close_spider(self,spider):
-        self.f.close()
-
-class article_first_love:
-    def __init__(self):
-        self.f = open('./first_lova.csv', "w")
-        self.writer = csv.writer(self.f)
-
-    def process_item(self, item, spider):
-        list = item['article']
-        self.writer.writerow(list)
-        self.writer.writerow('\n')
-        return item
-
-    def close_spider(self, spider):
+        Logger('all.log', level='debug').logger.info('cmindexSaleGrey爬取完成')
         self.f.close()

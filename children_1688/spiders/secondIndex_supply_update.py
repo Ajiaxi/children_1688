@@ -57,16 +57,10 @@ class SecondindexupdateSpider_supply(scrapy.Spider):
         surl = str(response.url)
         count = surl.find(',')
         resurl = surl[count + 1:]
-        if resurl == '127424004':
-            print('正在更新Spider , 更新名称 : secondIndexupdate_supply 1688我是供应商网站行业大盘二级目录全年指数数据')
-            Logger('all.log', level='debug').logger.info('正在更新Spider , 更新名称 : secondIndexupdate_supply 1688我是供应商网站行业大盘二级目录全年指数数据')
         self.next.remove(resurl)
         if self.next:
             r = scrapy.Request(url=self.url + self.next[0], callback=self.parse)
             items.append(r)
-        elif len(self.next) == 0:
-            print('更新Spider完成 , 更新数据名称 : secondIndexupdate_supply 1688我是供应商网站行业大盘二级目录全年指数数据')
-            Logger('all.log', level='debug').logger.info('正在更新Spider , 更新名称 : secondIndexupdate_supply 1688我是供应商网站行业大盘二级目录全年指数数据')
         return items
 
     def datalist(self):

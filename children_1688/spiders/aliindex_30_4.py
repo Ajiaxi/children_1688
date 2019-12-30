@@ -60,19 +60,13 @@ class aliindex_30_4_spider(scrapy.Spider):
             start = surl.find('=')
             end = surl.find('&')
             resurl = surl[start + 1:end]
-            if resurl == '311':
-                print('正在更新Spider , 更新数据名称 : aliindex_30_4 1688网站阿里排行搜索排行榜7天新词榜')
-                Logger('all.log', level='debug').logger.info('正在更新Spider , 更新数据名称 : aliindex_30_4 1688网站阿里排行搜索排行榜7天新词榜')
             self.next.remove(resurl)
             if self.next:
                 r = scrapy.Request(url=self.head + self.next[0]+self.end, callback=self.parse)
                 items.append(r)
-            elif len(self.next):
-                print('更新Spider完成 , 更新数据名称 : aliindex_30_4 1688网站阿里排行搜索排行榜新词榜')
-                Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : aliindex_30_4 1688网站阿里排行搜索排行榜新词榜')
             return items
         else:
-            print('content无数据.....')
+            # print('content无数据.....')
             surl = str(response.url)
             start = surl.find('=')
             end = surl.find('&')
@@ -81,7 +75,4 @@ class aliindex_30_4_spider(scrapy.Spider):
             if self.next:
                 r = scrapy.Request(url=self.head + self.next[0] + self.end, callback=self.parse)
                 items.append(r)
-            elif len(self.next):
-                print('更新Spider完成 , 更新数据名称 : aliindex_30_4 1688网站阿里排行搜索排行榜新词榜')
-                Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : aliindex_30_4 1688网站阿里排行搜索排行榜新词榜')
             return items

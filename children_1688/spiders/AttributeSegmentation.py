@@ -83,9 +83,6 @@ class AttributeSegmentationSpider(scrapy.Spider):
         surl = str(response.url)
         count = surl.find(',')
         resurl = surl[count + 1:]
-        if resurl == '127424004':
-            print('正在更新Spider　, 数据名称 : AttributeSegmentation 1688网站属性细分热门基础属性')
-            Logger('all.log', level='debug').logger.info('正在更新Spider　, 数据名称 : AttributeSegmentation 1688网站属性细分热门基础属性')
         self.next2.append(resurl)
         self.next.remove(resurl)
         if self.next:
@@ -204,7 +201,4 @@ class AttributeSegmentationSpider(scrapy.Spider):
         if self.next5:
             r = scrapy.Request(url=self.url + self.next5[0], dont_filter=True, callback=self.parse5)
             items.append(r)
-        elif len(self.next5) == 0:
-            print('更新Spider完成 , 更新数据名称 : AttributeSegmentation 1688网站属性细分热门基础属性')
-            Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : AttributeSegmentation 1688网站属性细分热门基础属性')
         return items

@@ -23,8 +23,6 @@ class annualIndexUpdateSpider(scrapy.Spider):
     }
 
     def parse(self, response):
-        print('正在更新Spider..... , 更新数据名称 : 1688我是采购商网站行业大盘童装所有全年三大指数')
-        Logger('all.log', level='debug').logger.info('正在更新Spider..... , 更新数据名称 : 1688我是采购商网站行业大盘童装所有全年三大指数')
         data = response.xpath('//*[@id="main-chart-val"]/@value').extract_first()
         # data1 =     response.css('#main-chart-val::attr(value)').extract_first()
         category1 = response.xpath('//*[@id="aliindex-masthead"]/div/div[3]/div[1]/p/a/text()').extract()
@@ -53,8 +51,6 @@ class annualIndexUpdateSpider(scrapy.Spider):
             item['supplyIndex'] = supplyIndexs[i]
             item['crawl_Time'] = crawl_Time
             yield item
-        print('更新Spider完成 , 更新数据名称 : everyIndex 1688我是采购商商网站行业大盘童装所有全年三大指数')
-        Logger('all.log', level='debug').logger.info('更新Spider完成 , 更新数据名称 : everyIndex 1688我是采购商商网站行业大盘童装所有全年三大指数')
 
     def datalist(self):
         # 获取2018年全年的日期

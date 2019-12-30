@@ -58,5 +58,4 @@ class CmindexsalegreySpider(scrapy.Spider):
                 items.append(r)
             except:
                 print('cmindexSaleGrey爬取完成')
-                Logger('all.log', level='debug').logger.info('cmindexSaleGrey爬取完成')
         return items
