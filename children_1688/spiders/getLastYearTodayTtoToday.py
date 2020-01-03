@@ -17,23 +17,28 @@ def getDataList():
 
     # 获取今年
     year = '20{}'.format(year)
-
+    # 获取去年全年的日期
     lastYear = getAllDayPerYear(int(year) - 1)
-    # 获取2019年全年的日期
+    # 获取今年全年的日期
     todayYear = getAllDayPerYear(year)
 
-    list_2018 = []
-    list_2019 = []
+    list_lastYear = []
+    list_todayYear = []
 
     # 在2018年全年list列表里匹配，当大于去年昨日日期，则添加进新数组
     for x in range(0, len(lastYear)):
         if datetime.datetime.strptime(lastYear[x], '%Y-%m-%d') >= datetime.datetime.strptime(last_Year_Today,
                                                                                              '%Y-%m-%d'):
-            list_2018.append(lastYear[x])
+            list_lastYear.append(lastYear[x])
     # 在2019年全年list列表里匹配，当今日日期大于列表元素时，添加进新数组
     for y in range(0, len(todayYear)):
-        if datetime.datetime.strptime(today, '%Y-%m-%d') >= datetime.datetime.strptime(todayYear[y], '%Y-%m-%d'):
-            list_2019.append(todayYear[y])
+        if datetime.datetime.strptime(today, '%Y-%m-%d') > datetime.datetime.strptime(todayYear[y], '%Y-%m-%d'):
+            list_todayYear.append(todayYear[y])
     # 去年昨日到今日的所有日期
-    list_Count = list_2018 + list_2019
+    list_Count = list_lastYear + list_todayYear
     return list_Count
+
+if __name__ == "__main__":
+    a = getDataList()
+    print(a)
+    print(len(a))
