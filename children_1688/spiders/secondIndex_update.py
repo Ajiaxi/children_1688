@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
-import datetime
 import json
 import time
 import scrapy
 from children_1688.items import SecondIndexItem
-from children_1688.logger import Logger
-from children_1688.spiders.date_All_Year import getAllDayPerYear
+from children_1688.spiders.getLastYearTodayTtoToday import getDataList
 
 '''
     - 陈航
@@ -42,7 +40,7 @@ class SecondindexupdateSpider(scrapy.Spider):
         print('正在更新Spider secondIndex_update , 更新名称 :' + category2 + '网页,Please wait....')
         # 依次遍历，将数据添加进item中
         items = []
-        for i in range(0, len(purchaseIndex1688s)):
+        for i in range(0, len(purchaseIndex1688s)-1):
         # debug时所用代码
         # for i in range(0,1):
             list_Count = self.datalist()
@@ -64,30 +62,5 @@ class SecondindexupdateSpider(scrapy.Spider):
         return items
 
     def datalist(self):
-        # 获取2018年全年的日期
-        data_2018 = getAllDayPerYear(2018)
-        # 获取2019年全年的日期
-        data_2019 = getAllDayPerYear(2019)
-        list_2018 = []
-        list_2019 = []
-        year = time.strftime('%y', time.localtime(time.time()))
-        month = time.strftime('%m', time.localtime(time.time()))
-        day = int(time.strftime('%d', time.localtime(time.time()))) - 1
-        # 获取去年昨日的日期 添加20原因：结果会显示为18-1-1 没有20
-        last_Year_Today = '20{}-{}-{}'.format(int(year) - 1, month, day)
-        # 获取今日的日期
-        today = '20{}-{}-{}'.format(year, month, int(day) + 1)
-        # 在2018年全年list列表里匹配，当大于去年昨日日期，则添加进新数组
-        for x in range(0, len(data_2018)):
-            if datetime.datetime.strptime(data_2018[x], '%Y-%m-%d') >= datetime.datetime.strptime(last_Year_Today,'%Y-%m-%d'):
-                list_2018.append(data_2018[x])
-        # 在2019年全年list列表里匹配，当今日日期大于列表元素时，添加进新数组
-        for y in range(0, len(data_2019)):
-            if datetime.datetime.strptime(today, '%Y-%m-%d') >= datetime.datetime.strptime(data_2019[y], '%Y-%m-%d'):
-                list_2019.append(data_2019[y])
-        # 去年昨日到今日的所有日期
-        list_Count = list_2018 + list_2019
-        return list_Count
-
-
+        return getDataList()
 

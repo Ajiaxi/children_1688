@@ -3,8 +3,6 @@
 import sys
 import os
 
-from children_1688.spiders.secondIndex import SecondindexSpider
-
 curPath = os.path.abspath(os.path.dirname(__file__))
 rootPath = os.path.split(curPath)[0]
 sys.path.append(rootPath)
@@ -65,8 +63,8 @@ runner = CrawlerRunner()
 '''
 runner.crawl(annualIndexUpdateSpider)
 runner.crawl(SecondindexupdateSpider)
-runner.crawl(SecondindexSpider)
 runner.crawl(IndustrymarketdownSpider)
+
 runner.crawl(annualIndexUpdateSupplySpider)
 runner.crawl(SecondindexupdateSpider_supply)
 runner.crawl(IndustrymarketdownSpider_supply)
