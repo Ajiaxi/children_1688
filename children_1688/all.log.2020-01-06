@@ -1,0 +1,231 @@
+2020-01-06 09:38:07,983 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:66] - INFO: 正在更新Spider..... , 更新数据名称 : 1688我是采购商网站行业大盘童装所有全年三大指数
+2020-01-06 09:38:07,994 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:119] - INFO: 正在更新Spider , 更新名称 : secondIndex_update 1688我是采购商网站行业大盘二级目录全年指数数据
+2020-01-06 09:38:07,994 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:119] - INFO: 正在更新Spider , 更新名称 : secondIndex_update 1688我是采购商网站行业大盘二级目录全年指数数据
+2020-01-06 09:38:08,001 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:167] - INFO: 正在更新Spider , 更新名称 : IndustryMarketDown 1688网站我是采购商行业大盘下部数据
+2020-01-06 09:38:08,001 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:167] - INFO: 正在更新Spider , 更新名称 : IndustryMarketDown 1688网站我是采购商行业大盘下部数据
+2020-01-06 09:38:08,001 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:167] - INFO: 正在更新Spider , 更新名称 : IndustryMarketDown 1688网站我是采购商行业大盘下部数据
+2020-01-06 09:38:08,009 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:87] - INFO: 正在更新Spider..... , 更新数据名称 : 1688我是供应商网站行业大盘童装所有全年三大指数
+2020-01-06 09:38:08,009 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:87] - INFO: 正在更新Spider..... , 更新数据名称 : 1688我是供应商网站行业大盘童装所有全年三大指数
+2020-01-06 09:38:08,009 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:87] - INFO: 正在更新Spider..... , 更新数据名称 : 1688我是供应商网站行业大盘童装所有全年三大指数
+2020-01-06 09:38:08,009 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:87] - INFO: 正在更新Spider..... , 更新数据名称 : 1688我是供应商网站行业大盘童装所有全年三大指数
+2020-01-06 09:38:08,017 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:152] - INFO: 正在更新Spider , 更新名称 : secondIndexupdate_supply 1688我是供应商网站行业大盘二级目录全年指数数据
+2020-01-06 09:38:08,017 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:152] - INFO: 正在更新Spider , 更新名称 : secondIndexupdate_supply 1688我是供应商网站行业大盘二级目录全年指数数据
+2020-01-06 09:38:08,017 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:152] - INFO: 正在更新Spider , 更新名称 : secondIndexupdate_supply 1688我是供应商网站行业大盘二级目录全年指数数据
+2020-01-06 09:38:08,017 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:152] - INFO: 正在更新Spider , 更新名称 : secondIndexupdate_supply 1688我是供应商网站行业大盘二级目录全年指数数据
+2020-01-06 09:38:08,017 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:152] - INFO: 正在更新Spider , 更新名称 : secondIndexupdate_supply 1688我是供应商网站行业大盘二级目录全年指数数据
+2020-01-06 09:38:08,025 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:184] - INFO: 正在更新Spider , 更新名称 : IndustryMarketDown_supply 1688我是供应商网站行业大盘下部数据
+2020-01-06 09:38:08,025 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:184] - INFO: 正在更新Spider , 更新名称 : IndustryMarketDown_supply 1688我是供应商网站行业大盘下部数据
+2020-01-06 09:38:08,025 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:184] - INFO: 正在更新Spider , 更新名称 : IndustryMarketDown_supply 1688我是供应商网站行业大盘下部数据
+2020-01-06 09:38:08,025 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:184] - INFO: 正在更新Spider , 更新名称 : IndustryMarketDown_supply 1688我是供应商网站行业大盘下部数据
+2020-01-06 09:38:08,025 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:184] - INFO: 正在更新Spider , 更新名称 : IndustryMarketDown_supply 1688我是供应商网站行业大盘下部数据
+2020-01-06 09:38:08,025 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:184] - INFO: 正在更新Spider , 更新名称 : IndustryMarketDown_supply 1688我是供应商网站行业大盘下部数据
+2020-01-06 09:38:08,033 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:203] - INFO: 正在更新Spider　, 数据名称 : AttributeSegmentation 1688网站属性细分热门基础属性
+2020-01-06 09:38:08,033 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:203] - INFO: 正在更新Spider　, 数据名称 : AttributeSegmentation 1688网站属性细分热门基础属性
+2020-01-06 09:38:08,033 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:203] - INFO: 正在更新Spider　, 数据名称 : AttributeSegmentation 1688网站属性细分热门基础属性
+2020-01-06 09:38:08,033 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:203] - INFO: 正在更新Spider　, 数据名称 : AttributeSegmentation 1688网站属性细分热门基础属性
+2020-01-06 09:38:08,033 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:203] - INFO: 正在更新Spider　, 数据名称 : AttributeSegmentation 1688网站属性细分热门基础属性
+2020-01-06 09:38:08,033 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:203] - INFO: 正在更新Spider　, 数据名称 : AttributeSegmentation 1688网站属性细分热门基础属性
+2020-01-06 09:38:08,033 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:203] - INFO: 正在更新Spider　, 数据名称 : AttributeSegmentation 1688网站属性细分热门基础属性
+2020-01-06 09:38:08,041 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:220] - INFO: 正在更新Spider , 更新名称 : AttributeSegmentationMiddle 1688网站属性名称中部热门营销属性数据
+2020-01-06 09:38:08,041 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:220] - INFO: 正在更新Spider , 更新名称 : AttributeSegmentationMiddle 1688网站属性名称中部热门营销属性数据
+2020-01-06 09:38:08,041 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:220] - INFO: 正在更新Spider , 更新名称 : AttributeSegmentationMiddle 1688网站属性名称中部热门营销属性数据
+2020-01-06 09:38:08,041 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:220] - INFO: 正在更新Spider , 更新名称 : AttributeSegmentationMiddle 1688网站属性名称中部热门营销属性数据
+2020-01-06 09:38:08,041 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:220] - INFO: 正在更新Spider , 更新名称 : AttributeSegmentationMiddle 1688网站属性名称中部热门营销属性数据
+2020-01-06 09:38:08,041 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:220] - INFO: 正在更新Spider , 更新名称 : AttributeSegmentationMiddle 1688网站属性名称中部热门营销属性数据
+2020-01-06 09:38:08,041 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:220] - INFO: 正在更新Spider , 更新名称 : AttributeSegmentationMiddle 1688网站属性名称中部热门营销属性数据
+2020-01-06 09:38:08,041 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:220] - INFO: 正在更新Spider , 更新名称 : AttributeSegmentationMiddle 1688网站属性名称中部热门营销属性数据
+2020-01-06 09:38:08,049 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:238] - INFO: 正在更新Spider , 更新名称 : AttributeSegmentationPrice 1688网站属性细分价格带分布
+2020-01-06 09:38:08,049 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:238] - INFO: 正在更新Spider , 更新名称 : AttributeSegmentationPrice 1688网站属性细分价格带分布
+2020-01-06 09:38:08,049 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:238] - INFO: 正在更新Spider , 更新名称 : AttributeSegmentationPrice 1688网站属性细分价格带分布
+2020-01-06 09:38:08,049 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:238] - INFO: 正在更新Spider , 更新名称 : AttributeSegmentationPrice 1688网站属性细分价格带分布
+2020-01-06 09:38:08,049 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:238] - INFO: 正在更新Spider , 更新名称 : AttributeSegmentationPrice 1688网站属性细分价格带分布
+2020-01-06 09:38:08,049 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:238] - INFO: 正在更新Spider , 更新名称 : AttributeSegmentationPrice 1688网站属性细分价格带分布
+2020-01-06 09:38:08,049 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:238] - INFO: 正在更新Spider , 更新名称 : AttributeSegmentationPrice 1688网站属性细分价格带分布
+2020-01-06 09:38:08,049 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:238] - INFO: 正在更新Spider , 更新名称 : AttributeSegmentationPrice 1688网站属性细分价格带分布
+2020-01-06 09:38:08,049 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:238] - INFO: 正在更新Spider , 更新名称 : AttributeSegmentationPrice 1688网站属性细分价格带分布
+2020-01-06 09:38:08,057 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:255] - INFO: 正在更新Spider , 更新名称  : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:08,057 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:255] - INFO: 正在更新Spider , 更新名称  : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:08,057 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:255] - INFO: 正在更新Spider , 更新名称  : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:08,057 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:255] - INFO: 正在更新Spider , 更新名称  : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:08,057 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:255] - INFO: 正在更新Spider , 更新名称  : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:08,057 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:255] - INFO: 正在更新Spider , 更新名称  : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:08,057 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:255] - INFO: 正在更新Spider , 更新名称  : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:08,057 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:255] - INFO: 正在更新Spider , 更新名称  : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:08,057 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:255] - INFO: 正在更新Spider , 更新名称  : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:08,057 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:255] - INFO: 正在更新Spider , 更新名称  : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:08,066 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:291] - INFO: 正在更新Spider , 更新数据名称 : aliindex_7_2 1688网站阿里排行搜索排行榜7天热搜榜
+2020-01-06 09:38:08,066 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:291] - INFO: 正在更新Spider , 更新数据名称 : aliindex_7_2 1688网站阿里排行搜索排行榜7天热搜榜
+2020-01-06 09:38:08,066 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:291] - INFO: 正在更新Spider , 更新数据名称 : aliindex_7_2 1688网站阿里排行搜索排行榜7天热搜榜
+2020-01-06 09:38:08,066 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:291] - INFO: 正在更新Spider , 更新数据名称 : aliindex_7_2 1688网站阿里排行搜索排行榜7天热搜榜
+2020-01-06 09:38:08,066 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:291] - INFO: 正在更新Spider , 更新数据名称 : aliindex_7_2 1688网站阿里排行搜索排行榜7天热搜榜
+2020-01-06 09:38:08,066 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:291] - INFO: 正在更新Spider , 更新数据名称 : aliindex_7_2 1688网站阿里排行搜索排行榜7天热搜榜
+2020-01-06 09:38:08,066 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:291] - INFO: 正在更新Spider , 更新数据名称 : aliindex_7_2 1688网站阿里排行搜索排行榜7天热搜榜
+2020-01-06 09:38:08,066 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:291] - INFO: 正在更新Spider , 更新数据名称 : aliindex_7_2 1688网站阿里排行搜索排行榜7天热搜榜
+2020-01-06 09:38:08,066 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:291] - INFO: 正在更新Spider , 更新数据名称 : aliindex_7_2 1688网站阿里排行搜索排行榜7天热搜榜
+2020-01-06 09:38:08,066 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:291] - INFO: 正在更新Spider , 更新数据名称 : aliindex_7_2 1688网站阿里排行搜索排行榜7天热搜榜
+2020-01-06 09:38:08,066 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:291] - INFO: 正在更新Spider , 更新数据名称 : aliindex_7_2 1688网站阿里排行搜索排行榜7天热搜榜
+2020-01-06 09:38:08,075 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:360] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_2 1688网站阿里排行搜索排行榜30天热搜榜
+2020-01-06 09:38:08,075 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:360] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_2 1688网站阿里排行搜索排行榜30天热搜榜
+2020-01-06 09:38:08,075 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:360] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_2 1688网站阿里排行搜索排行榜30天热搜榜
+2020-01-06 09:38:08,075 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:360] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_2 1688网站阿里排行搜索排行榜30天热搜榜
+2020-01-06 09:38:08,075 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:360] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_2 1688网站阿里排行搜索排行榜30天热搜榜
+2020-01-06 09:38:08,075 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:360] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_2 1688网站阿里排行搜索排行榜30天热搜榜
+2020-01-06 09:38:08,075 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:360] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_2 1688网站阿里排行搜索排行榜30天热搜榜
+2020-01-06 09:38:08,075 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:360] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_2 1688网站阿里排行搜索排行榜30天热搜榜
+2020-01-06 09:38:08,075 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:360] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_2 1688网站阿里排行搜索排行榜30天热搜榜
+2020-01-06 09:38:08,075 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:360] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_2 1688网站阿里排行搜索排行榜30天热搜榜
+2020-01-06 09:38:08,075 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:360] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_2 1688网站阿里排行搜索排行榜30天热搜榜
+2020-01-06 09:38:08,075 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:360] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_2 1688网站阿里排行搜索排行榜30天热搜榜
+2020-01-06 09:38:08,083 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:414] - INFO: 正在更新Spider , 更新数据名称 : aliindex_7_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,083 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:414] - INFO: 正在更新Spider , 更新数据名称 : aliindex_7_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,083 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:414] - INFO: 正在更新Spider , 更新数据名称 : aliindex_7_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,083 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:414] - INFO: 正在更新Spider , 更新数据名称 : aliindex_7_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,083 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:414] - INFO: 正在更新Spider , 更新数据名称 : aliindex_7_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,083 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:414] - INFO: 正在更新Spider , 更新数据名称 : aliindex_7_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,083 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:414] - INFO: 正在更新Spider , 更新数据名称 : aliindex_7_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,083 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:414] - INFO: 正在更新Spider , 更新数据名称 : aliindex_7_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,083 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:414] - INFO: 正在更新Spider , 更新数据名称 : aliindex_7_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,083 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:414] - INFO: 正在更新Spider , 更新数据名称 : aliindex_7_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,083 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:414] - INFO: 正在更新Spider , 更新数据名称 : aliindex_7_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,083 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:414] - INFO: 正在更新Spider , 更新数据名称 : aliindex_7_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,083 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:414] - INFO: 正在更新Spider , 更新数据名称 : aliindex_7_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,092 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:431] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,092 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:431] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,092 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:431] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,092 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:431] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,092 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:431] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,092 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:431] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,092 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:431] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,092 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:431] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,092 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:431] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,092 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:431] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,092 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:431] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,092 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:431] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,092 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:431] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,092 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:431] - INFO: 正在更新Spider , 更新数据名称 : aliindex_30_hot 1688网站阿里排行产品排行榜
+2020-01-06 09:38:08,102 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:447] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemain　
+2020-01-06 09:38:08,102 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:447] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemain　
+2020-01-06 09:38:08,102 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:447] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemain　
+2020-01-06 09:38:08,102 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:447] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemain　
+2020-01-06 09:38:08,102 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:447] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemain　
+2020-01-06 09:38:08,102 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:447] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemain　
+2020-01-06 09:38:08,102 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:447] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemain　
+2020-01-06 09:38:08,102 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:447] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemain　
+2020-01-06 09:38:08,102 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:447] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemain　
+2020-01-06 09:38:08,102 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:447] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemain　
+2020-01-06 09:38:08,102 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:447] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemain　
+2020-01-06 09:38:08,102 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:447] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemain　
+2020-01-06 09:38:08,102 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:447] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemain　
+2020-01-06 09:38:08,102 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:447] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemain　
+2020-01-06 09:38:08,102 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:447] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemain　
+2020-01-06 09:38:08,111 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:464] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemarket
+2020-01-06 09:38:08,111 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:464] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemarket
+2020-01-06 09:38:08,111 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:464] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemarket
+2020-01-06 09:38:08,111 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:464] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemarket
+2020-01-06 09:38:08,111 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:464] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemarket
+2020-01-06 09:38:08,111 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:464] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemarket
+2020-01-06 09:38:08,111 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:464] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemarket
+2020-01-06 09:38:08,111 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:464] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemarket
+2020-01-06 09:38:08,111 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:464] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemarket
+2020-01-06 09:38:08,111 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:464] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemarket
+2020-01-06 09:38:08,111 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:464] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemarket
+2020-01-06 09:38:08,111 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:464] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemarket
+2020-01-06 09:38:08,111 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:464] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemarket
+2020-01-06 09:38:08,111 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:464] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemarket
+2020-01-06 09:38:08,111 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:464] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemarket
+2020-01-06 09:38:08,111 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:464] - INFO: 正在更新Spider , 更新数据名称 : alisupplyfilemarket
+2020-01-06 09:38:08,122 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:482] - INFO: 正在更新Spider , 更新数据名称: alisupplyfilproduct
+2020-01-06 09:38:08,122 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:482] - INFO: 正在更新Spider , 更新数据名称: alisupplyfilproduct
+2020-01-06 09:38:08,122 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:482] - INFO: 正在更新Spider , 更新数据名称: alisupplyfilproduct
+2020-01-06 09:38:08,122 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:482] - INFO: 正在更新Spider , 更新数据名称: alisupplyfilproduct
+2020-01-06 09:38:08,122 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:482] - INFO: 正在更新Spider , 更新数据名称: alisupplyfilproduct
+2020-01-06 09:38:08,122 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:482] - INFO: 正在更新Spider , 更新数据名称: alisupplyfilproduct
+2020-01-06 09:38:08,122 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:482] - INFO: 正在更新Spider , 更新数据名称: alisupplyfilproduct
+2020-01-06 09:38:08,122 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:482] - INFO: 正在更新Spider , 更新数据名称: alisupplyfilproduct
+2020-01-06 09:38:08,122 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:482] - INFO: 正在更新Spider , 更新数据名称: alisupplyfilproduct
+2020-01-06 09:38:08,122 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:482] - INFO: 正在更新Spider , 更新数据名称: alisupplyfilproduct
+2020-01-06 09:38:08,122 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:482] - INFO: 正在更新Spider , 更新数据名称: alisupplyfilproduct
+2020-01-06 09:38:08,122 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:482] - INFO: 正在更新Spider , 更新数据名称: alisupplyfilproduct
+2020-01-06 09:38:08,122 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:482] - INFO: 正在更新Spider , 更新数据名称: alisupplyfilproduct
+2020-01-06 09:38:08,122 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:482] - INFO: 正在更新Spider , 更新数据名称: alisupplyfilproduct
+2020-01-06 09:38:08,122 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:482] - INFO: 正在更新Spider , 更新数据名称: alisupplyfilproduct
+2020-01-06 09:38:08,122 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:482] - INFO: 正在更新Spider , 更新数据名称: alisupplyfilproduct
+2020-01-06 09:38:08,122 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:482] - INFO: 正在更新Spider , 更新数据名称: alisupplyfilproduct
+2020-01-06 09:38:08,710 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:508] - INFO: 更新Spider完成 , 更新数据名称 : cmindexchild
+2020-01-06 09:38:08,710 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:508] - INFO: 更新Spider完成 , 更新数据名称 : cmindexchild
+2020-01-06 09:38:08,710 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:508] - INFO: 更新Spider完成 , 更新数据名称 : cmindexchild
+2020-01-06 09:38:08,710 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:508] - INFO: 更新Spider完成 , 更新数据名称 : cmindexchild
+2020-01-06 09:38:08,710 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:508] - INFO: 更新Spider完成 , 更新数据名称 : cmindexchild
+2020-01-06 09:38:08,710 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:508] - INFO: 更新Spider完成 , 更新数据名称 : cmindexchild
+2020-01-06 09:38:08,710 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:508] - INFO: 更新Spider完成 , 更新数据名称 : cmindexchild
+2020-01-06 09:38:08,710 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:508] - INFO: 更新Spider完成 , 更新数据名称 : cmindexchild
+2020-01-06 09:38:08,710 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:508] - INFO: 更新Spider完成 , 更新数据名称 : cmindexchild
+2020-01-06 09:38:08,710 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:508] - INFO: 更新Spider完成 , 更新数据名称 : cmindexchild
+2020-01-06 09:38:08,710 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:508] - INFO: 更新Spider完成 , 更新数据名称 : cmindexchild
+2020-01-06 09:38:08,710 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:508] - INFO: 更新Spider完成 , 更新数据名称 : cmindexchild
+2020-01-06 09:38:08,710 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:508] - INFO: 更新Spider完成 , 更新数据名称 : cmindexchild
+2020-01-06 09:38:08,710 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:508] - INFO: 更新Spider完成 , 更新数据名称 : cmindexchild
+2020-01-06 09:38:08,710 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:508] - INFO: 更新Spider完成 , 更新数据名称 : cmindexchild
+2020-01-06 09:38:08,710 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:508] - INFO: 更新Spider完成 , 更新数据名称 : cmindexchild
+2020-01-06 09:38:08,710 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:508] - INFO: 更新Spider完成 , 更新数据名称 : cmindexchild
+2020-01-06 09:38:08,710 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:508] - INFO: 更新Spider完成 , 更新数据名称 : cmindexchild
+2020-01-06 09:38:09,972 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:576] - INFO: cmindexSaleGrey爬取完成
+2020-01-06 09:38:09,972 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:576] - INFO: cmindexSaleGrey爬取完成
+2020-01-06 09:38:09,972 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:576] - INFO: cmindexSaleGrey爬取完成
+2020-01-06 09:38:09,972 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:576] - INFO: cmindexSaleGrey爬取完成
+2020-01-06 09:38:09,972 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:576] - INFO: cmindexSaleGrey爬取完成
+2020-01-06 09:38:09,972 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:576] - INFO: cmindexSaleGrey爬取完成
+2020-01-06 09:38:09,972 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:576] - INFO: cmindexSaleGrey爬取完成
+2020-01-06 09:38:09,972 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:576] - INFO: cmindexSaleGrey爬取完成
+2020-01-06 09:38:09,972 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:576] - INFO: cmindexSaleGrey爬取完成
+2020-01-06 09:38:09,972 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:576] - INFO: cmindexSaleGrey爬取完成
+2020-01-06 09:38:09,972 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:576] - INFO: cmindexSaleGrey爬取完成
+2020-01-06 09:38:09,972 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:576] - INFO: cmindexSaleGrey爬取完成
+2020-01-06 09:38:09,972 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:576] - INFO: cmindexSaleGrey爬取完成
+2020-01-06 09:38:09,972 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:576] - INFO: cmindexSaleGrey爬取完成
+2020-01-06 09:38:09,972 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:576] - INFO: cmindexSaleGrey爬取完成
+2020-01-06 09:38:09,972 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:576] - INFO: cmindexSaleGrey爬取完成
+2020-01-06 09:38:09,972 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:576] - INFO: cmindexSaleGrey爬取完成
+2020-01-06 09:38:09,972 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:576] - INFO: cmindexSaleGrey爬取完成
+2020-01-06 09:38:09,972 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:576] - INFO: cmindexSaleGrey爬取完成
+2020-01-06 09:38:11,339 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:266] - INFO: 更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:11,339 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:266] - INFO: 更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:11,339 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:266] - INFO: 更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:11,339 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:266] - INFO: 更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:11,339 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:266] - INFO: 更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:11,339 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:266] - INFO: 更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:11,339 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:266] - INFO: 更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:11,339 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:266] - INFO: 更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:11,339 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:266] - INFO: 更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:11,339 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:266] - INFO: 更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:11,339 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:266] - INFO: 更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:11,339 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:266] - INFO: 更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:11,339 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:266] - INFO: 更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:11,339 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:266] - INFO: 更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:11,339 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:266] - INFO: 更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:11,339 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:266] - INFO: 更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:11,339 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:266] - INFO: 更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:11,339 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:266] - INFO: 更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:11,339 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:266] - INFO: 更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描
+2020-01-06 09:38:11,339 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:266] - INFO: 更新Spider完成 , 更新数据名称 : BuyerSketch 1688网站采购商素描
+2020-01-06 09:42:11,143 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:492] - INFO: 更新Spider完成 , 更新数据名称 : alisupplyfilproduct
+2020-01-06 09:42:11,143 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:492] - INFO: 更新Spider完成 , 更新数据名称 : alisupplyfilproduct
+2020-01-06 09:42:11,143 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:492] - INFO: 更新Spider完成 , 更新数据名称 : alisupplyfilproduct
+2020-01-06 09:42:11,143 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:492] - INFO: 更新Spider完成 , 更新数据名称 : alisupplyfilproduct
+2020-01-06 09:42:11,143 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:492] - INFO: 更新Spider完成 , 更新数据名称 : alisupplyfilproduct
+2020-01-06 09:42:11,143 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:492] - INFO: 更新Spider完成 , 更新数据名称 : alisupplyfilproduct
+2020-01-06 09:42:11,143 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:492] - INFO: 更新Spider完成 , 更新数据名称 : alisupplyfilproduct
+2020-01-06 09:42:11,143 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:492] - INFO: 更新Spider完成 , 更新数据名称 : alisupplyfilproduct
+2020-01-06 09:42:11,143 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:492] - INFO: 更新Spider完成 , 更新数据名称 : alisupplyfilproduct
+2020-01-06 09:42:11,143 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:492] - INFO: 更新Spider完成 , 更新数据名称 : alisupplyfilproduct
+2020-01-06 09:42:11,143 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:492] - INFO: 更新Spider完成 , 更新数据名称 : alisupplyfilproduct
+2020-01-06 09:42:11,143 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:492] - INFO: 更新Spider完成 , 更新数据名称 : alisupplyfilproduct
+2020-01-06 09:42:11,143 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:492] - INFO: 更新Spider完成 , 更新数据名称 : alisupplyfilproduct
+2020-01-06 09:42:11,143 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:492] - INFO: 更新Spider完成 , 更新数据名称 : alisupplyfilproduct
+2020-01-06 09:42:11,143 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:492] - INFO: 更新Spider完成 , 更新数据名称 : alisupplyfilproduct
+2020-01-06 09:42:11,143 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:492] - INFO: 更新Spider完成 , 更新数据名称 : alisupplyfilproduct
+2020-01-06 09:42:11,143 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:492] - INFO: 更新Spider完成 , 更新数据名称 : alisupplyfilproduct
+2020-01-06 09:42:11,143 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:492] - INFO: 更新Spider完成 , 更新数据名称 : alisupplyfilproduct
+2020-01-06 09:42:11,143 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:492] - INFO: 更新Spider完成 , 更新数据名称 : alisupplyfilproduct
+2020-01-06 09:42:11,143 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:492] - INFO: 更新Spider完成 , 更新数据名称 : alisupplyfilproduct
+2020-01-06 09:42:11,143 - /home/chenhang/workplace/pycharmprojects/zhili-crawler/children_1688/pipelines.py[line:492] - INFO: 更新Spider完成 , 更新数据名称 : alisupplyfilproduct
